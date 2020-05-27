@@ -1,0 +1,15 @@
+.nav-bar {
+  width: 100%;
+  top: 68px;
+  position: absolute;
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+}
+
+.nav-item {
+  margin: 0 50px;
+}
