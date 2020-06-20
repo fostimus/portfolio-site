@@ -3,6 +3,9 @@
   src: url("../fonts/Lato-Regular.ttf") format("ttf");
 }
 
+/**
+* universal styles
+*/
 body {
   background-color: #272727;
   color: #f0f0f0;
@@ -12,10 +15,58 @@ body {
 }
 
 a {
-  color: #AEAEAE;
+  color: #aeaeae;
   text-decoration: none;
 }
 
 a:hover {
-  color: #2BC9AF;
+  color: #2bc9af;
+}
+
+/**
+* specific styles
+*/
+.tagline-container {
+  position: absolute;
+  top: 192px;
+  width: 100%;
+  text-align: center;
+}
+
+.tagline-container h1 {
+  display: inline-block;
+  margin: 0 25px 30px;
+  max-width: 600px;
+}
+
+.icon {
+  display: inline-block;
+  margin-right: 25px;
+}
+
+.icon:hover {
+  background-color: #2bc9af;
+}
+
+.skills {
+  position: absolute;
+  top: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.skills ul {
+  list-style-type: none;
+  width: 100%;
+}
+
+.skills li {
+  display: inline-block;
+  box-sizing: border-box;
+  height: 37px;
+  background-color: #464646;
+  border-radius: 15px;
+  width: 132px;
+  padding-top: 9.25px;
+  margin: 10px 10px;
 }
