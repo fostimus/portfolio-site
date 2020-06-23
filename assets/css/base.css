@@ -7,49 +7,135 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
+
 body {
-	line-height: 1;
+  line-height: 1;
 }
-ol, ul {
-	list-style: none;
+
+ol,
+ul {
+  list-style: none;
 }
-blockquote, q {
-	quotes: none;
+
+blockquote,
+q {
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
+
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /**
@@ -72,6 +158,19 @@ a:hover {
   color: #2bc9af;
 }
 
+h1 {
+  font: normal bold 32px/38px Lato, sans-serif;
+}
+
+h2 {
+  font: normal bold 24px/30px Lato, sans-serif;
+}
+
+h3 {
+  font: normal normal 16px/19px Lato, sans-serif;
+  color: #aeaeae;
+}
+
 /**
 * specific styles
 */
@@ -86,7 +185,6 @@ a:hover {
 }
 
 .tagline h1 {
-  font: normal bold 32px/38px Lato, sans-serif;
   margin: 0 25px 30px;
   display: inline-block;
   max-width: 600px;
@@ -119,4 +217,35 @@ a:hover {
   width: 160px;
   padding-top: 10px;
   margin: 10px 10px;
+}
+
+.background-work {
+  top: 800px;
+}
+
+#mydiv {
+  background: url("../images/line-text-headers/BACKEND-WORK.svg") no-repeat;
+  background-size: 100%;
+  height: 200px;
+}
+
+.btn {
+  /* position: absolute; */
+  width: 156px;
+  height: 50px;
+  left: 72px;
+
+  border: 2px solid #f0f0f0;
+  box-sizing: border-box;
+  border-radius: 15px;
+}
+
+.left {
+  float: left;
+  padding: 50px 100px;
+}
+
+.right {
+  float: right;
+  padding: 50px 100px;
 }
