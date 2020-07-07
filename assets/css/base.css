@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Lato";
-  src: url("../fonts/Lato-Regular.ttf") format("ttf");
+  src: url("../font/Lato-Regular.ttf") format("ttf");
 }
 
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -141,7 +141,8 @@ h3 {
 /**
 * projects
 */
-.background-work {
+#background-work {
+  position: relative;
   top: 700px;
 }
 
@@ -160,8 +161,8 @@ h3 {
   right: 60px;
 }
 
-#lead-project {
-  background: url("../images/line-text-headers/BACKEND-WORK.svg") no-repeat;
+.line-text-header {
+  background-repeat: no-repeat;
   background-size: 100%;
 }
 
@@ -197,4 +198,19 @@ h3 {
   top: 100px;
   padding: 50px 100px;
   /* vertical-align: middle;  */
+}
+
+/*
+*  contact me styling
+*/
+#contact-me {
+  /* i'd like to change this to relative, but the bottom of the background image cuts off when the browser grows too wide */
+  position: absolute;
+  top: 2800px;
+}
+
+.centered-header {
+  margin: 170px 0;
+  width: 500px;
+  text-align: center;
 }
