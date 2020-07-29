@@ -5,91 +5,93 @@
     <meta charset="utf-8" />
     <title>Derek Foster's Home Page</title>
     <link rel="stylesheet" href="assets/css/reset.css" />
-    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/less/base.css" />
     <link rel="stylesheet" href="assets/css/nav.css" />
   </head>
 
   <body>
-    <nav class="nav-bar">
-      <ul>
-        <li class="nav-item"><a href="index.html">Work</a></li>
-        <li class="nav-item"><a href="about.html">About</a></li>
-        <!-- for now going back to home. need to include download link -->
-        <li class="nav-item"><a href="index.html">Resume</a></li>
-      </ul>
-    </nav>
+    <div class="enable-sticky-footer">
+      <nav class="nav-bar">
+        <ul>
+          <li class="nav-item"><a href="index.html">Work</a></li>
+          <li class="nav-item"><a href="about.html">About</a></li>
+          <!-- for now going back to home. need to include download link -->
+          <li class="nav-item"><a href="index.html">Resume</a></li>
+        </ul>
+      </nav>
 
-    <section class="tagline container">
-      <div class="limited-width">
-        <h1>
-          Hello! My name is Derek. I'm a Full-Stack Developer based in Seattle
-          working for Red Hat
-        </h1>
-      </div>
-
-      <section>
-        <a class="icon" href="mailto:derekfoster94@gmail.com" target="_blank"><img src="./assets/images/social-media-icons/email.svg" /></a>
-        <a class="icon" href="https://www.linkedin.com/in/derek-foster/" target="_blank"><img src="./assets/images/social-media-icons/linkedin.svg" /></a>
-        <a class="icon" href="https://github.com/fostimus" target="_blank"><img src="./assets/images/social-media-icons/github.svg" /></a>
-        <a class="icon" href="https://open.spotify.com/user/1218307071?si=Ir3WJzehS9qQe-k_gaJpng" target="_blank"><img src="./assets/images/social-media-icons/spotify.svg" /></a>
-        <a class="icon" href="https://www.yelp.com/user_details?userid=ktbe2eLWnfgu3afRmDIi3g" target="_blank"><img src="./assets/images/social-media-icons/yelp.svg" /></a>
-      </section>
-    </section>
-
-    <section class="skills container">
-      <ul>
-        <li>Java</li>
-        <li>JavaScript</li>
-        <li>React.js</li>
-        <li>HTML5</li>
-        <li>CSS3</li>
-        <li>Maven</li>
-        <li>SQL</li>
-        <li>PostgreSQL</li>
-        <li>Git</li>
-        <li>Docker</li>
-        <li>Spring</li>
-        <li>Spring Boot</li>
-        <li>Apache Camel</li>
-        <li>RH OpenShift</li>
-        <li>RH Decision Manager</li>
-        <li>Cucumber</li>
-        <li>Selenium</li>
-      </ul>
-    </section>
-
-    <!-- need to change "backend-work" to just "work" or "projects" -->
-    <section id="background-work" class="line-text-header container" style="background-image: url('./assets/images/line-text-headers/BACKEND-WORK.svg')">
-
-      <section class="background-project">
-        <div class="left desc">
-          <h2>Giveback Ninja Website Modernization</h2>
-          <h3>April 2020 - November 2019</h3>
-          <a class="btn" href="/" target="_blank">Read Case Study</a>
+      <section id="tagline" class="container">
+        <div class="limited-width">
+          <h1>
+            Hello! My name is Derek. I'm a Full-Stack Developer based in Seattle
+            working for Red Hat
+          </h1>
         </div>
-        <img src="./assets/images/giveback-ninja.jpg" />
+
+        <section>
+          <a class="icon" href="mailto:derekfoster94@gmail.com" target="_blank"><img src="./assets/images/social-media-icons/email.svg" /></a>
+          <a class="icon" href="https://www.linkedin.com/in/derek-foster/" target="_blank"><img src="./assets/images/social-media-icons/linkedin.svg" /></a>
+          <a class="icon" href="https://github.com/fostimus" target="_blank"><img src="./assets/images/social-media-icons/github.svg" /></a>
+          <a class="icon" href="https://open.spotify.com/user/1218307071?si=Ir3WJzehS9qQe-k_gaJpng" target="_blank"><img src="./assets/images/social-media-icons/spotify.svg" /></a>
+          <a class="icon" href="https://www.yelp.com/user_details?userid=ktbe2eLWnfgu3afRmDIi3g" target="_blank"><img src="./assets/images/social-media-icons/yelp.svg" /></a>
+        </section>
       </section>
 
-      <section class="background-project">
-        <div class="right desc">
-          <h2>API Project</h2>
-          <h3>June 2019 - November 2019</h3>
-          <a class="btn" href="/" target="_blank">Case Study</a>
-        </div>
-        <img src="./assets/images/QA-UML.jpg" />
+      <section id="skills" class="container">
+        <ul>
+          <li>Java</li>
+          <li>JavaScript</li>
+          <li>React.js</li>
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>Maven</li>
+          <li>SQL</li>
+          <li>PostgreSQL</li>
+          <li>Git</li>
+          <li>Docker</li>
+          <li>Spring</li>
+          <li>Spring Boot</li>
+          <li>Apache Camel</li>
+          <li>RH OpenShift</li>
+          <li>RH Decision Manager</li>
+          <li>Cucumber</li>
+          <li>Selenium</li>
+        </ul>
       </section>
 
-      <section class="background-project">
-        <div class="left desc">
-          <h2>API Project</h2>
-          <h3>June 2019 - November 2019</h3>
-          <a class="btn" href="/" target="_blank">Case Study</a>
-        </div>
-        <img src="./assets/images/QA-UML.jpg" />
-      </section>
-    </section>
+      <!-- need to change "backend-work" to just "work" or "projects" -->
+      <section id="background-work" class="line-text-header container" style="background-image: url('./assets/images/line-text-headers/BACKEND-WORK.svg')">
 
-    <section id="contact-me" class="line-text-header container" style="background-image: url('./assets/images/line-text-headers/GET-IN-TOUCH.svg')">
+        <section class="background-project">
+          <div class="left desc">
+            <h2>Giveback Ninja Website Modernization</h2>
+            <h3>April 2020 - November 2019</h3>
+            <a class="btn" href="/" target="_blank">Read Case Study</a>
+          </div>
+          <img src="./assets/images/giveback-ninja.jpg" />
+        </section>
+
+        <section class="background-project">
+          <div class="right desc">
+            <h2>API Project</h2>
+            <h3>June 2019 - November 2019</h3>
+            <a class="btn" href="/" target="_blank">Case Study</a>
+          </div>
+          <img src="./assets/images/QA-UML.jpg" />
+        </section>
+
+        <section class="background-project">
+          <div class="left desc">
+            <h2>API Project</h2>
+            <h3>June 2019 - November 2019</h3>
+            <a class="btn" href="/" target="_blank">Case Study</a>
+          </div>
+          <img src="./assets/images/QA-UML.jpg" />
+        </section>
+      </section>
+    </div>
+
+    <section class="line-text-header container footer" style="background-image: url('./assets/images/line-text-headers/GET-IN-TOUCH.svg')">
       <div class="limited-width">
         <h1>Say hello! Learn more about my life as a professional and a person.</h1>
       </div>
@@ -99,7 +101,7 @@
         <a class="btn" href="/" target="_blank">Learn about me</a>
       </div>
 
-      <div class="footer">
+      <div class="copyright">
         <p>Ingredients: Heart, soul, and lots of coffee</p>
         <br />
         <p>&copy; Derek Foster 2020</p>
