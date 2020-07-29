@@ -7,6 +7,10 @@
   text-align: center;
 }
 
-.nav-item {
-  margin: 0 50px;
+/* anything larger than an iPad */
+@media (min-width: 769px) {
+  .nav-item {
+    display: inline;
+    margin: 0 50px;
+  }
 }
