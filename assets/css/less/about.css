@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "Lato";
+  src: url("../font/Lato-Regular.ttf") format("ttf");
+}
+body {
+  background-color: #F0F0F0;
+  color: #f0f0f0;
+  font: normal normal normal 14px Lato, sans-serif;
+}

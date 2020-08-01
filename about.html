@@ -2,14 +2,43 @@
 <html lang="en" dir="ltr">
 
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Derek Foster's About Page</title>
-    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/less/base.css" />
+    <link rel="stylesheet" href="assets/css/less/about.css" />
+    <link rel="stylesheet" href="assets/css/nav.css" />
   </head>
 
   <body>
-    <p>some text</p>
+    <div class="enable-sticky-footer">
+      <nav class="nav-bar">
+        <ul>
+          <li class="nav-item"><a href="index.html">Work</a></li>
+          <li class="nav-item"><a href="about.html">About</a></li>
+          <!-- for now going back to home. need to include download link -->
+          <li class="nav-item"><a href="index.html">Resume</a></li>
+        </ul>
+      </nav>
+    </div>
 
+    <section class="line-text-header container footer" style="background-image: url('./assets/images/line-text-headers/GET-IN-TOUCH.svg')">
+      <div class="limited-width">
+        <h1>
+          Say hello! Learn more about my life as a professional and a person.
+        </h1>
+      </div>
+
+      <div>
+        <a class="btn" href="/" target="_blank">Get in touch</a>
+        <a class="btn" href="/" target="_blank">Learn about me</a>
+      </div>
+
+      <div class="copyright">
+        <p>Ingredients: Heart, soul, and lots of coffee</p>
+        <br />
+        <p>&copy; Derek Foster 2020</p>
+      </div>
+    </section>
   </body>
 
 </html>

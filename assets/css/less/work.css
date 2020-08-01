@@ -1,0 +1,82 @@
+@font-face {
+  font-family: "Lato";
+  src: url("../font/Lato-Regular.ttf") format("ttf");
+}
+/* color variables */
+/* ==========================
+    work styles
+========================== */
+#tagline {
+  position: relative;
+  top: 192px;
+}
+.limited-width {
+  max-width: 600px;
+  display: inline-block;
+  margin-bottom: 30px;
+}
+.icon {
+  display: inline-block;
+  margin-right: 25px;
+}
+.icon :hover {
+  background-color: #2bc9af;
+}
+#skills {
+  position: relative;
+  top: 300px;
+}
+#skills ul {
+  display: inline-block;
+  max-width: 1000px;
+}
+#skills li {
+  display: inline-block;
+  height: 37px;
+  background-color: #464646;
+  border-radius: 15px;
+  width: 160px;
+  padding-top: 10px;
+  margin: 10px;
+}
+/* handling line text headers as backgrounds and thea
+* margin to show text underneath
+*/
+.line-text-header {
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.line-text-header :first-child {
+  margin-top: 50px;
+}
+/* ==========================
+    project
+========================== */
+#background-work {
+  position: relative;
+  top: 350px;
+}
+.background-project {
+  margin: 40px 0;
+}
+.background-project h3 {
+  position: relative;
+  top: 20px;
+}
+.background-project img {
+  position: relative;
+  top: 110px;
+  right: 60px;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.desc {
+  position: relative;
+  top: 100px;
+  padding: 50px 100px;
+  /* vertical-align: middle;  */
+}

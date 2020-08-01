@@ -1,0 +1,100 @@
+@font-face {
+  font-family: "Lato";
+  src: url("../font/Lato-Regular.ttf") format("ttf");
+}
+
+@site-font-family: Lato, sans-serif;
+@body-font: normal normal normal 14px @site-font-family;
+
+/* color variables */
+@primary-background-color: #272727;
+@primary-text-color: #f0f0f0;
+@link-color: #aeaeae;
+@hover-color: #2bc9af;
+
+@footer-height: 350px;
+
+/* ==========================
+    work styles
+========================== */
+#tagline {
+  position: relative;
+  top: 192px;
+}
+
+.icon {
+  display: inline-block;
+  margin-right: 25px;
+
+  :hover {
+    background-color: @hover-color;
+  }
+}
+
+#skills {
+  position: relative;
+  top: 300px;
+
+  ul {
+    display: inline-block;
+    max-width: 1000px;
+  }
+
+  li {
+    display: inline-block;
+    height: 37px;
+    background-color: #464646;
+    border-radius: 15px;
+    width: 160px;
+    padding-top: 10px;
+    margin: 10px;
+  }
+}
+/* handling line text headers as backgrounds and thea
+* margin to show text underneath
+*/
+.line-text-header {
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+  :first-child {
+    margin-top: 50px;
+  }
+}
+/* ==========================
+    project
+========================== */
+#background-work {
+  position: relative;
+  top: 350px;
+}
+
+.background-project {
+  margin: 40px 0;
+
+  h3 {
+    position: relative;
+    top: 20px;
+  }
+
+  img {
+    position: relative;
+    top: 110px;
+    right: 60px;
+  }
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.desc {
+  position: relative;
+  top: 100px;
+  padding: 50px 100px;
+  /* vertical-align: middle;  */
+}
