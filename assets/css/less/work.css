@@ -10,11 +10,6 @@
   position: relative;
   top: 192px;
 }
-.limited-width {
-  max-width: 600px;
-  display: inline-block;
-  margin-bottom: 30px;
-}
 .icon {
   display: inline-block;
   margin-right: 25px;
@@ -39,16 +34,6 @@
   padding-top: 10px;
   margin: 10px;
 }
-/* handling line text headers as backgrounds and thea
-* margin to show text underneath
-*/
-.line-text-header {
-  background-repeat: no-repeat;
-  background-size: 100%;
-}
-.line-text-header :first-child {
-  margin-top: 50px;
-}
 /* ==========================
     project
 ========================== */
@@ -56,27 +41,14 @@
   position: relative;
   top: 350px;
 }
-.background-project {
-  margin: 40px 0;
-}
-.background-project h3 {
-  position: relative;
-  top: 20px;
-}
-.background-project img {
-  position: relative;
-  top: 110px;
-  right: 60px;
-}
 .left {
   float: left;
 }
 .right {
+  display: block;
   float: right;
 }
 .desc {
   position: relative;
   top: 100px;
-  padding: 50px 100px;
-  /* vertical-align: middle;  */
 }

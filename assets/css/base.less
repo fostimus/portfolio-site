@@ -114,9 +114,21 @@ h3 {
   margin-bottom: 30px;
 }
 
+/* handling line text headers as backgrounds and thea
+* margin to show text underneath
+*/
+.line-text-header {
+  // display: block;
+  width: 100%;
+}
+
+.line-text-header + h1 {
+  position: relative;
+  top: -20px;
+}
+
 .btn {
   position: relative;
-  top: 40px;
   display: inline-block;
   width: 156px;
   height: 50px;
@@ -138,7 +150,7 @@ h3 {
   background-color: @primary-background-color;
   position: relative;
   top: 800px;
-  height: @footer-height;
+  // overflow: auto;
 }
 
 .footer a {
@@ -163,4 +175,14 @@ h3 {
     margin: 0 auto;
     text-align: center;
   }
+}
+
+
+/* ==========================
+    other & notes
+========================== */
+
+//will select all .col after the first .col element
+.col + .col {
+
 }
