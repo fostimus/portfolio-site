@@ -206,22 +206,24 @@ h3 {
 ========================== */
 .footer {
   background-color: #272727;
-  position: relative;
-  top: 600px;
 }
-.footer a {
+.footer-links {
+  margin-top: 30px;
+}
+.footer-links a {
   margin: 0 25px;
 }
 .copyright {
   position: relative;
-  top: 100px;
+  top: 150px;
+  font-size: 12px;
 }
 /* ==========================
     media queries
 ========================== */
 @media (min-width: 769px) {
   .enable-sticky-footer {
-    min-height: calc(100vh - 350px);
+    min-height: 100vh;
   }
   .container {
     width: 100%;

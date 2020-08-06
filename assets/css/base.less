@@ -158,17 +158,20 @@ h3 {
 ========================== */
 .footer {
   background-color: @primary-background-color;
-  position: relative;
-  top: 600px;
 }
 
-.footer a {
+.footer-links {
+  margin-top: 30px;
+}
+
+.footer-links a {
   margin: 0 25px;
 }
 
 .copyright {
   position: relative;
-  top: 100px;
+  top: 150px;
+  font-size: 12px;
 }
 
 /* ==========================
@@ -176,7 +179,7 @@ h3 {
 ========================== */
 @media (min-width: 769px) {
   .enable-sticky-footer {
-    min-height: calc(100vh - @footer-height);
+    min-height: 100vh;
   }
 
   .container {
