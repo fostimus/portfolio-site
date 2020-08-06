@@ -198,13 +198,16 @@ h3 {
   display: table;
   clear: both;
 }
+.clear {
+  clear: both;
+}
 /* ==========================
     footer - contact me styling
 ========================== */
 .footer {
   background-color: #272727;
   position: relative;
-  top: 800px;
+  top: 600px;
 }
 .footer a {
   margin: 0 25px;

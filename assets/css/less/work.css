@@ -14,7 +14,7 @@
   display: inline-block;
   margin-right: 25px;
 }
-.icon :hover {
+.icon:hover {
   background-color: #2bc9af;
 }
 #skills {
@@ -41,6 +41,13 @@
   position: relative;
   top: 350px;
 }
+.background-project {
+  width: 90%;
+  margin: 0 auto 80px;
+}
+.background-project:last-child {
+  margin: 0 auto;
+}
 @media (max-width: 768px) {
   .background-project > div {
     width: 100%;
@@ -56,9 +63,10 @@
   .desc {
     position: relative;
     top: 100px;
-    width: 50%;
+    width: 35%;
+    margin: 0 20px 100px;
   }
-  .project-image {
-    width: 50%;
+  .desc h3 {
+    margin: 20px 0;
   }
 }
