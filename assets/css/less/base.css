@@ -193,6 +193,11 @@ h3 {
 /* .btn:hover {
   color: #2bc9af;
 } */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
 /* ==========================
     footer - contact me styling
 ========================== */

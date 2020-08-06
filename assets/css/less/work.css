@@ -41,14 +41,24 @@
   position: relative;
   top: 350px;
 }
-.left {
-  float: left;
+@media (max-width: 768px) {
+  .background-project > div {
+    width: 100%;
+  }
 }
-.right {
-  display: block;
-  float: right;
-}
-.desc {
-  position: relative;
-  top: 100px;
+@media (min-width: 769px) {
+  .left {
+    float: left;
+  }
+  .right {
+    float: right;
+  }
+  .desc {
+    position: relative;
+    top: 100px;
+    width: 50%;
+  }
+  .project-image {
+    width: 50%;
+  }
 }
