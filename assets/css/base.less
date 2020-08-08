@@ -91,11 +91,11 @@ a:hover {
 }
 
 h1 {
-  font: normal bold 32px/38px @site-font-family;
+  font: normal bold 42px/50px @site-font-family;
 }
 
 h2 {
-  font: normal bold 24px/30px @site-font-family;
+  font: normal bold 32px/38px @site-font-family;
 }
 
 h3 {
@@ -149,8 +149,13 @@ h3 {
   clear: both;
 }
 
-.clear {
-  clear: both;
+.social-links > a {
+  display: inline-block;
+  margin-right: 25px;
+
+  &:hover {
+    background-color: @hover-color;
+  }
 }
 
 /* ==========================

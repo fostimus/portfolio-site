@@ -10,13 +10,6 @@
   position: relative;
   top: 192px;
 }
-.icon {
-  display: inline-block;
-  margin-right: 25px;
-}
-.icon:hover {
-  background-color: #2bc9af;
-}
 #skills {
   position: relative;
   top: 300px;

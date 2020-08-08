@@ -3,9 +3,65 @@
   src: url("../font/Lato-Regular.ttf") format("ttf");
 }
 body {
-  background-color: #F0F0F0;
-  color: #f0f0f0;
+  background-color: #f0f0f0;
+  color: #272727;
   font: normal normal normal 14px Lato, sans-serif;
+}
+.ellipsis-nav {
+  float: left;
+  text-align: left;
+  margin-left: 20px;
+  color: #464646;
+}
+.ellipse-container {
+  margin-bottom: 20px;
+}
+.ellipse {
+  display: inline-block;
+  border: 1px solid #aeaeae;
+  border-radius: 50%;
+  width: 13px;
+  height: 13px;
+}
+#profile {
+  position: relative;
+  top: 192px;
+}
+#profile .ellipse[href="#profile"] {
+  background-color: #464646;
+  border: 1px solid #464646;
+}
+#background {
+  position: relative;
+  top: 192px;
+}
+#background .ellipse[href="#background"] {
+  background-color: #464646;
+  border: 1px solid #464646;
+}
+#music {
+  position: relative;
+  top: 192px;
+}
+#music .ellipse[href="#music"] {
+  background-color: #464646;
+  border: 1px solid #464646;
+}
+#shows {
+  position: relative;
+  top: 192px;
+}
+#shows .ellipse[href="#shows"] {
+  background-color: #464646;
+  border: 1px solid #464646;
+}
+#blog {
+  position: relative;
+  top: 192px;
+}
+#blog .ellipse[href="#blog"] {
+  background-color: #464646;
+  border: 1px solid #464646;
 }
 .footer {
   position: relative;
