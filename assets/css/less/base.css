@@ -200,10 +200,30 @@ h3 {
 }
 .social-links > a {
   display: inline-block;
-  margin-right: 25px;
+  margin-right: 40px;
 }
 .social-links > a:hover {
   background-color: #2bc9af;
+}
+/* ==========================
+    skills styling
+========================== */
+.skills {
+  position: relative;
+  top: 300px;
+}
+.skills ul {
+  display: inline-block;
+  max-width: 1000px;
+}
+.skills li {
+  display: inline-block;
+  height: 37px;
+  background-color: #464646;
+  border-radius: 15px;
+  width: 160px;
+  padding-top: 10px;
+  margin: 10px;
 }
 /* ==========================
     footer - contact me styling

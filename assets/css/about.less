@@ -20,6 +20,7 @@ body {
   font: @body-font;
 }
 
+
 .ellipsis-nav {
   float: left;
   text-align: left;
@@ -49,9 +50,31 @@ body {
   }
 }
 
+.tagline {
+  text-align: left;
+
+  h1 {
+    margin-bottom: 30px;
+  }
+}
+
+/* ==========================
+    skills styling
+========================== */
+.skills {
+  position: relative;
+  top: 0;
+  margin: 50px auto;
+
+  li {
+    color: @background-color;
+    background-color: @link-color;
+  }
+}
+
 #background {
   position: relative;
-  top: 192px;
+  top: 200px;
 
   .ellipse[href="#background"] {
     background-color: @dark-ellipse;

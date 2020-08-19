@@ -133,7 +133,7 @@ h3 {
   width: 156px;
   height: 50px;
   padding-top: 15px;
-  border: 2px solid #f0f0f0;
+  border: 2px solid @primary-text-color;
   border-radius: 15px;
   font-size: 14px;
 }
@@ -151,10 +151,34 @@ h3 {
 
 .social-links > a {
   display: inline-block;
-  margin-right: 25px;
+  margin-right: 40px;
 
   &:hover {
     background-color: @hover-color;
+  }
+}
+
+/* ==========================
+    skills styling
+========================== */
+
+.skills {
+  position: relative;
+  top: 300px;
+
+  ul {
+    display: inline-block;
+    max-width: 1000px;
+  }
+
+  li {
+    display: inline-block;
+    height: 37px;
+    background-color: #464646;
+    border-radius: 15px;
+    width: 160px;
+    padding-top: 10px;
+    margin: 10px;
   }
 }
 

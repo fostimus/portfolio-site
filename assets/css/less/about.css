@@ -31,9 +31,27 @@ body {
   background-color: #464646;
   border: 1px solid #464646;
 }
+.tagline {
+  text-align: left;
+}
+.tagline h1 {
+  margin-bottom: 30px;
+}
+/* ==========================
+    skills styling
+========================== */
+.skills {
+  position: relative;
+  top: 0;
+  margin: 50px auto;
+}
+.skills li {
+  color: #f0f0f0;
+  background-color: #aeaeae;
+}
 #background {
   position: relative;
-  top: 192px;
+  top: 200px;
 }
 #background .ellipse[href="#background"] {
   background-color: #464646;
