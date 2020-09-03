@@ -168,7 +168,7 @@ h3 {
   display: inline-block;
   margin-bottom: 30px;
 }
-/* handling line text headers as backgrounds and thea
+/* handling line text headers as backgrounds and the
 * margin to show text underneath
 */
 .line-text-header {
@@ -230,6 +230,7 @@ h3 {
 ========================== */
 .footer {
   background-color: #272727;
+  color: #f0f0f0;
 }
 .footer-links {
   margin-top: 30px;
@@ -238,8 +239,7 @@ h3 {
   margin: 0 25px;
 }
 .copyright {
-  position: relative;
-  top: 150px;
+  margin-top: 150px;
   font-size: 12px;
 }
 /* ==========================

@@ -13,6 +13,7 @@ body {
 .ellipsis-nav {
   float: left;
   text-align: left;
+  margin-top: 55px;
   margin-left: 20px;
   color: #464646;
 }
@@ -60,6 +61,10 @@ body {
   text-align: justify;
   font-size: 16px;
   line-height: 1.5em;
+}
+#lakers {
+  position: relative;
+  top: 192px;
 }
 #lakers img {
   display: block;
