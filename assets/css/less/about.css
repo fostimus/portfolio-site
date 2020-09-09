@@ -39,6 +39,8 @@ body {
   border: 1px solid #464646;
 }
 .tagline {
+  position: relative;
+  bottom: 230px;
   text-align: left;
 }
 .tagline h1 {
