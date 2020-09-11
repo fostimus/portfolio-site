@@ -6,23 +6,35 @@
 @site-font-family: Lato, sans-serif;
 @body-font: normal normal normal 14px @site-font-family;
 
-@background-color: #f0f0f0;
-@text-color: #272727;
-@link-color: #aeaeae;
+/* background colors */
+@primary-background-color: #f0f0f0;
+@secondary-background-color: #272727;
+
+/* text colors */
+@primary-text-color: #272727;
+@secondary-text-color: #f0f0f0;
+@tertiary-text-color: #aeaeae;
 @hover-color: #2bc9af;
 
+/* ellipsis nav colors */
 @ellipse-border: #aeaeae;
 @dark-ellipse: #464646;
+@light-ellipse: #f0f0f0;
+
+/* skills colors */
+@skill-text-color: #f0f0f0;
+@skill-background-color: #aeaeae;
 
 body {
-  background-color: @background-color;
-  color: @text-color;
+  background-color: @primary-background-color;
+  color: @primary-text-color;
   font: @body-font;
 }
 
 /* ==========================
     ellipsis nav styling
 ========================== */
+
 .ellipsis-nav {
   float: left;
   text-align: left;
@@ -33,6 +45,10 @@ body {
 
 .ellipse-container {
   margin-bottom: 20px;
+
+  span {
+    margin-left: 8px;
+  }
 }
 
 .ellipse {
@@ -72,8 +88,8 @@ body {
   margin: 50px auto;
 
   li {
-    color: @background-color;
-    background-color: @link-color;
+    color: @skill-text-color;
+    background-color: @skill-background-color;
   }
 }
 
@@ -132,10 +148,21 @@ body {
 #music {
   position: relative;
   top: 192px;
+  background-color: @secondary-background-color;
 
+  .ellipsis-nav {
+    color: @light-ellipse;
+  }
   .ellipse[href="#music"] {
-    background-color: @dark-ellipse;
-    border: 1px solid @dark-ellipse;
+    background-color: @light-ellipse;
+    border: 1px solid @light-ellipse;
+  }
+
+  table {
+    color: #f0f0f0;
+  }
+  th {
+    color: @tertiary-text-color;
   }
 }
 

@@ -2,6 +2,10 @@
   font-family: "Lato";
   src: url("../font/Lato-Regular.ttf") format("ttf");
 }
+/* background colors */
+/* text colors */
+/* ellipsis nav colors */
+/* skills colors */
 body {
   background-color: #f0f0f0;
   color: #272727;
@@ -19,6 +23,9 @@ body {
 }
 .ellipse-container {
   margin-bottom: 20px;
+}
+.ellipse-container span {
+  margin-left: 8px;
 }
 .ellipse {
   display: inline-block;
@@ -102,10 +109,20 @@ body {
 #music {
   position: relative;
   top: 192px;
+  background-color: #272727;
+}
+#music .ellipsis-nav {
+  color: #f0f0f0;
 }
 #music .ellipse[href="#music"] {
-  background-color: #464646;
-  border: 1px solid #464646;
+  background-color: #f0f0f0;
+  border: 1px solid #f0f0f0;
+}
+#music table {
+  color: #f0f0f0;
+}
+#music th {
+  color: #aeaeae;
 }
 /* ==========================
     shows styling
