@@ -55,6 +55,10 @@ body {
   color: #f0f0f0;
   background-color: #aeaeae;
 }
+#bg-desc {
+  position: relative;
+  right: 85px;
+}
 .limited-width {
   margin: -10px 0 0 -20px;
 }
@@ -63,6 +67,15 @@ body {
   text-align: justify;
   font-size: 16px;
   line-height: 1.5em;
+}
+.vertical {
+  transform: rotate(90deg);
+  float: right;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: bold;
+  position: relative;
+  top: 70px;
 }
 #lakers {
   position: relative;
