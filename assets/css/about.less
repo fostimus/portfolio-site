@@ -149,6 +149,7 @@ body {
   position: relative;
   top: 192px;
   background-color: @secondary-background-color;
+  color: @secondary-text-color;
 
   .ellipsis-nav {
     color: @light-ellipse;
@@ -158,8 +159,27 @@ body {
     border: 1px solid @light-ellipse;
   }
 
+  h2 {
+    font-weight: 400;
+    display: inline-block;
+    text-transform: uppercase;
+  }
+  
+  h3 {
+    color: @hover-color;
+  }
+
+  button {
+    border: 1px solid @primary-background-color;
+    border-radius: 27px;
+    height: 27px;
+    line-height: 27px;
+    background-color: @secondary-background-color;
+    margin-left: 12px;
+  }
+
   table {
-    color: #f0f0f0;
+    margin: 10px;
   }
   th {
     color: @tertiary-text-color;

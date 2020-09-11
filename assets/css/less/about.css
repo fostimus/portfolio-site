@@ -110,6 +110,7 @@ body {
   position: relative;
   top: 192px;
   background-color: #272727;
+  color: #f0f0f0;
 }
 #music .ellipsis-nav {
   color: #f0f0f0;
@@ -118,8 +119,24 @@ body {
   background-color: #f0f0f0;
   border: 1px solid #f0f0f0;
 }
+#music h2 {
+  font-weight: 400;
+  display: inline-block;
+  text-transform: uppercase;
+}
+#music h3 {
+  color: #2bc9af;
+}
+#music button {
+  border: 1px solid #f0f0f0;
+  border-radius: 27px;
+  height: 27px;
+  line-height: 27px;
+  background-color: #272727;
+  margin-left: 12px;
+}
 #music table {
-  color: #f0f0f0;
+  margin: 10px;
 }
 #music th {
   color: #aeaeae;
