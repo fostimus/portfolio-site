@@ -93,11 +93,6 @@ body {
   }
 }
 
-#bg-desc {
-  position: relative;
-  right: 85px;
-}
-
 .limited-width {
   margin: -10px 0 0 -20px;
 }
@@ -142,6 +137,12 @@ body {
   }
 }
 
+.offset-left {
+  position: relative;
+  right: 85px;
+  bottom: 15px;
+}
+
 /* ==========================
     music styling
 ========================== */
@@ -159,12 +160,20 @@ body {
     border: 1px solid @light-ellipse;
   }
 
+  @table-width: 760px;
+
+  .dropdown {
+    text-align: left;
+    margin: 0 auto;
+    max-width: @table-width;
+  }
+
   h2 {
     font-weight: 400;
     display: inline-block;
     text-transform: uppercase;
   }
-  
+
   h3 {
     color: @hover-color;
   }
@@ -179,10 +188,17 @@ body {
   }
 
   table {
-    margin: 10px;
+    margin: 10px auto;
+    width: @table-width;
+    //TODO: space table data to match underline and edge of container
   }
   th {
     color: @tertiary-text-color;
+    text-transform: uppercase;
+  }
+
+  tbody > tr:first-child {
+    border-bottom: 1px solid @tertiary-text-color;
   }
 }
 

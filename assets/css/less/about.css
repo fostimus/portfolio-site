@@ -62,10 +62,6 @@ body {
   color: #f0f0f0;
   background-color: #aeaeae;
 }
-#bg-desc {
-  position: relative;
-  right: 85px;
-}
 .limited-width {
   margin: -10px 0 0 -20px;
 }
@@ -103,6 +99,11 @@ body {
   background-color: #464646;
   border: 1px solid #464646;
 }
+.offset-left {
+  position: relative;
+  right: 85px;
+  bottom: 15px;
+}
 /* ==========================
     music styling
 ========================== */
@@ -118,6 +119,11 @@ body {
 #music .ellipse[href="#music"] {
   background-color: #f0f0f0;
   border: 1px solid #f0f0f0;
+}
+#music .dropdown {
+  text-align: left;
+  margin: 0 auto;
+  max-width: 760px;
 }
 #music h2 {
   font-weight: 400;
@@ -136,10 +142,16 @@ body {
   margin-left: 12px;
 }
 #music table {
-  margin: 10px;
+  margin: 10px auto;
+  width: 760px;
+  text-align: justify;
 }
 #music th {
   color: #aeaeae;
+  text-transform: uppercase;
+}
+#music tbody > tr:first-child {
+  border-bottom: 1px solid #aeaeae;
 }
 /* ==========================
     shows styling
