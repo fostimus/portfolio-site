@@ -148,6 +148,14 @@ body {
 /* ==========================
     music styling
 ========================== */
+@music-table-width: 760px;
+
+.dropdown {
+  text-align: left;
+  margin: 0 auto 50px;
+  max-width: @music-table-width;
+}
+
 #music {
   position: relative;
   top: 192px;
@@ -160,14 +168,6 @@ body {
   .ellipse[href="#music"] {
     background-color: @light-ellipse;
     border: 1px solid @light-ellipse;
-  }
-
-  @table-width: 760px;
-
-  .dropdown {
-    text-align: left;
-    margin: 0 auto 50px;
-    max-width: @table-width;
   }
 
   h2 {
@@ -191,7 +191,7 @@ body {
 
   table {
     margin: 10px auto;
-    width: @table-width;
+    width: @music-table-width;
     //TODO: space table data to match underline and edge of container
   }
   th {
