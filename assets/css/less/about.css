@@ -108,6 +108,11 @@ body {
 /* ==========================
     music styling
 ========================== */
+.dropdown {
+  text-align: left;
+  margin: 0 auto 50px;
+  max-width: 760px;
+}
 #music {
   position: relative;
   top: 192px;
@@ -120,11 +125,6 @@ body {
 #music .ellipse[href="#music"] {
   background-color: #f0f0f0;
   border: 1px solid #f0f0f0;
-}
-#music .dropdown {
-  text-align: left;
-  margin: 0 auto 50px;
-  max-width: 760px;
 }
 #music h2 {
   font-weight: 400;
@@ -149,6 +149,13 @@ body {
 #music th {
   color: #aeaeae;
   text-transform: uppercase;
+}
+#music th:first-child,
+#music th:last-child,
+#music td:first-child,
+#music td:last-child {
+  width: 1%;
+  white-space: nowrap;
 }
 #music tbody > tr:first-child {
   border-bottom: 1px solid #aeaeae;

@@ -194,9 +194,18 @@ body {
     width: @music-table-width;
     //TODO: space table data to match underline and edge of container
   }
+
   th {
     color: @tertiary-text-color;
     text-transform: uppercase;
+  }
+
+  th:first-child,
+  th:last-child,
+  td:first-child,
+  td:last-child {
+    width: 1%;
+    white-space: nowrap;
   }
 
   tbody > tr:first-child {
