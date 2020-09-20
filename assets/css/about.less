@@ -3,18 +3,20 @@
   src: url("../font/Lato-Regular.ttf") format("ttf");
 }
 
+//LATO FONT NOT WORKING
 @site-font-family: Lato, sans-serif;
 @body-font: normal normal normal 14px @site-font-family;
 
 /* background colors */
 @primary-background-color: #f0f0f0;
 @secondary-background-color: #272727;
+@background-hover-color: #464646;
 
 /* text colors */
 @primary-text-color: #272727;
 @secondary-text-color: #f0f0f0;
 @tertiary-text-color: #aeaeae;
-@hover-color: #2bc9af;
+@text-hover-color: #2bc9af;
 
 /* ellipsis nav colors */
 @ellipse-border: #aeaeae;
@@ -177,7 +179,7 @@ body {
   }
 
   h3 {
-    color: @hover-color;
+    color: @text-hover-color;
   }
 
   button {
@@ -189,15 +191,26 @@ body {
     margin-left: 12px;
   }
 
-  table {
-    margin: 10px auto;
-    width: @music-table-width;
-    //TODO: space table data to match underline and edge of container
+  .table {
+    margin: 0 auto;
+    max-width: @music-table-width;
+  }
+
+  td {
+    padding: 10px;
   }
 
   th {
     color: @tertiary-text-color;
     text-transform: uppercase;
+    padding: 5px;
+  }
+
+  tr + tr:hover {
+    //border-radius not working
+    border-radius: 10px;
+    color: @text-hover-color;
+    background-color: @background-hover-color;
   }
 
   th:first-child,
@@ -215,7 +228,11 @@ body {
 
 .mi {
   position: relative;
-  bottom: 100px;
+  bottom: 150px;
+}
+
+.music-player {
+  background-color: @background-hover-color;
 }
 
 /* ==========================

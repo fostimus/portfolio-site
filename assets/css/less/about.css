@@ -142,13 +142,22 @@ body {
   background-color: #272727;
   margin-left: 12px;
 }
-#music table {
-  margin: 10px auto;
-  width: 760px;
+#music .table {
+  margin: 0 auto;
+  max-width: 760px;
+}
+#music td {
+  padding: 10px;
 }
 #music th {
   color: #aeaeae;
   text-transform: uppercase;
+  padding: 5px;
+}
+#music tr + tr:hover {
+  border-radius: 10px;
+  color: #2bc9af;
+  background-color: #464646;
 }
 #music th:first-child,
 #music th:last-child,
@@ -162,7 +171,10 @@ body {
 }
 .mi {
   position: relative;
-  bottom: 100px;
+  bottom: 150px;
+}
+.music-player {
+  background-color: #464646;
 }
 /* ==========================
     shows styling
