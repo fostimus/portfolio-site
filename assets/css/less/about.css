@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Lato";
-  src: url("../font/Lato-Regular.ttf") format("ttf");
+  src: url("../../font/Lato-Regular.ttf") format("truetype");
 }
 /* background colors */
 /* text colors */
@@ -9,7 +9,7 @@
 body {
   background-color: #f0f0f0;
   color: #272727;
-  font: normal normal normal 14px Lato, sans-serif;
+  font: normal normal normal 14px "Lato", sans-serif;
 }
 /* ==========================
     ellipsis nav styling

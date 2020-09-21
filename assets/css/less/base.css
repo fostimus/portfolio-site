@@ -128,7 +128,7 @@ table {
 }
 @font-face {
   font-family: "Lato";
-  src: url("../font/Lato-Regular.ttf") format("ttf");
+  src: url("../../font/Lato-Regular.ttf") format("truetype");
 }
 /* color variables */
 /* ==========================
@@ -140,7 +140,7 @@ table {
 body {
   background-color: #272727;
   color: #f0f0f0;
-  font: normal normal normal 14px Lato, sans-serif;
+  font: normal normal normal 14px "Lato", sans-serif;
 }
 a {
   color: #aeaeae;
@@ -150,13 +150,13 @@ a:hover {
   color: #2bc9af;
 }
 h1 {
-  font: normal bold 42px/50px Lato, sans-serif;
+  font: normal bold 42px/50px "Lato", sans-serif;
 }
 h2 {
-  font: normal bold 32px/38px Lato, sans-serif;
+  font: normal bold 32px/38px "Lato", sans-serif;
 }
 h3 {
-  font: normal normal 16px/19px Lato, sans-serif;
+  font: normal normal 16px/19px "Lato", sans-serif;
   color: #aeaeae;
 }
 .container {
