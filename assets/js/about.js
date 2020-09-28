@@ -1,7 +1,6 @@
 let currentPlaylistName = document.querySelector("#playlist-name");
 
 const dropdown = () => {
-  // let dropbtn = document.querySelector('.dropbtn');
   document.querySelector(".dropdown-content").classList.toggle("show");
 };
 
@@ -87,6 +86,8 @@ const playlistClick = playlistId => {
         tbody.appendChild(tr);
       });
     });
+
+    document.querySelector(".dropdown-content").classList.toggle("show");;
 };
 
 // Use the fetch API to get data from the server

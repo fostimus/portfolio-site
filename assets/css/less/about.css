@@ -112,9 +112,8 @@ body {
 .dropdown {
   text-align: left;
   margin: 0 auto 50px;
-  max-width: 760px;
+  max-width: 1000px;
 }
-/* Dropdown Button */
 .dropbtn {
   border: 1px solid #f0f0f0;
   border-radius: 27px;
@@ -123,7 +122,6 @@ body {
   background-color: #272727;
   margin-left: 12px;
 }
-/* Dropdown button on hover & focus */
 .dropbtn:hover,
 .dropbtn:focus {
   background-color: #2bc9af;
@@ -177,7 +175,7 @@ body {
 }
 #music .table {
   margin: 0 auto;
-  max-width: 760px;
+  max-width: 1000px;
 }
 #music td {
   padding: 10px;

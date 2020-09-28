@@ -150,7 +150,7 @@ body {
 /* ==========================
     music styling
 ========================== */
-@music-table-width: 760px;
+@music-table-width: 1000px;
 
 /* begin dropdown css */
 .dropdown {
@@ -159,7 +159,6 @@ body {
   max-width: @music-table-width;
 }
 
-/* Dropdown Button */
 .dropbtn {
   border: 1px solid @primary-background-color;
   border-radius: 27px;
@@ -167,16 +166,8 @@ body {
   line-height: 27px;
   background-color: @secondary-background-color;
   margin-left: 12px;
-
-  // background-color: #3498DB;
-  // color: white;
-  // padding: 16px;
-  // font-size: 16px;
-  // border: none;
-  // cursor: pointer;
 }
 
-/* Dropdown button on hover & focus */
 .dropbtn:hover, .dropbtn:focus {
   background-color: @text-hover-color;
 }
@@ -190,7 +181,6 @@ body {
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
-
 
 /* Links inside the dropdown */
 .dropdown-content button {
@@ -233,8 +223,7 @@ body {
     color: @text-hover-color;
   }
 
-
-
+  // TODO: table header style gets messed up after spotify data gets pulled in
   .table {
     margin: 0 auto;
     max-width: @music-table-width;
@@ -251,10 +240,10 @@ body {
   }
 
   tr + tr:hover {
-    //border-radius not working
-    border-radius: 10px;
-    color: @text-hover-color;
-    background-color: @background-hover-color;
+      //border-radius not working
+      border-radius: 10px;
+      color: @text-hover-color;
+      background-color: @background-hover-color;
   }
 
   th:first-child,
