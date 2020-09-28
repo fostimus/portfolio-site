@@ -139,6 +139,24 @@ app.get('/playlists', function(req, res) {
     json: true
   }
   request.get(playlists, function(error, response, body) {
+    console.log(body)
+    res.send(body);
+  })
+})
+
+app.get('/tracks', function(req, res) {
+  // use the access token to access the Spotify Web API
+  var tracks = {
+    url: 'https://api.spotify.com/v1/playlists/' + req.query.playlistId + '/tracks',
+    headers: {
+      'Authorization': 'Bearer ' + access_token
+    },
+    json: true
+  }
+
+  console.log(tracks)
+  request.get(tracks, function(error, response, body) {
+    console.log(body)
     res.send(body);
   })
 })
