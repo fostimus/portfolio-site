@@ -6,12 +6,38 @@ const dropdown = () => {
 
 }
 
+const msToTime = (milliseconds) => {
+  let seconds = milliseconds/1000;
+
+  let minutes = (seconds - (seconds % 60))/60;
+  seconds = Math.ceil(seconds % 60);
+  let stringSeconds = "" + seconds;
+  if (seconds < 10) {
+    stringSeconds = "0" + seconds;
+  }
+
+  let stringTime = "" + minutes + ":" + stringSeconds;
+
+  return stringTime;
+}
+
+const getArtists = (artistList) => {
+  let artists = "";
+
+  artistList.map(artist =>  {
+    artists = artists + artist.name + ", "
+  })
+
+  artists = artists.slice(0, artists.length-2)
+  return artists;
+}
+
 let playlists = [];
 
 fetch('http://localhost:8888/playlists')
   .then(response => response.json())
   .then(data => {
-    let playlists = data.items;
+    const playlists = data.items;
     let dropdownContainer = document.querySelector('.dropdown-content')
 
     console.log(playlists)
@@ -21,10 +47,9 @@ fetch('http://localhost:8888/playlists')
       const title = document.createTextNode(playlist.name);
 
       option.appendChild(title);
+      // attach onclick method to trigger action on choosing a playlist
       option.onclick =
         () => playlistClick(playlist.id);
-
-      // option.setAttribute("onclick", "() => playlistClick(\"" + playlistUrl + "\")");
 
       dropdownContainer.appendChild(option);
     })
@@ -38,9 +63,20 @@ const playlistClick = (playlistId) => {
   fetch('http://localhost:8888/tracks?playlistId=' + playlistId)
     .then(response => response.json())
     .then(data => {
-      console.log(data)
+      console.log(data);
+
+      const tracks = data.items;
+
+      tracks.map(track => {
+        const name = track.track.name;
+        const length = msToTime(track.track.duration_ms);
+        const artists = getArtists(track.track.artists);
+
+      })
     })
 }
+
+
 
 // Use the fetch API to get data from the server
 
