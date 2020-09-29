@@ -161,6 +161,23 @@ app.get('/tracks', function(req, res) {
   })
 })
 
+app.get('/play', function(req, res) {
+  // use the access token to access the Spotify Web API
+  var play = {
+    url: 'https://api.spotify.com/v1/me/player/play',
+    headers: {
+      'Authorization': 'Bearer ' + access_token
+    },
+    json: true
+  }
+
+  console.log(play)
+  request.put(play, function(error, response, body) {
+    console.log(body)
+    res.send(body);
+  })
+})
+
 app.get('/refresh_token', function(req, res) {
 
   // requesting access token from refresh token

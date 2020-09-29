@@ -4,6 +4,19 @@ const dropdown = () => {
   document.querySelector(".dropdown-content").classList.toggle("show");
 };
 
+// window.addEventListener("click", () => {
+//   console.log(event.target)
+//   if (!event.target.matches('.dropbtn')) {
+//     let dropdown = document.querySelector(".dropdown-content");
+//
+//     console.log(dropdown)
+//     if (dropdown.classList.contains('show')) {
+//       dropdown.classList.remove('show');
+//     }
+//
+//   }
+// })
+
 const msToTime = milliseconds => {
   let seconds = milliseconds / 1000;
 
@@ -41,20 +54,46 @@ fetch("http://localhost:8888/playlists")
     console.log(playlists);
     playlists.map(playlist => {
       // get playlist and create playlist button object
-      let option = document.createElement("button");
+      const option = document.createElement("button");
       const title = document.createTextNode(playlist.name);
 
       option.appendChild(title);
       // attach onclick method to trigger action on choosing a playlist
-      option.onclick = () => playlistClick(playlist.id);
+      option.onclick = () => playlistClick(playlist.name, playlist.external_urls.spotify, playlist.id);
 
       dropdownContainer.appendChild(option);
     });
   });
 
-const playlistClick = playlistId => {
+const playlistClick = (title, url, playlistId) => {
   console.log(playlistId);
 
+  const tbody = document.querySelector(".table tbody");
+  const tbodyChildren = tbody.children;
+
+  //if more than just th in table, remove all td rows
+  if (tbodyChildren.length > 1) {
+    for (let i = tbodyChildren.length - 1; i > 0; i--) {
+      tbodyChildren[i].remove();
+    }
+  }
+
+  //set title in html
+  const playlistName = document.querySelector('#playlist-name');
+  playlistName.innerHTML = title;
+
+  //set link in bio under title
+  const playlistUrl = document.querySelector('.dropdown h3');
+
+  const playlistLink = document.createElement('a')
+  playlistLink.href = url;
+  playlistLink.target = "_blank";
+  playlistLink.innerHTML = playlistUrl.innerText;
+
+  playlistUrl.innerHTML = null;
+  playlistUrl.appendChild(playlistLink);
+
+  //fetch track data for that playlist
   fetch("http://localhost:8888/tracks?playlistId=" + playlistId)
     .then(response => response.json())
     .then(data => {
@@ -82,12 +121,11 @@ const playlistClick = playlistId => {
         tr.appendChild(tdArtists);
         tr.appendChild(tdLength);
 
-        const tbody = document.querySelector(".table tbody");
         tbody.appendChild(tr);
       });
     });
 
-    document.querySelector(".dropdown-content").classList.toggle("show");;
+  document.querySelector(".dropdown-content").classList.toggle("show");;
 };
 
 // Use the fetch API to get data from the server

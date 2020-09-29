@@ -170,7 +170,11 @@ body {
   display: inline-block;
   text-transform: uppercase;
 }
-#music h3 {
+#music a {
+  color: #f0f0f0;
+}
+#music h3,
+#music a:hover {
   color: #2bc9af;
 }
 #music .table {
