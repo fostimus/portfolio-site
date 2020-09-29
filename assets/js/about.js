@@ -22,6 +22,11 @@ const msToTime = milliseconds => {
 
   let minutes = (seconds - (seconds % 60)) / 60;
   seconds = Math.ceil(seconds % 60);
+  if (seconds === 60) {
+    minutes++;
+    seconds = 0;
+  }
+
   let stringSeconds = "" + seconds;
   if (seconds < 10) {
     stringSeconds = "0" + seconds;
