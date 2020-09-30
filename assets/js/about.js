@@ -4,18 +4,21 @@ const dropdown = () => {
   document.querySelector(".dropdown-content").classList.toggle("show");
 };
 
-// window.addEventListener("click", () => {
-//   console.log(event.target)
-//   if (!event.target.matches('.dropbtn')) {
-//     let dropdown = document.querySelector(".dropdown-content");
-//
-//     console.log(dropdown)
-//     if (dropdown.classList.contains('show')) {
-//       dropdown.classList.remove('show');
-//     }
-//
-//   }
-// })
+window.addEventListener("click", () => {
+
+  // see if button or dropdown-content was clicked
+  let clickOutside = document.querySelector('.dropdown-content') !== event.target && document.querySelector('.dropbtn') !== event.target && document.querySelector('.dropbtn img') !== event.target;
+
+  if (clickOutside) {
+    let dropdown = document.querySelector(".dropdown-content");
+
+    // if the drop down is currently open, close it
+    if (dropdown.classList.contains('show')) {
+      dropdown.classList.remove('show');
+    }
+
+  }
+})
 
 const msToTime = milliseconds => {
   let seconds = milliseconds / 1000;
