@@ -6,6 +6,7 @@
 /* text colors */
 /* ellipsis nav colors */
 /* skills colors */
+/* vertical offset */
 body {
   background-color: #f0f0f0;
   color: #272727;
@@ -94,7 +95,7 @@ body {
 ========================== */
 #background {
   position: relative;
-  top: 200px;
+  top: 192px;
 }
 #background .ellipse[href="#background"] {
   background-color: #464646;
@@ -235,5 +236,5 @@ body {
 }
 .footer {
   position: relative;
-  top: 550px;
+  top: 192px;
 }

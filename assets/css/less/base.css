@@ -247,7 +247,7 @@ h3 {
 ========================== */
 @media (min-width: 769px) {
   .enable-sticky-footer {
-    min-height: 100vh;
+    min-height: -250vh;
   }
   .container {
     width: 100%;
