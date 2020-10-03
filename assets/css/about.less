@@ -3,7 +3,6 @@
   src: url("../../font/Lato-Regular.ttf") format("truetype");
 }
 
-//LATO FONT NOT WORKING
 @site-font-family: "Lato", sans-serif;
 @body-font: normal normal normal 14px @site-font-family;
 
@@ -28,7 +27,7 @@
 @skill-background-color: #aeaeae;
 
 /* vertical offset */
-@vertical-offset: 192px;
+@vertical-offset: 150px;
 
 body {
   background-color: @primary-background-color;
@@ -40,10 +39,11 @@ body {
     ellipsis nav styling
 ========================== */
 
+//do flex container not take up space left by floated objects?
 .ellipsis-nav {
-  float: left;
   text-align: left;
-  margin: 55px 30px 0 15px;
+  margin-right: 25px;
+  margin-left: 15px;
   color: @dark-ellipse;
 }
 
@@ -68,6 +68,8 @@ body {
 ========================== */
 #profile {
   position: relative;
+  display: flex;
+  flex-direction: column;
   top: @vertical-offset;
 
   .ellipse[href="#profile"] {
@@ -76,9 +78,20 @@ body {
   }
 }
 
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+
+@media (max-width: 769px) {
+  .flex-around {
+    flex-direction: column;
+  }
+}
+
 .tagline {
-  position: relative;
-  bottom: 230px;
   text-align: left;
 
   h1 {
@@ -101,36 +114,6 @@ body {
   margin: -10px 0 0 -20px;
 }
 
-.paragraph {
-  margin: 40px;
-  text-align: justify;
-  font-size: 16px;
-  line-height: 1.5em;
-}
-
-.vertical {
-  transform: rotate(90deg);
-  float: right;
-  text-transform: uppercase;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.bg {
-  position: relative;
-  top: 60px;
-}
-
-#lakers {
-  position: relative;
-  top: @vertical-offset;
-
-  img {
-    display: block;
-    width: 100%;
-  }
-}
-
 /* ==========================
     background styling
 ========================== */
@@ -148,6 +131,35 @@ body {
   position: relative;
   right: 85px;
   bottom: 15px;
+}
+
+.paragraph {
+  margin: 40px;
+  text-align: justify;
+  font-size: 16px;
+  line-height: 1.5em;
+}
+
+.bg {
+  position: relative;
+  bottom: 160px;
+}
+
+.vertical {
+  transform: rotate(90deg);
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#lakers {
+  position: relative;
+  top: @vertical-offset;
+
+  img {
+    display: block;
+    width: 100%;
+  }
 }
 
 /* ==========================
@@ -171,7 +183,8 @@ body {
   margin-left: 12px;
 }
 
-.dropbtn:hover, .dropbtn:focus {
+.dropbtn:hover,
+.dropbtn:focus {
   background-color: @text-hover-color;
 }
 
@@ -181,7 +194,7 @@ body {
   position: absolute;
   background-color: @secondary-background-color;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -195,10 +208,14 @@ body {
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content button:hover {color: @text-hover-color}
+.dropdown-content button:hover {
+  color: @text-hover-color;
+}
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {display:block;}
+.show {
+  display: block;
+}
 
 /* end dropdown css */
 
@@ -207,6 +224,7 @@ body {
   top: @vertical-offset;
   background-color: @secondary-background-color;
   color: @secondary-text-color;
+  padding-bottom: 30px;
 
   .ellipsis-nav {
     color: @light-ellipse;
@@ -230,12 +248,12 @@ body {
   a:hover {
     color: @text-hover-color;
   }
+}
 
-  // TODO: table header style gets messed up after spotify data gets pulled in
-  .table {
-    margin: 0 auto;
-    max-width: @music-table-width;
-  }
+// TODO: table header style gets messed up after spotify data gets pulled in
+.table {
+  margin: 0 auto;
+  max-width: @music-table-width;
 
   td {
     padding: 10px;
@@ -248,10 +266,10 @@ body {
   }
 
   tr + tr:hover {
-      //border-radius not working
-      border-radius: 10px;
-      color: @text-hover-color;
-      background-color: @background-hover-color;
+    //border-radius not working
+    border-radius: 10px;
+    color: @text-hover-color;
+    background-color: @background-hover-color;
   }
 
   th:first-child,
@@ -269,7 +287,8 @@ body {
 
 .mi {
   position: relative;
-  bottom: 150px;
+  bottom: 10px;
+  width: 250px;
 }
 
 .music-player {

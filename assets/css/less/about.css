@@ -16,9 +16,9 @@ body {
     ellipsis nav styling
 ========================== */
 .ellipsis-nav {
-  float: left;
   text-align: left;
-  margin: 55px 30px 0 15px;
+  margin-right: 25px;
+  margin-left: 15px;
   color: #464646;
 }
 .ellipse-container {
@@ -39,15 +39,26 @@ body {
 ========================== */
 #profile {
   position: relative;
-  top: 192px;
+  display: flex;
+  flex-direction: column;
+  top: 150px;
 }
 #profile .ellipse[href="#profile"] {
   background-color: #464646;
   border: 1px solid #464646;
 }
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+@media (max-width: 769px) {
+  .flex-around {
+    flex-direction: column;
+  }
+}
 .tagline {
-  position: relative;
-  bottom: 230px;
   text-align: left;
 }
 .tagline h1 {
@@ -65,37 +76,12 @@ body {
 .limited-width {
   margin: -10px 0 0 -20px;
 }
-.paragraph {
-  margin: 40px;
-  text-align: justify;
-  font-size: 16px;
-  line-height: 1.5em;
-}
-.vertical {
-  transform: rotate(90deg);
-  float: right;
-  text-transform: uppercase;
-  font-size: 16px;
-  font-weight: bold;
-}
-.bg {
-  position: relative;
-  top: 60px;
-}
-#lakers {
-  position: relative;
-  top: 192px;
-}
-#lakers img {
-  display: block;
-  width: 100%;
-}
 /* ==========================
     background styling
 ========================== */
 #background {
   position: relative;
-  top: 192px;
+  top: 150px;
 }
 #background .ellipse[href="#background"] {
   background-color: #464646;
@@ -105,6 +91,30 @@ body {
   position: relative;
   right: 85px;
   bottom: 15px;
+}
+.paragraph {
+  margin: 40px;
+  text-align: justify;
+  font-size: 16px;
+  line-height: 1.5em;
+}
+.bg {
+  position: relative;
+  bottom: 160px;
+}
+.vertical {
+  transform: rotate(90deg);
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold;
+}
+#lakers {
+  position: relative;
+  top: 150px;
+}
+#lakers img {
+  display: block;
+  width: 100%;
 }
 /* ==========================
     music styling
@@ -155,9 +165,10 @@ body {
 /* end dropdown css */
 #music {
   position: relative;
-  top: 192px;
+  top: 150px;
   background-color: #272727;
   color: #f0f0f0;
+  padding-bottom: 30px;
 }
 #music .ellipsis-nav {
   color: #f0f0f0;
@@ -178,36 +189,37 @@ body {
 #music a:hover {
   color: #2bc9af;
 }
-#music .table {
+.table {
   margin: 0 auto;
   max-width: 1000px;
 }
-#music td {
+.table td {
   padding: 10px;
 }
-#music th {
+.table th {
   color: #aeaeae;
   text-transform: uppercase;
   padding: 5px;
 }
-#music tr + tr:hover {
+.table tr + tr:hover {
   border-radius: 10px;
   color: #2bc9af;
   background-color: #464646;
 }
-#music th:first-child,
-#music th:last-child,
-#music td:first-child,
-#music td:last-child {
+.table th:first-child,
+.table th:last-child,
+.table td:first-child,
+.table td:last-child {
   width: 1%;
   white-space: nowrap;
 }
-#music tbody > tr:first-child {
+.table tbody > tr:first-child {
   border-bottom: 1px solid #aeaeae;
 }
 .mi {
   position: relative;
-  bottom: 150px;
+  bottom: 10px;
+  width: 250px;
 }
 .music-player {
   background-color: #464646;
@@ -236,5 +248,5 @@ body {
 }
 .footer {
   position: relative;
-  top: 192px;
+  top: 150px;
 }
