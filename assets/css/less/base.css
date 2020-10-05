@@ -203,7 +203,7 @@ h3 {
 /* ==========================
     skills styling
 ========================== */
-.skills ul {
+.skills {
   display: inline-block;
   max-width: 1000px;
 }
