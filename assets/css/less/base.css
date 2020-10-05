@@ -165,7 +165,10 @@ h3 {
 }
 .limited-width {
   max-width: 600px;
-  display: inline-block;
+  margin: 0 auto;
+}
+.limited-width h1,
+.limited-width h2 {
   margin-bottom: 30px;
 }
 /* handling line text headers as backgrounds and the
@@ -206,6 +209,7 @@ h3 {
 .skills {
   display: inline-block;
   max-width: 1000px;
+  margin: 0 auto;
 }
 .skills li {
   display: inline-block;

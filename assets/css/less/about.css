@@ -50,15 +50,17 @@ body {
 .flex-between,
 .mobile-flex {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   gap: 25px;
 }
-.tagline {
-  text-align: left;
+.flex-between {
+  justify-content: space-between;
 }
-.tagline h1 {
-  margin-bottom: 30px;
+.mobile-flex {
+  justify-content: space-around;
+}
+.limited-width {
+  text-align: left;
 }
 .skills {
   position: relative;
@@ -68,9 +70,6 @@ body {
 .skills li {
   color: #f0f0f0;
   background-color: #aeaeae;
-}
-.limited-width {
-  margin: -10px 0 0 -20px;
 }
 /* ==========================
     background styling

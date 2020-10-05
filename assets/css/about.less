@@ -80,17 +80,20 @@ body {
 .flex-between,
 .mobile-flex {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   gap: 25px;
 }
 
-.tagline {
-  text-align: left;
+.flex-between {
+  justify-content: space-between;
+}
 
-  h1 {
-    margin-bottom: 30px;
-  }
+.mobile-flex {
+  justify-content: space-around;
+}
+
+.limited-width {
+  text-align: left;
 }
 
 .skills {
@@ -102,10 +105,6 @@ body {
     color: @skill-text-color;
     background-color: @skill-background-color;
   }
-}
-
-.limited-width {
-  margin: -10px 0 0 -20px;
 }
 
 /* ==========================
