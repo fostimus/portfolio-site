@@ -47,16 +47,12 @@ body {
   background-color: #464646;
   border: 1px solid #464646;
 }
-.flex-between {
+.flex-between,
+.mobile-flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 25px;
-}
-@media (max-width: 769px) {
-  .flex-around {
-    flex-direction: column;
-  }
 }
 .tagline {
   text-align: left;
@@ -249,4 +245,15 @@ body {
 .footer {
   position: relative;
   top: 150px;
+}
+/* ==========================
+    mobile styling
+========================== */
+@media (max-width: 1100px) {
+  .mobile-flex {
+    flex-direction: column;
+  }
+  .offset-left {
+    position: static;
+  }
 }

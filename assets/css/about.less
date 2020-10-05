@@ -78,17 +78,12 @@ body {
   }
 }
 
-.flex-between {
+.flex-between,
+.mobile-flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 25px;
-}
-
-@media (max-width: 769px) {
-  .flex-around {
-    flex-direction: column;
-  }
 }
 
 .tagline {
@@ -324,4 +319,17 @@ body {
 .footer {
   position: relative;
   top: @vertical-offset;
+}
+
+/* ==========================
+    mobile styling
+========================== */
+@media (max-width: 1100px) {
+  .mobile-flex {
+    flex-direction: column;
+  }
+
+  .offset-left {
+    position: static;
+  }
 }
