@@ -14,6 +14,10 @@
   position: relative;
   top: 550px;
 }
+.skills {
+  position: relative;
+  top: 300px;
+}
 /* ==========================
     project
 ========================== */
@@ -25,7 +29,7 @@
   display: flex;
   justify-content: space-around;
   width: 90%;
-  margin: 0 auto 80px;
+  margin: 0 auto 100px;
 }
 .background-project:last-child {
   margin: 0 auto;
@@ -36,8 +40,15 @@
 .desc {
   align-self: center;
 }
+.desc * + * {
+  margin-top: 20px;
+}
 @media (max-width: 1000px) {
   .background-project {
     flex-direction: column;
+    margin-bottom: 80px;
+  }
+  .desc {
+    margin-bottom: 30px;
   }
 }
