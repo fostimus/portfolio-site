@@ -68,8 +68,9 @@ body {
   margin: 50px auto;
 }
 .skills li {
-  color: #f0f0f0;
+  color: #000000;
   background-color: #aeaeae;
+  box-shadow: 6px 8px #000000;
 }
 /* ==========================
     background styling

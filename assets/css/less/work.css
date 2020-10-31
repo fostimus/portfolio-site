@@ -6,6 +6,11 @@
 /* ==========================
     work styles
 ========================== */
+body {
+  background-color: #272727;
+  color: #f0f0f0;
+  font: normal normal normal 14px Lato, sans-serif;
+}
 .flex-column {
   display: flex;
   flex-flow: column nowrap;
