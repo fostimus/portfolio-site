@@ -2,7 +2,7 @@
   "name": "server",
   "version": "1.0.0",
   "description": "Facilitates API calls to 3rd party software",
-  "main": "index.js",
+  "main": "app.js",
   "dependencies": {
     "cookie-parse": "^0.4.0",
     "cookie-parser": "^1.4.5",
