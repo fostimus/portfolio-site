@@ -141,11 +141,19 @@ body {
   transition: all 1.5s;
 }
 a {
-  color: #aeaeae;
   text-decoration: none;
 }
-a:hover {
+.dark-bg a {
+  color: #aeaeae;
+}
+.dark-bg a:hover {
   color: #2bc9af;
+}
+.light-bg a {
+  color: #2bc9af;
+}
+.light-bg a:hover {
+  color: #aeaeae;
 }
 h1 {
   font: normal bold 42px/50px "Lato", sans-serif;

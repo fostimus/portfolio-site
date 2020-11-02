@@ -162,12 +162,27 @@ body {
 }
 
 a {
-  color: @secondary-color;
   text-decoration: none;
 }
 
-a:hover {
-  color: @hover-color;
+.dark-bg {
+  a {
+    color: @secondary-color;
+  }
+
+  a:hover {
+    color: @hover-color;
+  }
+}
+
+.light-bg {
+  a {
+    color: @hover-color;
+  }
+
+  a:hover {
+    color: @secondary-color;
+  }
 }
 
 h1 {
