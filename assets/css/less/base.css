@@ -205,6 +205,9 @@ h3 {
 .social-links > a:hover {
   background-color: #2bc9af;
 }
+.tagline {
+  margin: 30px;
+}
 /* ==========================
     skills styling
 ========================== */
