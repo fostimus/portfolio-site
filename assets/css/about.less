@@ -28,6 +28,7 @@
 
 /* vertical offset */
 @vertical-offset: 150px;
+@max-limited-width: 800px;
 
 body {
   background-color: @primary-background-color;
@@ -41,8 +42,7 @@ body {
 
 .ellipsis-nav {
   text-align: left;
-  margin-right: 25px;
-  margin-left: 15px;
+  margin: 0 15px;
   color: @dark-ellipse;
 }
 
@@ -117,18 +117,19 @@ body {
   }
 }
 
+.limited-width {
+  max-width: @max-limited-width;
+}
+
 .offset-left {
   position: relative;
   right: 85px;
   bottom: 15px;
-}
-
-.offset-left h2 {
   text-align: left;
 }
 
 .paragraph {
-  margin: 40px;
+  margin: 25px;
   text-align: justify;
   font-size: 16px;
   line-height: 1.5em;
@@ -324,12 +325,12 @@ body {
 /* ==========================
     mobile styling
 ========================== */
-@media (max-width: 1100px) {
+@media (max-width: 1150px) {
   .mobile-flex {
     flex-direction: column;
   }
 
-  .offset-left {
-    position: static;
+  .vertical {
+    display: none;
   }
 }
