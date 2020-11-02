@@ -134,9 +134,8 @@ body {
   line-height: 1.5em;
 }
 
-.bg {
-  position: relative;
-  bottom: 160px;
+.current-projects {
+  list-style: decimal;
 }
 
 .vertical {
@@ -144,6 +143,9 @@ body {
   text-transform: uppercase;
   font-size: 16px;
   font-weight: bold;
+  position: absolute;
+  top: 50px;
+  right: 0;
 }
 
 #lakers {
@@ -277,12 +279,6 @@ body {
   tbody > tr:first-child {
     border-bottom: 1px solid @tertiary-text-color;
   }
-}
-
-.mi {
-  position: relative;
-  bottom: 10px;
-  width: 250px;
 }
 
 .music-player {
