@@ -9,15 +9,15 @@
 
 const static = require("node-static");
 const file = new static.Server();
-require("http")
-  .createServer(function(request, response) {
-    request
-      .addListener("end", function() {
-        file.serve(request, response);
-      })
-      .resume();
-  })
-  .listen(process.env.PORT || 3000);
+// require("http")
+//   .createServer(function(request, response) {
+//     request
+//       .addListener("end", function() {
+//         file.serve(request, response);
+//       })
+//       .resume();
+//   })
+//   .listen(process.env.PORT || 3000);
 
 require("dotenv").config();
 var express = require("express"); // Express web server framework
@@ -230,4 +230,4 @@ app.get("/refresh_token", function(req, res) {
 });
 
 console.log(`Listening on ${process.env.PORT || 3000}`);
-// app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 3000);
