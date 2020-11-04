@@ -7,6 +7,18 @@
  * https://developer.spotify.com/web-api/authorization-guide/#authorization_code_flow
  */
 
+const static = require("node-static");
+const file = new static.Server();
+require("http")
+  .createServer(function(request, response) {
+    request
+      .addListener("end", function() {
+        file.serve(request, response);
+      })
+      .resume();
+  })
+  .listen(process.env.PORT || 3000);
+
 require("dotenv").config();
 var express = require("express"); // Express web server framework
 // HTTP client; deprecated feb 11, 2020. Should use something
