@@ -5,20 +5,21 @@ const dropdown = () => {
 };
 
 window.addEventListener("click", () => {
-
   // see if button or dropdown-content was clicked
-  let clickOutside = document.querySelector('.dropdown-content') !== event.target && document.querySelector('.dropbtn') !== event.target && document.querySelector('.dropbtn img') !== event.target;
+  let clickOutside =
+    document.querySelector(".dropdown-content") !== event.target &&
+    document.querySelector(".dropbtn") !== event.target &&
+    document.querySelector(".dropbtn img") !== event.target;
 
   if (clickOutside) {
     let dropdown = document.querySelector(".dropdown-content");
 
     // if the drop down is currently open, close it
-    if (dropdown.classList.contains('show')) {
-      dropdown.classList.remove('show');
+    if (dropdown.classList.contains("show")) {
+      dropdown.classList.remove("show");
     }
-
   }
-})
+});
 
 const msToTime = milliseconds => {
   let seconds = milliseconds / 1000;
@@ -53,7 +54,7 @@ const getArtists = artistList => {
 
 let playlists = [];
 
-fetch("http://localhost:8888/playlists")
+fetch("/playlists")
   .then(response => response.json())
   .then(data => {
     const playlists = data.items;
@@ -67,7 +68,12 @@ fetch("http://localhost:8888/playlists")
 
       option.appendChild(title);
       // attach onclick method to trigger action on choosing a playlist
-      option.onclick = () => playlistClick(playlist.name, playlist.external_urls.spotify, playlist.id);
+      option.onclick = () =>
+        playlistClick(
+          playlist.name,
+          playlist.external_urls.spotify,
+          playlist.id
+        );
 
       dropdownContainer.appendChild(option);
     });
@@ -87,13 +93,13 @@ const playlistClick = (title, url, playlistId) => {
   }
 
   //set title in html
-  const playlistName = document.querySelector('#playlist-name');
+  const playlistName = document.querySelector("#playlist-name");
   playlistName.innerHTML = title;
 
   //set link in bio under title
-  const playlistUrl = document.querySelector('.dropdown h3');
+  const playlistUrl = document.querySelector(".dropdown h3");
 
-  const playlistLink = document.createElement('a')
+  const playlistLink = document.createElement("a");
   playlistLink.href = url;
   playlistLink.target = "_blank";
   playlistLink.innerHTML = playlistUrl.innerText;
@@ -102,7 +108,7 @@ const playlistClick = (title, url, playlistId) => {
   playlistUrl.appendChild(playlistLink);
 
   //fetch track data for that playlist
-  fetch("http://localhost:8888/tracks?playlistId=" + playlistId)
+  fetch("/tracks?playlistId=" + playlistId)
     .then(response => response.json())
     .then(data => {
       console.log(data);
@@ -133,7 +139,7 @@ const playlistClick = (title, url, playlistId) => {
       });
     });
 
-  document.querySelector(".dropdown-content").classList.toggle("show");;
+  document.querySelector(".dropdown-content").classList.toggle("show");
 };
 
 // Use the fetch API to get data from the server

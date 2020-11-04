@@ -24,7 +24,7 @@ app
 
 const client_id = process.env.SPOTIFY_CLIENT_ID; // Your client id
 const client_secret = process.env.SPOTIFY_CLIENT_SECRET; // Your secret
-const redirect_uri = "http://localhost:8888/callback"; // Your redirect uri
+const redirect_uri = "http://localhost:" + process.env.PORT + "/callback"; // Your redirect uri
 
 /**
  * Generates a random string containing numbers and letters
@@ -53,6 +53,10 @@ app.get("/about", function(req, res) {
   res.sendFile(__dirname + "/public/about.html");
 });
 
+app.get("/spotify", function(req, res) {
+  res.sendFile(__dirname + "/public/spotify.html");
+});
+
 app.get("/login", function(req, res) {
   const state = generateRandomString(16);
   // this line sets the cookie to the randomly generated state
@@ -62,6 +66,16 @@ app.get("/login", function(req, res) {
 
   // your application requests authorization
   const scope = "user-read-private user-read-email playlist-read-private";
+  console.log(
+    "https://accounts.spotify.com/authorize?" +
+      querystring.stringify({
+        response_type: "code",
+        client_id: client_id,
+        scope: scope,
+        redirect_uri: redirect_uri,
+        state: state
+      })
+  );
   res.redirect(
     "https://accounts.spotify.com/authorize?" +
       querystring.stringify({
@@ -98,7 +112,9 @@ app.get("/callback", function(req, res) {
   } else {
     res.clearCookie(stateKey);
     // step 2 of auth flow, use auth code obtained from /authorize endpoint in step 1. in this case, variable is "code", which comes from req
-    const authOptions = {
+
+    // something funky is going on with var declaration scope...
+    var authOptions = {
       url: "https://accounts.spotify.com/api/token",
       form: {
         code: code,
@@ -108,7 +124,7 @@ app.get("/callback", function(req, res) {
       headers: {
         Authorization:
           "Basic " +
-          new Buffer(client_id + ":" + client_secret).toString("base64")
+          Buffer.from(client_id + ":" + client_secret).toString("base64")
       },
       json: true
     };
