@@ -15,8 +15,13 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
+  "keywords": [
+    "heroku",
+    "node.js"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fostimus/portfolio-site.git"
@@ -26,5 +31,8 @@
   "bugs": {
     "url": "https://github.com/fostimus/portfolio-site/issues"
   },
-  "homepage": "https://github.com/fostimus/portfolio-site#readme"
+  "homepage": "https://github.com/fostimus/portfolio-site#readme",
+  "engines": {
+    "node": "12.x"
+  }
 }
