@@ -25,7 +25,7 @@ app
 const client_id = process.env.SPOTIFY_CLIENT_ID; // Your client id
 const client_secret = process.env.SPOTIFY_CLIENT_SECRET; // Your secret
 const redirect_uri =
-  process.env.DEPLOYED === true
+  process.env.DEPLOYED === "true"
     ? "https://fostimus-portfolio.herokuapp.com/callback"
     : "http://localhost:" + process.env.PORT + "/callback"; // Your redirect uri
 
