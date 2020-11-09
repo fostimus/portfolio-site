@@ -1,0 +1,12 @@
+<section class="<%= project.layout %> background-project">
+  <div class="desc">
+    <h2><%= project.title %></h2>
+    <h4><%= project.date %></h4>
+    <% project.btns.forEach(function(btn) { %>
+      <a class="btn" href="<%= btn.link %>" target="_blank"><%= btn.text %></a>
+    <% }) %>
+  </div>
+  <div class="project-image">
+    <img src="<%= project.image %>" />
+  </div>
+</section>

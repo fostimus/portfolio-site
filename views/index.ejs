@@ -47,40 +47,60 @@
         <section id="background-work" class="dark-bg container">
           <img class="line-text-header" src="images/line-text-headers/BACKEND-WORK.svg" />
 
-          <section class="background-project">
-            <div class="desc">
-              <h2>Better BooThang</h2>
-              <h4>October 2020</h4>
-              <a class="btn" href="/" target="_blank">Send a text to your boo</a>
-              <a class="btn" href="/" target="_blank">Check out the code</a>
-            </div>
-            <div class="project-image">
-              <img src="images/projects/Welcome.png" />
-            </div>
-          </section>
+          <%- include("partials/project",
+          {
+            project:
+            {
+              layout: null,
+              title: "Better BooThang",
+              date: "October 2020",
+              btns: [
+                {
+                  link: "https://github.com/fostimus/better-boothang",
+                  text: "Check out the code"
+                }
+              ],
+              image: "images/projects/Welcome.png"
+            }
+          }) %>
 
-          <section class="flex-reverse background-project">
-            <div class="desc">
-              <h2>Concentration</h2>
-              <h4>October 2020</h4>
-              <a class="btn" href="https://fostimus.github.io/concentration/" target="_blank">Play the Game</a>
-              <a class="btn" href="https://github.com/fostimus/concentration" target="_blank">Check out the code</a>
-            </div>
-            <div class="project-image">
-              <img src="images/projects/ss3.png" />
-            </div>
-          </section>
+          <%- include("partials/project",
+          {
+            project:
+            {
+              layout: "flex-reverse",
+              title: "Concentration",
+              date: "October 2020",
+              btns: [
+                {
+                  link: "https://fostimus.github.io/concentration/",
+                  text: "Play the Game"
+                },
+                {
+                  link: "https://github.com/fostimus/concentration",
+                  text: "Check out the code"
+                }
+              ],
+              image: "images/projects/ss3.png"
+            }
+          }) %>
 
-          <section class="background-project">
-            <div class="desc">
-              <h2>Giveback Ninja Website Modernization</h2>
-              <h4>April 2020 - September 2020</h4>
-              <a class="btn" href="https://github.com/redhat-cop/ninja-board/tree/v2" target="_blank">Check out the code</a>
-            </div>
-            <div class="project-image">
-              <img src="images/projects/giveback-ninja.jpg" />
-            </div>
-          </section>
+          <%- include("partials/project",
+          {
+            project:
+            {
+              layout: null,
+              title: "Giveback Ninja Website Modernization",
+              date: "April 2020 - September 2020",
+              btns: [
+                {
+                  link: "https://github.com/redhat-cop/ninja-board/tree/v2",
+                  text: "Check out the code"
+                }
+              ],
+              image: "images/projects/giveback-ninja.jpg"
+            }
+          }) %>
         </section>
       </div>
 
