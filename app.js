@@ -17,6 +17,8 @@ const cookieParser = require("cookie-parser");
 
 const app = express();
 
+app.set("view engine", "ejs");
+
 app
   .use(express.static(__dirname + "/public"))
   .use(cors())
@@ -49,11 +51,11 @@ const stateKey = "spotify_auth_state";
 
 //serve html file
 app.get("/", function(req, res) {
-  res.sendFile(__dirname + "/public/index.html");
+  res.render("index");
 });
 
 app.get("/about", function(req, res) {
-  res.sendFile(__dirname + "/public/about.html");
+  res.render("about");
 });
 
 app.get("/spotify", function(req, res) {
