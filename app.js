@@ -23,8 +23,8 @@ app.set("view engine", "ejs");
 app
   .use(express.static(__dirname + "/public"))
   .use(cors())
-  .use(cookieParser())
-  .use(forceSsl);
+  .use(cookieParser());
+// .use(forceSsl);
 
 const client_id = process.env.SPOTIFY_CLIENT_ID; // Your client id
 const client_secret = process.env.SPOTIFY_CLIENT_SECRET; // Your secret
