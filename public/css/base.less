@@ -251,17 +251,19 @@ h4 {
   color: #2bc9af;
 } */
 
-.social-links > a {
-  display: inline-block;
-  margin-right: 40px;
+.social-links {
+  display: flex;
+  width: 600px;
+  margin: 0 auto;
+  justify-content: space-evenly;
+}
 
-  &:hover {
-    background-color: @hover-color;
-  }
+a:hover {
+  background-color: @hover-color;
 }
 
 .tagline {
-  margin: 30px;
+  margin-bottom: 40px;
 }
 
 /* ==========================
@@ -352,6 +354,14 @@ h4 {
       width: 130px;
       padding-top: 5px;
     }
+  }
+
+  .social-links {
+    width: 300px;
+  }
+
+  .tagline {
+    margin-bottom: 25px;
   }
 }
 

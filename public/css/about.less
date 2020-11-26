@@ -100,7 +100,6 @@ body {
   li {
     color: @skill-text-color;
     background-color: @skill-background-color;
-    box-shadow: 6px 8px @skill-text-color;
   }
 }
 
@@ -332,5 +331,35 @@ body {
 
   .vertical {
     display: none;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  #portfolio-headshot {
+    width: 300px;
+  }
+
+  .ellipsis-nav {
+    display: none;
+  }
+
+  .offset-left {
+    right: 0;
+  }
+
+  .footer-links {
+    display: flex;
+  }
+
+  .dropdown h2 {
+    font-size: 24px;
+  }
+
+  .dropdown h3 {
+    font-size: 18px;
   }
 }
