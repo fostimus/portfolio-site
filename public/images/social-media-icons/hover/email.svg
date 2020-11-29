@@ -23,11 +23,26 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <defs
-     id="defs16" />
+     id="defs16">
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter851"
+       x="-9.5142859e-06"
+       width="1.000019"
+       y="-1.24875e-05"
+       height="1.000025">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.000124875"
+         id="feGaussianBlur853" />
+    </filter>
+  </defs>
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -43,13 +58,14 @@
      showgrid="false"
      inkscape:zoom="32.90625"
      inkscape:cx="16"
-     inkscape:cy="8.3532764"
+     inkscape:cy="13.215575"
      inkscape:window-x="3056"
      inkscape:window-y="89"
      inkscape:window-maximized="0"
      inkscape:current-layer="svg12" />
   <path
-     d="M28.35 0H3.15C1.41277 0 0 1.3455 0 3V21C0 22.6545 1.41277 24 3.15 24H28.35C30.0872 24 31.5 22.6545 31.5 21V3C31.5 1.3455 30.0872 0 28.35 0ZM28.35 3V3.7665L15.75 13.101L3.15 3.768V3H28.35ZM3.15 21V7.566L14.783 16.1835C15.0665 16.395 15.4082 16.5 15.75 16.5C16.0918 16.5 16.4336 16.395 16.7171 16.1835L28.35 7.566L28.3532 21H3.15Z"
+     d="M 28.35,0 H 3.15 C 1.41277,0 0,1.3455 0,3 v 18 c 0,1.6545 1.41277,3 3.15,3 h 25.2 c 1.7372,0 3.15,-1.3455 3.15,-3 V 3 c 0,-1.6545 -1.4128,-3 -3.15,-3 z m 0,3 V 3.7665 L 15.75,13.101 3.15,3.768 V 3 Z M 3.15,21 V 7.566 l 11.633,8.6175 c 0.2835,0.2115 0.6252,0.3165 0.967,0.3165 0.3418,0 0.6836,-0.105 0.9671,-0.3165 L 28.35,7.566 28.3532,21 Z"
      fill="#F0F0F0"
-     id="path10" />
+     id="path10"
+     style="fill:#2bc9af;stroke-width:0.999999;filter:url(#filter851);fill-opacity:1" />
 </svg>

@@ -178,11 +178,11 @@ a {
 
 .light-bg {
   a {
-    color: @hover-color;
+    color: @primary-background-color;
   }
 
   a:hover {
-    color: @secondary-color;
+    color: @hover-color;
   }
 }
 
@@ -256,10 +256,6 @@ h4 {
   width: 600px;
   margin: 0 auto;
   justify-content: space-evenly;
-}
-
-a:hover {
-  background-color: @hover-color;
 }
 
 .tagline {
@@ -343,6 +339,18 @@ a:hover {
 }
 
 @media screen and (max-width: 769px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
   .social-links img {
     width: 20px;
   }
