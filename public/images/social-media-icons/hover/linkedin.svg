@@ -7,27 +7,28 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="32"
-   height="24"
-   viewBox="0 0 32 24"
+   width="27"
+   height="27"
+   viewBox="0 0 27 27"
    fill="none"
    version="1.1"
-   id="svg12"
-   sodipodi:docname="email.svg"
+   id="svg835"
+   sodipodi:docname="linkedin.svg"
    inkscape:version="1.0.1 (c497b03c, 2020-09-10)">
   <metadata
-     id="metadata18">
+     id="metadata841">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <defs
-     id="defs16" />
+     id="defs839" />
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -39,17 +40,18 @@
      inkscape:pageshadow="2"
      inkscape:window-width="820"
      inkscape:window-height="480"
-     id="namedview14"
+     id="namedview837"
      showgrid="false"
-     inkscape:zoom="32.90625"
-     inkscape:cx="16"
-     inkscape:cy="8.3532764"
-     inkscape:window-x="3056"
-     inkscape:window-y="89"
+     inkscape:zoom="30.037037"
+     inkscape:cx="8.6017919"
+     inkscape:cy="13.5"
+     inkscape:window-x="2554"
+     inkscape:window-y="23"
      inkscape:window-maximized="0"
-     inkscape:current-layer="svg12" />
+     inkscape:current-layer="svg835" />
   <path
-     d="M28.35 0H3.15C1.41277 0 0 1.3455 0 3V21C0 22.6545 1.41277 24 3.15 24H28.35C30.0872 24 31.5 22.6545 31.5 21V3C31.5 1.3455 30.0872 0 28.35 0ZM28.35 3V3.7665L15.75 13.101L3.15 3.768V3H28.35ZM3.15 21V7.566L14.783 16.1835C15.0665 16.395 15.4082 16.5 15.75 16.5C16.0918 16.5 16.4336 16.395 16.7171 16.1835L28.35 7.566L28.3532 21H3.15Z"
+     d="M25.5 0H1.5C0.6705 0 0 0.672 0 1.5V25.5C0 26.328 0.6705 27 1.5 27H25.5C26.3295 27 27 26.328 27 25.5V1.5C27 0.672 26.3295 0 25.5 0ZM8.0085 23.0055H4.0005V10.1205H8.0085V23.0055ZM6.0045 8.361C4.7205 8.361 3.6825 7.32 3.6825 6.039C3.6825 4.758 4.719 3.717 6.0045 3.717C7.2855 3.717 8.3265 4.7565 8.3265 6.039C8.3265 7.3215 7.2855 8.361 6.0045 8.361ZM23.007 23.0055H19.0035V16.74C19.0035 15.246 18.9765 13.3245 16.9215 13.3245C14.8365 13.3245 14.52 14.9535 14.52 16.635V23.007H10.5195V10.122H14.3595V11.883H14.415C14.9475 10.8705 16.2555 9.8025 18.201 9.8025C22.257 9.8025 23.0055 12.4695 23.0055 15.9405V23.0055H23.007Z"
      fill="#F0F0F0"
-     id="path10" />
+     id="path833"
+     style="fill-opacity:1;fill:#2bc9af" />
 </svg>
