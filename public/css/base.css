@@ -140,7 +140,8 @@ table {
 body {
   transition: all 1.5s;
 }
-a {
+a,
+a:hover {
   text-decoration: none;
 }
 .dark-bg a {
@@ -150,16 +151,16 @@ a {
   color: #2bc9af;
 }
 .light-bg a {
-  color: #2bc9af;
+  color: #272727;
 }
 .light-bg a:hover {
-  color: #aeaeae;
+  color: #2bc9af;
 }
 h1 {
-  font: normal bold 42px/50px "Lato", sans-serif;
+  font: normal bold 48px/54px "Lato", sans-serif;
 }
 h2 {
-  font: normal bold 32px/38px "Lato", sans-serif;
+  font: normal bold 36px/44px "Lato", sans-serif;
 }
 h3 {
   font: normal bold 24px/28px "Lato", sans-serif;
@@ -168,8 +169,7 @@ h4 {
   font: normal normal 16px/19px "Lato", sans-serif;
   color: #aeaeae;
 }
-.container {
-  padding: 0 1em;
+.my-container {
   text-align: center;
   position: relative;
 }
@@ -194,30 +194,48 @@ h4 {
   position: relative;
   top: -20px;
 }
+.btns-container {
+  width: 400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.btns-container a,
+.btns-container a:hover {
+  transition: 0.7s all;
+  color: #f0f0f0;
+}
+.btns-container a:hover {
+  font-size: 16px;
+  height: 60px;
+  width: 166px;
+}
 .btn {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   width: 156px;
   height: 50px;
-  padding-top: 15px;
   border: 2px solid #f0f0f0;
   border-radius: 15px;
   font-size: 14px;
 }
-/* TODO: make whole button hover color
-*/
-/* .btn:hover {
-  color: #2bc9af;
-} */
-.social-links > a {
-  display: inline-block;
-  margin-right: 40px;
-}
-.social-links > a:hover {
+.btn:hover {
+  color: #aeaeae;
   background-color: #2bc9af;
+  border: #2bc9af;
+}
+.social-links {
+  display: flex;
+  width: 600px;
+  margin: 0 auto;
+  justify-content: space-evenly;
 }
 .tagline {
-  margin: 30px;
+  margin-bottom: 40px;
 }
 /* ==========================
     skills styling
@@ -235,7 +253,6 @@ h4 {
   width: 160px;
   padding-top: 10px;
   margin: 10px;
-  box-shadow: 6px 8px;
 }
 /* ==========================
     footer - contact me styling
@@ -284,6 +301,41 @@ h4 {
     display: inline;
     margin: 0 50px;
   }
+}
+@media screen and (max-width: 769px) {
+  h1 {
+    font-size: 28px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  h3 {
+    font-size: 18px;
+  }
+  .social-links img {
+    width: 20px;
+  }
+  .skills li {
+    font-size: 12px;
+    height: 25px;
+    width: 130px;
+    padding-top: 5px;
+  }
+  .social-links {
+    width: 300px;
+  }
+  .tagline {
+    margin-bottom: 25px;
+  }
+  .footer-links {
+    display: flex;
+  }
+}
+/* ==========================
+    otw modal
+========================== */
+.otw {
+  color: #272727;
 }
 /* ==========================
     other & notes

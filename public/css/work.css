@@ -47,9 +47,10 @@ body {
 }
 .desc {
   align-self: center;
-}
-.desc * + * {
-  margin-top: 20px;
+  display: flex;
+  height: 200px;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
 }
 @media (max-width: 1000px) {
   .background-project {
@@ -58,5 +59,16 @@ body {
   }
   .desc {
     margin-bottom: 30px;
+  }
+}
+@media screen and (max-width: 769px) {
+  .flex-column {
+    height: 750px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  .background-project img {
+    width: 300px;
   }
 }
