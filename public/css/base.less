@@ -236,21 +236,44 @@ h4 {
   top: -20px;
 }
 
+.btns-container {
+  width: 400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+
+  a,
+  a:hover {
+    transition: 0.7s all;
+    color: @primary-text-color;
+  }
+
+  a:hover {
+    font-size: 16px;
+    height: 60px;
+    width: 166px;
+  }
+}
+
 .btn {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   width: 156px;
   height: 50px;
-  padding-top: 15px;
   border: 2px solid @primary-text-color;
   border-radius: 15px;
   font-size: 14px;
+
+  &:hover {
+    color: @secondary-color;
+    background-color: @hover-color;
+    border: @hover-color;
+  }
 }
-/* TODO: make whole button hover color
-*/
-/* .btn:hover {
-  color: #2bc9af;
-} */
 
 .social-links {
   display: flex;
