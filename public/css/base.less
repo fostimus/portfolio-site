@@ -179,11 +179,11 @@ a:hover {
 
 .light-bg {
   a {
-    color: @primary-background-color;
+    color: @hover-color;
   }
 
   a:hover {
-    color: @hover-color;
+    color: lighten(@hover-color, 30%);
   }
 }
 
