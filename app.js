@@ -15,12 +15,14 @@ const cors = require("cors");
 const querystring = require("querystring");
 const cookieParser = require("cookie-parser");
 const forceSsl = require("force-ssl-heroku");
+const utils = require("./utility");
 
 const app = express();
 
 app.set("view engine", "ejs");
 
 app
+  .use(express.json())
   .use(express.static(__dirname + "/public"))
   .use(cors())
   .use(cookieParser());
@@ -179,9 +181,9 @@ app.get("/playlists", function(req, res) {
     },
     json: true
   };
+
   request.get(playlists, function(error, response, body) {
-    console.log(body);
-    res.send(body);
+    res.json(body);
   });
 });
 
@@ -198,10 +200,20 @@ app.get("/tracks", function(req, res) {
     json: true
   };
 
-  console.log(tracks);
   request.get(tracks, function(error, response, body) {
-    console.log(body);
-    res.send(body);
+    const formattedTracks = body.items.map(track => {
+      const name = track.track.name;
+      const artists = utils.getArtists(track.track.artists);
+      const length = utils.msToTime(track.track.duration_ms);
+
+      return {
+        name,
+        artists,
+        length
+      };
+    });
+
+    res.json(formattedTracks);
   });
 });
 

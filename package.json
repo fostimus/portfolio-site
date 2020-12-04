@@ -12,13 +12,14 @@
     "express": "^4.17.1",
     "force-ssl-heroku": "^1.0.2",
     "node-static": "^0.7.11",
+    "nodemon": "^2.0.6",
     "querystring": "^0.2.0",
     "request": "^2.88.2"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "nodemon app.js"
   },
   "keywords": [
     "heroku",
