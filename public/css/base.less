@@ -1,13 +1,5 @@
 @import "./globals.less";
 
-/* color variables */
-@primary-background-color: #272727;
-@primary-text-color: #f0f0f0;
-@secondary-color: #aeaeae;
-@hover-color: #2bc9af;
-@skill-background-color: #464646;
-
-@footer-height: 350px;
 @max-limited-width: 600px;
 
 /* ==========================
@@ -28,21 +20,21 @@ a:hover {
 
 .dark-bg {
   a {
-    color: @secondary-color;
+    color: @secondary-text-color;
   }
 
   a:hover {
-    color: @hover-color;
+    color: @text-hover-color;
   }
 }
 
 .light-bg {
   a {
-    color: @hover-color;
+    color: @text-hover-color;
   }
 
   a:hover {
-    color: lighten(@hover-color, 30%);
+    color: lighten(@text-hover-color, 30%);
   }
 }
 
@@ -128,9 +120,9 @@ h4 {
   font-size: 14px;
 
   &:hover {
-    color: @secondary-color;
-    background-color: @hover-color;
-    border: @hover-color;
+    color: @secondary-text-color;
+    background-color: @text-hover-color;
+    border: @text-hover-color;
   }
 }
 
@@ -157,7 +149,8 @@ h4 {
   li {
     display: inline-block;
     height: 37px;
-    background-color: @skill-background-color;
+    font-family: @bold-font;
+    background-color: @primary-skill-background-color;
     border-radius: 15px;
     width: 160px;
     padding-top: 10px;

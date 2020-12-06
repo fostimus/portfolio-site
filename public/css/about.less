@@ -1,38 +1,23 @@
 @import "./globals.less";
 
-/* background colors */
-@primary-background-color: #f0f0f0;
-@secondary-background-color: #272727;
-@background-hover-color: #464646;
-
-/* text colors */
-@primary-text-color: #272727;
-@secondary-text-color: #f0f0f0;
-@tertiary-text-color: #aeaeae;
-@text-hover-color: #2bc9af;
-
 /* ellipsis nav colors */
-@ellipse-border: #aeaeae;
-@dark-ellipse: #464646;
-@light-ellipse: #f0f0f0;
-
-/* skills colors */
-@skill-text-color: #000000;
-@skill-background-color: #aeaeae;
+@ellipse-border: @light-grey;
+@dark-ellipse: @dark-grey;
+@light-ellipse: @white;
 
 /* vertical offset */
 @vertical-offset: 150px;
 @max-limited-width: 800px;
 
 body {
-  background-color: @primary-background-color;
-  color: @primary-text-color;
+  background-color: @secondary-background-color;
+  color: @tertiary-text-color;
   font: @body-font;
 }
 
 .nav-links {
   a {
-    color: @primary-text-color;
+    color: @tertiary-text-color;
   }
 
   a:hover {
@@ -51,6 +36,7 @@ body {
 }
 
 .ellipse-container {
+  display: flex;
   margin-bottom: 20px;
 
   span {
@@ -102,8 +88,8 @@ body {
   margin: 50px auto;
 
   li {
-    color: @skill-text-color;
-    background-color: @skill-background-color;
+    color: @secondary-skill-text-color;
+    background-color: @secondary-skill-background-color;
   }
 }
 
@@ -195,11 +181,11 @@ body {
 }
 
 .dropbtn {
-  border: 1px solid @primary-background-color;
+  border: 1px solid @secondary-background-color;
   border-radius: 27px;
   height: 27px;
   line-height: 27px;
-  background-color: @secondary-background-color;
+  background-color: @primary-background-color;
   margin-left: 12px;
 }
 
@@ -212,7 +198,7 @@ body {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: @secondary-background-color;
+  background-color: @primary-background-color;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
@@ -220,8 +206,8 @@ body {
 
 /* Links inside the dropdown */
 .dropdown-content button {
-  color: @secondary-text-color;
-  background-color: @secondary-background-color;
+  color: @primary-text-color;
+  background-color: @primary-background-color;
   border: none;
   padding: 12px 16px;
   display: block;
@@ -242,8 +228,8 @@ body {
 #music {
   position: relative;
   top: @vertical-offset;
-  background-color: @secondary-background-color;
-  color: @secondary-text-color;
+  background-color: @primary-background-color;
+  color: @primary-text-color;
   padding-bottom: 30px;
 
   .ellipsis-nav {
@@ -261,7 +247,7 @@ body {
   }
 
   a {
-    color: @secondary-text-color;
+    color: @primary-text-color;
   }
 
   h3,
@@ -280,7 +266,7 @@ body {
   }
 
   th {
-    color: @tertiary-text-color;
+    color: @secondary-text-color;
     text-transform: uppercase;
     padding: 5px;
   }
@@ -301,7 +287,7 @@ body {
   }
 
   tbody > tr:first-child {
-    border-bottom: 1px solid @tertiary-text-color;
+    border-bottom: 1px solid @secondary-text-color;
   }
 }
 
