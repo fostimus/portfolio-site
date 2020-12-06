@@ -181,6 +181,7 @@ app.get("/playlists", function(req, res) {
   };
 
   request.get(playlists, function(error, response, body) {
+    console.log(body);
     res.json(body);
   });
 });

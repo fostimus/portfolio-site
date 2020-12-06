@@ -16,6 +16,12 @@ const toggleDropdown = e => {
           // get playlist and create playlist button object
           const option = document.createElement("button");
           const title = document.createTextNode(playlist.name);
+          let imageUrl = null;
+
+          // if the playlist image is set, set the url
+          if (playlist.images.length === 1) {
+            imageUrl = playlist.images[0].url;
+          }
 
           option.appendChild(title);
           // attach onclick method to trigger action on choosing a playlist
@@ -23,7 +29,9 @@ const toggleDropdown = e => {
             playlistClick(
               playlist.name,
               playlist.external_urls.spotify,
-              playlist.id
+              playlist.id,
+              imageUrl,
+              playlist.description
             )
           );
 
@@ -56,15 +64,33 @@ window.addEventListener("click", () => {
   }
 });
 
-const playlistClick = (title, url, playlistId) => {
+const playlistClick = (title, url, playlistId, imageUrl, description) => {
   console.log(playlistId);
 
-  removeCurrentSongs();
+  removePreviousPlaylist();
   setPlaylistLink(url);
 
   // set title in html
   const playlistName = document.querySelector("#playlist-name");
   playlistName.innerHTML = title;
+
+  // set playlist image
+  if (imageUrl) {
+    const playlistImage = document.querySelector("#playlist-image");
+    const image = document.createElement("img");
+    image.width = 220;
+    image.height = 220;
+
+    image.setAttribute("src", imageUrl);
+
+    playlistImage.appendChild(image);
+  }
+
+  // set playlist description
+  if (description) {
+    const playlistDescription = document.querySelector("#playlist-description");
+    playlistDescription.textContent = description;
+  }
 
   //fetch track data for that playlist
   fetch("/tracks?playlistId=" + playlistId)
@@ -98,7 +124,8 @@ const playlistClick = (title, url, playlistId) => {
  * helpers
  */
 
-function removeCurrentSongs() {
+function removePreviousPlaylist() {
+  // remove table data
   const tbody = document.querySelector(".table tbody");
   const tbodyChildren = tbody.children;
 
@@ -108,6 +135,18 @@ function removeCurrentSongs() {
       tbodyChildren[i].remove();
     }
   }
+
+  // remove playlist image
+  const playlistImage = document.querySelector("#playlist-image");
+  if (playlistImage.children.length > 0) {
+    for (let i = playlistImage.children.length - 1; i > -1; i--) {
+      playlistImage.children[i];
+      playlistImage.children[i].remove();
+    }
+  }
+
+  // remove playlist description
+  document.querySelector("#playlist-description").textContent = null;
 }
 
 function setPlaylistLink(url) {
