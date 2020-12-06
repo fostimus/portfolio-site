@@ -7,13 +7,14 @@
     <!-- set viewport to device width to allow responsiveness -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/about.css" />
   </head>
 
   <body>
     <div class="enable-sticky-footer">
-      <nav class="light-bg nav-bar">
+      <nav class="nav-links  nav-bar">
         <ul>
           <li class="nav-item"><a href="/">Work</a></li>
           <li class="nav-item"><a href="/about">About</a></li>
@@ -158,15 +159,24 @@
 
           <div class="container">
             <div class="dropdown">
-              <div class="">
-                <h2 id="playlist-name">Select a playlist</h2>
-                <button class="dropbtn" data-toggle="modal" data-target="#otw">
-                  <img src="images/down-arrow.svg" />
-                </button>
+              <div class="playlist-text">
+                <div>
+                  <h2 id="playlist-name">Select a playlist</h2>
+                  <button class="dropbtn" data-toggle="modal" data-target="#otw">
+                    <img src="images/down-arrow.svg" />
+                  </button>
+                  <div class="dropdown-content"></div>
+                  <h3>Listen to the full playlist on Spotify</h3>
+                </div>
+                <div id="playlist-description">
+
+                </div>
               </div>
-              <div class="dropdown-content"></div>
-              <h3>Listen to the full playlist on Spotify</h3>
+              <div id="playlist-image">
+
+              </div>
             </div>
+
             <div class="table">
               <table>
                 <tbody>

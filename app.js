@@ -14,7 +14,8 @@ const request = require("request"); // "Request" library
 const cors = require("cors");
 const querystring = require("querystring");
 const cookieParser = require("cookie-parser");
-const forceSsl = require("force-ssl-heroku");
+// TODO: set up SSL on bluehost with DNS
+// const forceSsl = require("force-ssl-heroku");
 const utils = require("./utility");
 
 const app = express();
@@ -183,6 +184,7 @@ app.get("/playlists", function(req, res) {
   };
 
   request.get(playlists, function(error, response, body) {
+    console.log(body);
     res.json(body);
   });
 });

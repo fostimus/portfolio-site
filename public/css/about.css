@@ -1,16 +1,42 @@
 @font-face {
   font-family: "Lato";
-  src: url("../../font/Lato-Regular.ttf") format("truetype");
+  src: url("../font/Lato-Regular.ttf") format("truetype");
 }
+@font-face {
+  font-family: "LatoItalic";
+  src: url("../font/Lato-Italic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "LatoBold";
+  src: url("../font/Lato-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "LatoItalicBold";
+  src: url("../font/Lato-BoldItalic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "LatoHairline";
+  src: url("../font/Lato-Hairline.ttf") format("truetype");
+}
+/**
+ *  Color variables
+ */
 /* background colors */
 /* text colors */
+/* skill colors */
+/* length variables */
 /* ellipsis nav colors */
-/* skills colors */
 /* vertical offset */
 body {
   background-color: #f0f0f0;
   color: #272727;
   font: normal normal normal 14px "Lato", sans-serif;
+}
+.nav-links a {
+  color: #272727;
+}
+.nav-links a:hover {
+  color: #2bc9af;
 }
 /* ==========================
     ellipsis nav styling
@@ -21,6 +47,7 @@ body {
   color: #464646;
 }
 .ellipse-container {
+  display: flex;
   margin-bottom: 20px;
 }
 .ellipse-container span {
@@ -64,7 +91,7 @@ body {
   margin: 50px auto;
 }
 .skills li {
-  color: #000000;
+  color: #272727;
   background-color: #aeaeae;
 }
 /* ==========================
@@ -119,11 +146,24 @@ body {
 /* ==========================
     music styling
 ========================== */
+.playlist-text {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  gap: 25px;
+}
+#playlist-description {
+  font-family: "LatoItalicBold", sans-serif;
+}
 /* begin dropdown css */
 .dropdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   text-align: left;
-  margin: 0 auto 50px;
+  margin: 0 auto;
   max-width: 1000px;
+  padding: 20px 50px;
 }
 .dropbtn {
   border: 1px solid #f0f0f0;

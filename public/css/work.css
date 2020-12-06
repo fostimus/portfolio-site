@@ -1,15 +1,37 @@
 @font-face {
   font-family: "Lato";
-  src: url("../font/Lato-Regular.ttf") format("ttf");
+  src: url("../font/Lato-Regular.ttf") format("truetype");
 }
-/* color variables */
+@font-face {
+  font-family: "LatoItalic";
+  src: url("../font/Lato-Italic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "LatoBold";
+  src: url("../font/Lato-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "LatoItalicBold";
+  src: url("../font/Lato-BoldItalic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "LatoHairline";
+  src: url("../font/Lato-Hairline.ttf") format("truetype");
+}
+/**
+ *  Color variables
+ */
+/* background colors */
+/* text colors */
+/* skill colors */
+/* length variables */
 /* ==========================
     work styles
 ========================== */
 body {
   background-color: #272727;
   color: #f0f0f0;
-  font: normal normal normal 14px Lato, sans-serif;
+  font: normal normal normal 14px "Lato", sans-serif;
 }
 .flex-column {
   display: flex;
