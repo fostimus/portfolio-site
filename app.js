@@ -14,7 +14,10 @@ const request = require("request"); // "Request" library
 const cors = require("cors");
 const querystring = require("querystring");
 const cookieParser = require("cookie-parser");
+// TODO: set up SSL on bluehost with DNS
+// const forceSsl = require("force-ssl-heroku");
 const utils = require("./utility");
+const axios = require("axios");
 
 const app = express();
 
@@ -25,6 +28,9 @@ app
   .use(express.static(__dirname + "/public"))
   .use(cors())
   .use(cookieParser());
+// .use(forceSsl);
+
+const githubApiUrl = "https://api.github.com";
 
 const client_id = process.env.SPOTIFY_CLIENT_ID; // Your client id
 const client_secret = process.env.SPOTIFY_CLIENT_SECRET; // Your secret
@@ -258,6 +264,14 @@ app.get("/refresh_token", function(req, res) {
       });
     }
   });
+});
+
+app.get("/repo/:id", function(req, res) {
+  axios
+    .get(githubApiUrl + "/repos/fostimus/" + req.params.id)
+    .then(response => {
+      res.json(response.data);
+    });
 });
 
 console.log(`Listening on ${process.env.PORT || 3000}`);
