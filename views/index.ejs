@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet/less" type="text/css" href="css/base.less" />
     <link rel="stylesheet/less" type="text/css" href="css/work.less" />
+    <script defer src="js/index.js"></script>
     <script src="js/less.min.js" type="text/javascript"></script>
   </head>
 
@@ -49,6 +50,45 @@
           <%- include("partials/project",
           {
               layout: null,
+              id: "give-it-a-shot-v2",
+              title: "Give It A Shot V2",
+              date: "December 2020 - Ongoing",
+              btns: [
+              {
+                link: "https://giveitashotv2.herokuapp.com/",
+                text: "Find your drink"
+              },
+                {
+                  link: "https://github.com/fostimus/give-it-a-shot-v2",
+                  text: "Check out the code"
+                }
+              ],
+              image: "images/projects/give-it-a-shot.png"
+          }) %>
+
+          <%- include("partials/project",
+          {
+              layout: "flex-reverse",
+              id: "give-it-a-shot",
+              title: "Give It A Shot",
+              date: "November 2020",
+              btns: [
+              {
+                link: "https://give-it-a-shot-client.herokuapp.com/",
+                text: "Find your drink"
+              },
+                {
+                  link: "https://github.com/fostimus/give-it-a-shot",
+                  text: "Check out the code"
+                }
+              ],
+              image: "images/projects/give-it-a-shot.png"
+          }) %>
+
+          <%- include("partials/project",
+          {
+              layout: null,
+              id: "better-boothang",
               title: "Better BooThang",
               date: "October 2020",
               btns: [
@@ -63,6 +103,7 @@
           <%- include("partials/project",
           {
               layout: "flex-reverse",
+              id: "concentration",
               title: "Concentration",
               date: "October 2020",
               btns: [
@@ -81,6 +122,7 @@
           <%- include("partials/project",
           {
               layout: null,
+              id: "ninja-board",
               title: "Giveback Ninja Website Modernization",
               date: "April 2020 - September 2020",
               btns: [
