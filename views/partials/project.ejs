@@ -2,12 +2,12 @@
   <div class="desc">
     <h2><%= title %></h2>
     <h4><%= date %></h4>
-    <p></p>
     <div class="btns-container">
       <% btns.forEach(function(btn) { %>
         <a class="btn" href="<%= btn.link %>" target="_blank"><%= btn.text %></a>
       <% }) %>
     </div>
+    <p></p>
   </div>
   <div class="project-image">
     <img src="<%= image %>" />

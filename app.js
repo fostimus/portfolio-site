@@ -267,11 +267,18 @@ app.get("/refresh_token", function(req, res) {
 });
 
 app.get("/repo/:id", function(req, res) {
-  axios
-    .get(githubApiUrl + "/repos/fostimus/" + req.params.id)
+  // rate limits are pretty low for non-authenticated requests.
+  const request = {
+    method: "get",
+    url: githubApiUrl + "/repos/fostimus/" + req.params.id,
+    headers: { "User-Agent": "fostimus" }
+  };
+
+  axios(request)
     .then(response => {
       res.json(response.data);
-    });
+    })
+    .catch(e => console.error(e));
 });
 
 console.log(`Listening on ${process.env.PORT || 3000}`);

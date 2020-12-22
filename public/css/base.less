@@ -9,6 +9,15 @@
   box-sizing: border-box;
 }
 
+html,
+body
+// section,
+// div,
+// main
+ {
+  height: 100%;
+}
+
 body {
   transition: all 1.5s;
 }
@@ -39,20 +48,24 @@ a:hover {
 }
 
 h1 {
-  font: normal bold 48px/54px @site-font-family;
+  font: normal bold 54px/62px @site-font-family;
 }
 
 h2 {
-  font: normal bold 36px/44px @site-font-family;
+  font: normal bold 48px/52px @site-font-family;
 }
 
 h3 {
-  font: normal bold 24px/28px @site-font-family;
+  font: normal bold 36px/40px @site-font-family;
 }
 
 h4 {
-  font: normal normal 16px/19px @site-font-family;
-  color: #aeaeae;
+  font: normal normal 24px/30px @site-font-family;
+  color: @light-grey;
+}
+
+p {
+  font: normal normal 16px/20px @site-font-family;
 }
 
 .container {
@@ -88,7 +101,7 @@ h4 {
 }
 
 .btns-container {
-  width: 400px;
+  max-width: 400px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -184,7 +197,7 @@ h4 {
 ========================== */
 @media (min-width: 769px) {
   .enable-sticky-footer {
-    min-height: 100vh - @footer-height;
+    min-height: calc(100vh - @footer-height);
   }
 
   .container {
@@ -216,15 +229,24 @@ h4 {
 
 @media screen and (max-width: 769px) {
   h1 {
-    font-size: 28px;
+    font-size: 32px;
   }
 
   h2 {
-    font-size: 24px;
+    font-size: 28px;
   }
 
   h3 {
+    font-size: 22px;
+  }
+
+  h4 {
     font-size: 18px;
+  }
+
+  p {
+    font-size: 10px;
+    max-width: 350px;
   }
 
   .social-links img {

@@ -12,6 +12,10 @@ const toggleDropdown = e => {
       .then(data => {
         const playlists = data.items;
 
+        console.log("playlists: " + typeof playlists);
+        console.log("currentPlaylistName: " + typeof currentPlaylistName);
+        console.log("e:" + typeof e);
+
         playlists.map(playlist => {
           // get playlist and create playlist button object
           const option = document.createElement("button");
