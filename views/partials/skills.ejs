@@ -1,22 +1,10 @@
-<ul class="skills">
-  <li>Java</li>
-  <li>JavaScript</li>
-  <li>React.js</li>
-  <li>HTML5</li>
-  <li>CSS3</li>
-  <li>SQL</li>
-  <li>PostgreSQL</li>
-  <li>Express.js</li>
-  <li>Bootstrap</li>
-  <li>Sequelize ORM</li>
-  <li>Git</li>
-  <li>Cucumber</li>
-  <li>Selenium</li>
-  <li>Maven</li>
-  <li>Docker</li>
-  <li>Spring</li>
-  <li>Spring Boot</li>
-  <li>Apache Camel</li>
-  <li>RH OpenShift</li>
-  <li>RH Decision Manager</li>
-</ul>
+<div class="">
+  <h3>Skills</h3>
+  <div class="skills">
+    <%- include("skill-expandable", {name: "Client", skills: [ "HTML5", "CSS3", "JavaScript", "Bootstrap", "React.js", "Next.js"]}) %>
+    <%- include("skill-expandable", {name: "Server", skills: ["JavaScript", "Express.js", "Java", "Apache Maven", "Spring Boot", "Apache Camel"]}) %>
+    <%- include("skill-expandable", {name: "Database", skills: ["SQL", "PostgreSQL", "Sequelize ORM"]}) %>
+    <%- include("skill-expandable", {name: "Red Hat", skills: ["OpenShift", "Decision Manager", "Linux"]}) %>
+    <%- include("skill-expandable", {name: "Other", skills: ["Git", "GitHub", "Docker", "Selenium WebDriver", "Cucumber"]}) %>
+  </div>
+</div>

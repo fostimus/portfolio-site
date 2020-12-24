@@ -2,6 +2,15 @@
 
 @max-limited-width: 600px;
 
+@button-hover-font-size: 16px;
+@button-hover-height: 60px;
+@button-hover-width: 166px;
+@button-transition: 0.7s all;
+
+@skill-height: 37px;
+@skill-width: 160px;
+@subskill-height: 30px;
+
 /* ==========================
     universal styles
 ========================== */
@@ -115,9 +124,9 @@ p {
   }
 
   a:hover {
-    font-size: 16px;
-    height: 60px;
-    width: 166px;
+    font-size: @button-hover-font-size;
+    height: @button-hover-height;
+    width: @button-hover-width;
   }
 }
 
@@ -155,19 +164,49 @@ p {
 ========================== */
 
 .skills {
-  display: inline-block;
+  display: inline-flex;
   max-width: 1000px;
   margin: 0 auto;
+  align-items: center;
+}
 
-  li {
-    display: inline-block;
-    height: 37px;
-    font-family: @bold-font;
-    background-color: @primary-skill-background-color;
-    border-radius: 15px;
-    width: 160px;
-    padding-top: 10px;
-    margin: 10px;
+.skill {
+  display: inline-block;
+  height: 37px;
+  font-family: @bold-font;
+  background-color: @primary-skill-background-color;
+  border-radius: 15px;
+  width: 160px;
+  margin: 10px;
+  transition: @button-transition;
+
+  .skill-name {
+    font-size: 20px;
+    height: 100%;
+    max-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: @button-transition;
+  }
+
+  &:hover {
+    .skill-items {
+      display: block;
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .skill-name {
+      max-height: 40%;
+    }
+  }
+
+  .skill-items {
+    transition: @button-transition;
+    display: hidden;
+    visibility: hidden;
+    opacity: 0;
   }
 }
 
