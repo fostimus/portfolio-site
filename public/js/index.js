@@ -3,12 +3,9 @@ const projects = document.querySelectorAll(".background-project");
 projects.forEach(project => {
   const id = project.getAttribute("id");
 
-  console.log(id);
-
   fetch("/repo/" + id)
     .then(response => response.json())
     .then(data => {
-      console.log(data);
       project.querySelector("p").textContent = data.description;
     });
 });
@@ -27,11 +24,11 @@ skills.forEach(skill => {
       originalSkillHeight = skill.offsetHeight;
     }
 
-    const subSkills = skill.querySelectorAll(".skill-item");
-    // +20 is padding
-    const subSkillsHeight = subSkills[0].offsetHeight * subSkills.length + 20;
-
-    const newHeight = skill.offsetHeight + subSkillsHeight;
+    // +15 for padding at bottom
+    const newHeight =
+      skill.offsetHeight +
+      skill.querySelector(".skill-items").offsetHeight +
+      15;
 
     skill.setAttribute("style", "height: " + newHeight.toString() + "px");
   });
