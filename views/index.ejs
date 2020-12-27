@@ -16,14 +16,7 @@
   <body>
     <main class="main">
       <div class="enable-sticky-footer">
-        <nav class="dark-bg nav-bar">
-          <ul>
-            <li class="nav-item"><a href="/">Work</a></li>
-            <li class="nav-item"><a href="/about">About</a></li>
-            <!-- for now going back to home. need to include download link -->
-            <li class="nav-item"><a href="/">Resume</a></li>
-          </ul>
-        </nav>
+        <%- include("partials/nav", {style: "dark-bg"}) %>
 
         <section class="flex-column my-container">
           <div class="limited-width">

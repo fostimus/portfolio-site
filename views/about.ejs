@@ -14,14 +14,7 @@
 
   <body>
     <div class="enable-sticky-footer">
-      <nav class="nav-links  nav-bar">
-        <ul>
-          <li class="nav-item"><a href="/">Work</a></li>
-          <li class="nav-item"><a href="/about">About</a></li>
-          <!-- for now going back to home. need to include download link -->
-          <li class="nav-item"><a href="/">Resume</a></li>
-        </ul>
-      </nav>
+      <%- include("partials/nav", {style: "nav-links"}) %>
 
       <section id="profile" class="light-bg container">
         <div class="flex-between container">

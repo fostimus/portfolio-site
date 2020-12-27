@@ -272,5 +272,9 @@ app.get("/repo/:id", function(req, res) {
     .catch(e => console.error(e));
 });
 
+app.get("/resume", function(req, res) {
+  res.sendFile(__dirname + "/public/resume.pdf");
+});
+
 console.log(`Listening on ${process.env.PORT || 3000}`);
 app.listen(process.env.PORT || 3000);
