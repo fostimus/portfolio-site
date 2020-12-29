@@ -95,7 +95,7 @@ const playlistClick = (title, url, playlistId, imageUrl, description) => {
     .then(response => response.json())
     .then(data => {
       data.forEach(track => {
-        const tbody = document.querySelector(".table tbody");
+        const tbody = document.querySelector(".my-table tbody");
         const tr = document.createElement("tr");
 
         let tdName = document.createElement("td");
