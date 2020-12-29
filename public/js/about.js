@@ -10,7 +10,7 @@ const toggleDropdown = e => {
     fetch("/playlists")
       .then(response => response.json())
       .then(data => {
-        const playlists = data.items;
+        const playlists = data;
 
         playlists.map(playlist => {
           // get playlist and create playlist button object
@@ -65,8 +65,6 @@ window.addEventListener("click", () => {
 });
 
 const playlistClick = (title, url, playlistId, imageUrl, description) => {
-  console.log(playlistId);
-
   removePreviousPlaylist();
   setPlaylistLink(url);
 
@@ -119,6 +117,27 @@ const playlistClick = (title, url, playlistId, imageUrl, description) => {
 
   document.querySelector(".dropdown-content").classList.toggle("show");
 };
+
+/**
+ * Load first playlist
+ */
+
+fetch("/playlists/first")
+  .then(response => response.json())
+  .then(data => {
+    let imageUrl = null;
+    // if the playlist image is set, set the url
+    if (data.images.length === 1) {
+      imageUrl = data.images[0].url;
+    }
+    playlistClick(
+      data.name,
+      data.external_urls.spotify,
+      data.id,
+      imageUrl,
+      data.description
+    );
+  });
 
 /**
  * helpers

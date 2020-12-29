@@ -10,20 +10,15 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/base.css" />
     <link rel="stylesheet" href="css/about.css" />
+    <script defer src="js/skills.js"></script>
   </head>
 
   <body>
     <div class="enable-sticky-footer">
-      <nav class="nav-links  nav-bar">
-        <ul>
-          <li class="nav-item"><a href="/">Work</a></li>
-          <li class="nav-item"><a href="/about">About</a></li>
-          <li class="nav-item"><a href="#" data-toggle="modal" data-target="#otw">Resume</a></li>
-        </ul>
-        <%- include('./partials/otw-modal', {modal: {name: "otw", title: "On the way!", body: "This feature is not yet complete. It will be here soon :)"}}) %>
-      </nav>
 
-      <section id="profile" class="light-bg my-container">
+      <%- include("partials/nav", {style: "nav-links"}) %>
+
+      <section id="profile" class="my-container">
         <div class="flex-between my-container">
           <div class="ellipsis-nav">
             <div class="ellipse-container">
@@ -54,7 +49,8 @@
         <%- include("partials/skills") %>
 
       </section>
-      <section id="background" class="light-bg my-container clearfix">
+
+      <section id="background" class="my-container">
         <img class="line-text-header" src="images/line-text-headers/background/line-light.svg" />
 
         <div class="flex-between my-container">
@@ -88,7 +84,7 @@
               <br />
               <br />
               Between those 3 P's (problems, people, & productivity), I fit in
-              various interests, hobbies and passion projects (4th and 5th P
+              various interests, hobbies and passion projects (4th and 5th P's
               maybe?). I'm unapologetically Southern Californian, so I'll refer
               to my interests as I normally would.
               <br />
@@ -100,7 +96,7 @@
               fan; One Piece, Fullmetal Alchemist: Brotherhood and Gurren Lagann
               are my favorites, and each are s i c k (sorry, SoCal slang. Told
               you I'd do it!). Watching anime, this brings me to one of my
-              passion projects: learning to speak Japanese!
+              passion projects: learning Japanese!
               <br />
               <br />
               <div class="current-projects">
@@ -137,8 +133,7 @@
       <section id="lakers">
         <img src="images/lakers.svg" />
       </section>
-
-      <section id="music" class="dark-bg my-container">
+      <section id="music" class="my-container">
         <img class="line-text-header" src="images/line-text-headers/spotify-playlists/line-dark.svg" />
 
         <div class="flex-between my-container">
@@ -155,7 +150,7 @@
             </div>
           </div>
 
-          <div class="container">
+          <div class="my-container">
             <div class="dropdown">
               <div class="playlist-text">
                 <div>
@@ -188,6 +183,9 @@
             </div>
           </div>
 
+          <!-- temp fix to make flexbox work for music table -->
+          <div style="visibility: hidden;"></div>
+
           <div class="vertical">
             Music Interests
           </div>
@@ -197,7 +195,7 @@
       </section>
     </div>
 
-    <footer class="dark-bg my-container footer">
+    <footer class="my-container footer">
       <img class="line-text-header" src="images/line-text-headers/get-in-touch/line-dark.svg" />
 
       <!-- TODO: this isn't centered correctly -->

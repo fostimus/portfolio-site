@@ -28,10 +28,17 @@
 /* ==========================
     work styles
 ========================== */
-body {
+body,
+html {
   background-color: #272727;
   color: #f0f0f0;
   font: normal normal normal 14px "Lato", sans-serif;
+}
+.nav-links a {
+  color: #f0f0f0;
+}
+.nav-links a:hover {
+  color: #2bc9af;
 }
 .flex-column {
   display: flex;
@@ -45,15 +52,16 @@ body {
   position: relative;
   top: 550px;
 }
-.skills {
+.skills-container {
   position: relative;
+  top: 120px;
 }
 /* ==========================
     project
 ========================== */
 #background-work {
   position: relative;
-  top: 350px;
+  top: 320px;
 }
 .background-project {
   display: flex;
@@ -64,15 +72,23 @@ body {
 .background-project:last-child {
   margin: 0 auto;
 }
+.background-project img {
+  max-width: 620px;
+}
 .flex-reverse {
   flex-direction: row-reverse;
 }
 .desc {
   align-self: center;
   display: flex;
-  height: 200px;
+  max-width: 500px;
+  height: 15rem;
+  height: inherit;
   flex-flow: column wrap;
   justify-content: space-evenly;
+}
+.desc p {
+  text-align: justify;
 }
 @media (max-width: 1000px) {
   .background-project {

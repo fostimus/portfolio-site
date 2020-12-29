@@ -67,7 +67,7 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  top: 150px;
+  top: 100px;
 }
 #profile .ellipse[href="#profile"] {
   background-color: #464646;
@@ -85,12 +85,13 @@ body {
 .mobile-flex {
   justify-content: space-around;
 }
-.skills {
+.skills-container {
   position: relative;
-  top: 0;
-  margin: 50px auto;
+  top: 70px;
+  max-width: 800px;
+  margin: 0 auto;
 }
-.skills li {
+.skill {
   color: #272727;
   background-color: #aeaeae;
 }
@@ -99,7 +100,7 @@ body {
 ========================== */
 #background {
   position: relative;
-  top: 150px;
+  top: 170px;
 }
 #background .ellipse[href="#background"] {
   background-color: #464646;
@@ -137,7 +138,7 @@ body {
 }
 #lakers {
   position: relative;
-  top: 150px;
+  top: 100px;
 }
 #lakers img {
   display: block;
@@ -205,10 +206,13 @@ body {
 /* end dropdown css */
 #music {
   position: relative;
-  top: 150px;
+  top: 100px;
   background-color: #272727;
   color: #f0f0f0;
-  padding-bottom: 30px;
+  padding-bottom: 120px;
+}
+#music a:hover {
+  color: #f0f0f0;
 }
 #music .ellipsis-nav {
   color: #f0f0f0;
@@ -222,11 +226,7 @@ body {
   display: inline-block;
   text-transform: uppercase;
 }
-#music a {
-  color: #f0f0f0;
-}
-#music h3,
-#music a:hover {
+#music h3 {
   color: #2bc9af;
 }
 .table {
@@ -240,6 +240,7 @@ body {
   color: #aeaeae;
   text-transform: uppercase;
   padding: 5px;
+  text-align: left;
 }
 .table tr + tr:hover {
   border-radius: 10px;
@@ -283,7 +284,7 @@ body {
 }
 .footer {
   position: relative;
-  top: 150px;
+  top: 100px;
 }
 /* ==========================
     mobile styling

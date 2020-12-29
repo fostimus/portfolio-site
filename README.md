@@ -2,6 +2,10 @@
 
 -   Use `@media` queries to do some creative swapping of styles to site.
 -   Separate content from HTML (maybe EJS/templates?)
+-   switch to JAM stack, especially because there is no need to dynamically get data at runtime. Maybe Next.js?
+    -   github data (via github API)
+    -   spotify data (via spotify API)
+    -   
 
 ## Notes
 

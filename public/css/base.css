@@ -31,6 +31,10 @@
 * {
   box-sizing: border-box;
 }
+html,
+body {
+  height: 100%;
+}
 body {
   transition: all 1.5s;
 }
@@ -38,37 +42,35 @@ a,
 a:hover {
   text-decoration: none;
 }
-.dark-bg a {
-  color: #aeaeae;
-}
-.dark-bg a:hover {
+a {
   color: #2bc9af;
 }
-.light-bg a {
-  color: #2bc9af;
-}
-.light-bg a:hover {
+a:hover {
   color: #a2ebdf;
 }
 h1 {
-  font: normal bold 48px/54px "Lato", sans-serif;
+  font: normal bold 54px/62px "Lato", sans-serif;
 }
 h2 {
-  font: normal bold 36px/44px "Lato", sans-serif;
+  font: normal bold 48px/52px "Lato", sans-serif;
 }
 h3 {
-  font: normal bold 24px/28px "Lato", sans-serif;
+  font: normal bold 36px/40px "Lato", sans-serif;
 }
 h4 {
-  font: normal normal 16px/19px "Lato", sans-serif;
+  font: normal normal 24px/30px "Lato", sans-serif;
   color: #aeaeae;
 }
+p {
+  font: normal normal 16px/20px "Lato", sans-serif;
+}
 .my-container {
+  padding: 0 1em;
   text-align: center;
   position: relative;
 }
 .limited-width {
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
 }
 .limited-width h1,
@@ -89,7 +91,7 @@ h4 {
   top: -20px;
 }
 .btns-container {
-  width: 400px;
+  max-width: 400px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -134,20 +136,47 @@ h4 {
 /* ==========================
     skills styling
 ========================== */
-.skills {
-  display: inline-block;
-  max-width: 1000px;
-  margin: 0 auto;
+.skills-container h3 {
+  margin-bottom: 20px;
+  text-align: center;
 }
-.skills li {
+.skills {
+  display: inline-flex;
+  max-width: 1000px;
+  min-height: 250px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+.skill {
   display: inline-block;
   height: 37px;
   font-family: "LatoBold", sans-serif;
   background-color: #464646;
   border-radius: 15px;
   width: 160px;
-  padding-top: 10px;
   margin: 10px;
+  transition: 0.7s all;
+}
+.skill .skill-name {
+  font-size: 20px;
+  height: 37px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.7s all;
+}
+.skill:hover .skill-items {
+  visibility: visible;
+  opacity: 1;
+}
+.skill .skill-items {
+  transition: 0.7s all;
+  visibility: hidden;
+  opacity: 0;
+}
+.skill-item {
+  margin: 5px 0;
+  text-align: center;
 }
 /* ==========================
     footer - contact me styling
@@ -165,15 +194,16 @@ h4 {
 .copyright {
   margin-top: 150px;
   font-size: 12px;
+  text-align: center;
 }
 /* ==========================
     media queries
 ========================== */
 @media (min-width: 769px) {
   .enable-sticky-footer {
-    min-height: -250vh;
+    min-height: calc(100vh - 350px);
   }
-  .container {
+  .my-container {
     width: 100%;
     margin: 0 auto;
     text-align: center;
@@ -199,13 +229,20 @@ h4 {
 }
 @media screen and (max-width: 769px) {
   h1 {
-    font-size: 28px;
+    font-size: 32px;
   }
   h2 {
-    font-size: 24px;
+    font-size: 28px;
   }
   h3 {
+    font-size: 22px;
+  }
+  h4 {
     font-size: 18px;
+  }
+  p {
+    font-size: 10px;
+    max-width: 350px;
   }
   .social-links img {
     width: 20px;

@@ -10,19 +10,16 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/base.css" />
     <link rel="stylesheet" type="text/css" href="css/work.css" />
+    <script defer src="js/index.js"></script>
+    <script defer src="js/skills.js"></script>
+    <script src="js/less.min.js" type="text/javascript"></script>
   </head>
 
   <body>
     <main class="main">
       <div class="enable-sticky-footer">
-        <nav class="dark-bg nav-bar">
-          <ul>
-            <li class="nav-item"><a href="/">Work</a></li>
-            <li class="nav-item"><a href="/about">About</a></li>
-            <li class="nav-item"><a href="#" data-toggle="modal" data-target="#otw">Resume</a></li>
-          </ul>
-          <%- include('./partials/otw-modal', {modal: {name: "otw", title: "On the way!", body: "This feature is not yet complete. It will be here soon :)"}}) %>
-        </nav>
+
+        <%- include("partials/nav", {style: "nav-links"}) %>
 
         <section class="flex-column my-container">
           <div class="limited-width">
@@ -38,13 +35,51 @@
 
         </section>
 
-        <!-- need to change "backend-work" to just "work" or "projects" -->
-        <section id="background-work" class="dark-bg container">
+        <section id="background-work" class="my-container">
           <img class="line-text-header" src="images/line-text-headers/projects/line-dark.svg" />
 
           <%- include("partials/project",
           {
               layout: null,
+              id: "give-it-a-shot-v2",
+              title: "Give It A Shot V2",
+              date: "December 2020 - Ongoing",
+              btns: [
+              {
+                link: "https://giveitashotv2.herokuapp.com/",
+                text: "Find your drink"
+              },
+                {
+                  link: "https://github.com/fostimus/give-it-a-shot-v2",
+                  text: "Check out the code"
+                }
+              ],
+              image: "images/projects/give-it-a-shot-v2.png"
+          }) %>
+
+          <%- include("partials/project",
+          {
+              layout: "flex-reverse",
+              id: "give-it-a-shot",
+              title: "Give It A Shot",
+              date: "November 2020",
+              btns: [
+              {
+                link: "https://give-it-a-shot-client.herokuapp.com/",
+                text: "Find your drink"
+              },
+                {
+                  link: "https://github.com/fostimus/give-it-a-shot",
+                  text: "Check out the code"
+                }
+              ],
+              image: "images/projects/give-it-a-shot.png"
+          }) %>
+
+          <%- include("partials/project",
+          {
+              layout: null,
+              id: "better-boothang",
               title: "Better BooThang",
               date: "October 2020",
               btns: [
@@ -59,6 +94,7 @@
           <%- include("partials/project",
           {
               layout: "flex-reverse",
+              id: "concentration",
               title: "Concentration",
               date: "October 2020",
               btns: [
@@ -77,6 +113,7 @@
           <%- include("partials/project",
           {
               layout: null,
+              id: "ninja-board",
               title: "Giveback Ninja Website Modernization",
               date: "April 2020 - September 2020",
               btns: [
@@ -90,7 +127,7 @@
         </section>
       </div>
 
-      <footer class="dark-bg container footer">
+      <footer class="dark-bg my-container footer">
         <img class="line-text-header" src="images/line-text-headers/get-in-touch/line-dark.svg" />
 
         <h2 class="limited-width">

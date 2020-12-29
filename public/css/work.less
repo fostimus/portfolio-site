@@ -4,10 +4,21 @@
     work styles
 ========================== */
 
-body {
+body,
+html {
   background-color: @primary-background-color;
   color: @primary-text-color;
   font: @body-font;
+}
+
+.nav-links {
+  a {
+    color: @primary-text-color;
+  }
+
+  a:hover {
+    color: @text-hover-color;
+  }
 }
 
 .flex-column {
@@ -24,9 +35,9 @@ body {
   top: 550px;
 }
 
-.skills {
+.skills-container {
   position: relative;
-  // top: 300px;
+  top: 120px;
 }
 
 /* ==========================
@@ -34,7 +45,7 @@ body {
 ========================== */
 #background-work {
   position: relative;
-  top: 350px;
+  top: 320px;
 }
 
 .background-project {
@@ -46,6 +57,10 @@ body {
   &:last-child {
     margin: 0 auto;
   }
+
+  img {
+    max-width: 620px;
+  }
 }
 
 .flex-reverse {
@@ -55,9 +70,15 @@ body {
 .desc {
   align-self: center;
   display: flex;
-  height: 200px;
+  max-width: 500px;
+  height: 15rem;
+  height: inherit;
   flex-flow: column wrap;
   justify-content: space-evenly;
+
+  p {
+    text-align: justify;
+  }
 }
 
 @media (max-width: 1000px) {

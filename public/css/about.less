@@ -6,7 +6,7 @@
 @light-ellipse: @white;
 
 /* vertical offset */
-@vertical-offset: 150px;
+@vertical-offset: 100px;
 @max-limited-width: 800px;
 
 body {
@@ -59,7 +59,7 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  top: @vertical-offset;
+  top: 100px;
 
   .ellipse[href="#profile"] {
     background-color: @dark-ellipse;
@@ -82,15 +82,16 @@ body {
   justify-content: space-around;
 }
 
-.skills {
+.skills-container {
   position: relative;
-  top: 0;
-  margin: 50px auto;
+  top: 70px;
+  max-width: 800px;
+  margin: 0 auto;
+}
 
-  li {
-    color: @secondary-skill-text-color;
-    background-color: @secondary-skill-background-color;
-  }
+.skill {
+  color: @secondary-skill-text-color;
+  background-color: @secondary-skill-background-color;
 }
 
 /* ==========================
@@ -98,7 +99,7 @@ body {
 ========================== */
 #background {
   position: relative;
-  top: @vertical-offset;
+  top: 170px;
 
   .ellipse[href="#background"] {
     background-color: @dark-ellipse;
@@ -230,7 +231,11 @@ body {
   top: @vertical-offset;
   background-color: @primary-background-color;
   color: @primary-text-color;
-  padding-bottom: 30px;
+  padding-bottom: 120px;
+
+  a:hover {
+    color: @white;
+  }
 
   .ellipsis-nav {
     color: @light-ellipse;
@@ -246,17 +251,11 @@ body {
     text-transform: uppercase;
   }
 
-  a {
-    color: @primary-text-color;
-  }
-
-  h3,
-  a:hover {
+  h3 {
     color: @text-hover-color;
   }
 }
 
-// TODO: table header style gets messed up after spotify data gets pulled in
 .table {
   margin: 0 auto;
   max-width: @music-table-width;
@@ -269,6 +268,7 @@ body {
     color: @secondary-text-color;
     text-transform: uppercase;
     padding: 5px;
+    text-align: left;
   }
 
   tr + tr:hover {
