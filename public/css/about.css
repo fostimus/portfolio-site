@@ -236,11 +236,14 @@ body {
 .my-table td {
   padding: 10px;
 }
+.my-table td,
+.my-table th {
+  text-align: left;
+}
 .my-table th {
   color: #aeaeae;
   text-transform: uppercase;
   padding: 5px;
-  text-align: left;
 }
 .my-table tr + tr:hover {
   border-radius: 10px;
