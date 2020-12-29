@@ -231,7 +231,11 @@ body {
   top: @vertical-offset;
   background-color: @primary-background-color;
   color: @primary-text-color;
-  padding-bottom: 30px;
+  padding-bottom: 120px;
+
+  a:hover {
+    color: @white;
+  }
 
   .ellipsis-nav {
     color: @light-ellipse;
@@ -247,12 +251,7 @@ body {
     text-transform: uppercase;
   }
 
-  a {
-    color: @primary-text-color;
-  }
-
-  h3,
-  a:hover {
+  h3 {
     color: @text-hover-color;
   }
 }
