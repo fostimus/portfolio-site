@@ -2,13 +2,13 @@ require("dotenv").config();
 const express = require("express"); // Express web server framework
 // HTTP client; deprecated feb 11, 2020. Should use something (e.g. axios)
 const request = require("request"); // "Request" library
+const axios = require("axios");
 const cors = require("cors");
 const querystring = require("querystring");
 const cookieParser = require("cookie-parser");
 // TODO: set up SSL on bluehost with DNS
 // const forceSsl = require("force-ssl-heroku");
 const utils = require("./utility");
-const axios = require("axios");
 
 const app = express();
 
@@ -23,6 +23,7 @@ app
 
 const githubApiUrl = "https://api.github.com";
 
+const spotifyUserId = "1218307071";
 const client_id = process.env.SPOTIFY_CLIENT_ID; // Your client id
 const client_secret = process.env.SPOTIFY_CLIENT_SECRET; // Your secret
 const redirect_uri =
@@ -46,6 +47,10 @@ const generateRandomString = function(length) {
   return text;
 };
 
+/**
+ * app state
+ */
+let state = {};
 const stateKey = "spotify_auth_state";
 
 //serve html file
@@ -62,24 +67,13 @@ app.get("/spotify", function(req, res) {
 });
 
 app.get("/login", function(req, res) {
-  const state = generateRandomString(16);
+  state.login = generateRandomString(16);
   // this line sets the cookie to the randomly generated state
-  res.cookie(stateKey, state);
-
-  console.log(state);
+  res.cookie(stateKey, state.login);
 
   // your application requests authorization
   const scope = "user-read-private user-read-email playlist-read-private";
-  console.log(
-    "https://accounts.spotify.com/authorize?" +
-      querystring.stringify({
-        response_type: "code",
-        client_id: client_id,
-        scope: scope,
-        redirect_uri: redirect_uri,
-        state: state
-      })
-  );
+
   res.redirect(
     "https://accounts.spotify.com/authorize?" +
       querystring.stringify({
@@ -87,7 +81,7 @@ app.get("/login", function(req, res) {
         client_id: client_id,
         scope: scope,
         redirect_uri: redirect_uri,
-        state: state
+        state: state.login
       })
   );
 });
@@ -101,11 +95,11 @@ app.get("/callback", function(req, res) {
 
   //req.query === accessing query parameters from URL
   const code = req.query.code || null;
-  const state = req.query.state || null;
+  const loginState = req.query.state || null;
   const storedState = req.cookies ? req.cookies[stateKey] : null;
 
   // this if statement checks that state from the request matches the state from the cookie on the user's browser
-  if (state === null || state !== storedState) {
+  if (loginState === null || loginState !== storedState) {
     //not sure where the HTML alert comes from when this error is thrown
     res.redirect(
       "/#" +
@@ -134,7 +128,6 @@ app.get("/callback", function(req, res) {
     };
   }
 
-  console.log(authOptions);
   request.post(authOptions, function(error, response, body) {
     if (!error && response.statusCode === 200) {
       access_token = body.access_token;
@@ -167,21 +160,39 @@ app.get("/callback", function(req, res) {
   });
 });
 
-app.get("/playlists", function(req, res) {
+app.get("/playlists/first", async function(req, res) {
+  if (state.playlists) {
+    res.json(state.playlists[0]);
+  } else {
+    const playlists = await getPlaylists();
+    res.json(playlists[0]);
+  }
+});
+
+app.get("/playlists", async function(req, res) {
+  if (state.playlists) {
+    res.json(state.playlists);
+  } else {
+    res.json(await getPlaylists());
+  }
+});
+
+async function getPlaylists() {
   // use the access token to access the Spotify Web API
-  const playlists = {
-    url: "https://api.spotify.com/v1/users/1218307071/playlists",
+  const playlistsRequest = {
+    method: "get",
+    url: "https://api.spotify.com/v1/users/" + spotifyUserId + "/playlists",
     headers: {
       Authorization: "Bearer " + access_token
-    },
-    json: true
+    }
   };
 
-  request.get(playlists, function(error, response, body) {
-    console.log(body);
-    res.json(body);
-  });
-});
+  const response = await axios(playlistsRequest);
+
+  state.playlists = response.data.items;
+
+  return state.playlists;
+}
 
 app.get("/tracks", function(req, res) {
   // use the access token to access the Spotify Web API

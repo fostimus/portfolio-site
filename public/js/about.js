@@ -1,6 +1,10 @@
 let currentPlaylistName = document.querySelector("#playlist-name");
 
 /**
+ * Load first playlist
+ */
+
+/**
  * toggle dropdown
  */
 const toggleDropdown = e => {
@@ -10,11 +14,7 @@ const toggleDropdown = e => {
     fetch("/playlists")
       .then(response => response.json())
       .then(data => {
-        const playlists = data.items;
-
-        console.log("playlists: " + typeof playlists);
-        console.log("currentPlaylistName: " + typeof currentPlaylistName);
-        console.log("e:" + typeof e);
+        const playlists = data;
 
         playlists.map(playlist => {
           // get playlist and create playlist button object
