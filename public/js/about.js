@@ -145,7 +145,7 @@ fetch("/playlists/first")
 
 function removePreviousPlaylist() {
   // remove table data
-  const tbody = document.querySelector(".table tbody");
+  const tbody = document.querySelector(".my-table tbody");
   const tbodyChildren = tbody.children;
 
   // if more than just th in table, remove all td rows
