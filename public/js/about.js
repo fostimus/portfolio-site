@@ -7,7 +7,7 @@ const toggleDropdown = e => {
   let dropdownContainer = document.querySelector(".dropdown-content");
 
   if (dropdownContainer.children.length === 0) {
-    fetch("/playlists")
+    fetch("/spotify/playlists")
       .then(response => response.json())
       .then(data => {
         const playlists = data;
@@ -91,7 +91,7 @@ const playlistClick = (title, url, playlistId, imageUrl, description) => {
   }
 
   //fetch track data for that playlist
-  fetch("/tracks?playlistId=" + playlistId)
+  fetch("/spotify/tracks?playlistId=" + playlistId)
     .then(response => response.json())
     .then(data => {
       data.forEach(track => {
@@ -122,7 +122,7 @@ const playlistClick = (title, url, playlistId, imageUrl, description) => {
  * Load first playlist
  */
 
-fetch("/playlists/first")
+fetch("/spotify/playlists/first")
   .then(response => response.json())
   .then(data => {
     let imageUrl = null;
