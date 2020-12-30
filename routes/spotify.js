@@ -4,7 +4,9 @@ const request = require("request"); // "Request" library
 const axios = require("axios");
 const querystring = require("querystring");
 const utils = require("../utility");
-// TODO: set up SSL on bluehost with DNS
+
+// spotify data
+const scope = "user-read-private user-read-email playlist-read-private";
 
 const spotifyUserId = "1218307071";
 const client_id = process.env.SPOTIFY_CLIENT_ID; // Your client id
@@ -14,20 +16,15 @@ const redirect_uri =
     ? "https://fostimus-portfolio.herokuapp.com/spotify/callback"
     : "http://localhost:" + process.env.PORT + "/spotify/callback"; // Your redirect uri
 
-/**
- * Generates a random string containing numbers and letters
- * @param  {number} length The length of the string
- * @return {string} The generated string
- */
-const generateRandomString = function(length) {
-  let text = "";
-  const possible =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-
-  for (let i = 0; i < length; i++) {
-    text += possible.charAt(Math.floor(Math.random() * possible.length));
+const spotifyAuthObject = {
+  baseUrl: "https://accounts.spotify.com/authorize?",
+  options: {
+    response_type: "code",
+    client_id: client_id,
+    scope: scope,
+    redirect_uri: redirect_uri,
+    state: null
   }
-  return text;
 };
 
 /**
@@ -41,22 +38,13 @@ router.get("/", function(req, res) {
 });
 
 router.get("/login", function(req, res) {
-  state.login = generateRandomString(16);
+  state.login = utils.generateRandomString(16);
   // this line sets the cookie to the randomly generated state
   res.cookie(stateKey, state.login);
 
-  // your application requests authorization
-  const scope = "user-read-private user-read-email playlist-read-private";
-
+  spotifyAuthObject.options.state = state.login;
   res.redirect(
-    "https://accounts.spotify.com/authorize?" +
-      querystring.stringify({
-        response_type: "code",
-        client_id: client_id,
-        scope: scope,
-        redirect_uri: redirect_uri,
-        state: state.login
-      })
+    spotifyAuthObject.baseUrl + querystring.stringify(spotifyAuthObject.options)
   );
 });
 
@@ -242,4 +230,4 @@ router.get("/refresh_token", function(req, res) {
   });
 });
 
-module.exports = router;
+module.exports = { router, getPlaylists };

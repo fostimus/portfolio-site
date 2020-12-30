@@ -1,29 +1,9 @@
 require("dotenv").config();
-const express = require("express"); // Express web server framework
+const express = require("express");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const app = express();
 const routes = require("./routes");
-const mongoose = require("mongoose");
-
-/**
- * Set up mongoose
- */
-
-const connectionUrl =
-  "mongodb+srv://fostimus:" +
-  process.env.MONGO_PASSWORD +
-  "@fostimus-atlas.nzwwr.mongodb.net/portfolio?retryWrites=true&w=majority";
-mongoose.connect(connectionUrl, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
-
-const db = mongoose.connection;
-db.on("error", console.error.bind(console, "connection error:"));
-db.once("open", function() {
-  console.log("Connected to Mongo Atlas DB at: " + connectionUrl);
-});
 
 app.set("view engine", "ejs");
 

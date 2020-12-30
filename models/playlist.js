@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 let playlistSchema = new Schema({
   name: String,
   url: String,
-  id: String,
+  spotifyId: String,
   imageUrl: String,
   description: String,
   tracks: [{ name: String, artists: String, length: String }]
