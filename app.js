@@ -14,31 +14,14 @@ app
   .use(cookieParser());
 
 app.use("/spotify", routes.spotify);
+app.use("/github", routes.github);
 
-const githubApiUrl = "https://api.github.com";
-
-//serve html file
 app.get("/", function(req, res) {
   res.render("index");
 });
 
 app.get("/about", function(req, res) {
   res.render("about");
-});
-
-app.get("/repo/:id", function(req, res) {
-  // rate limits are pretty low for non-authenticated requests.
-  const request = {
-    method: "get",
-    url: githubApiUrl + "/repos/fostimus/" + req.params.id,
-    headers: { "User-Agent": "fostimus" }
-  };
-
-  axios(request)
-    .then(response => {
-      res.json(response.data);
-    })
-    .catch(e => console.error(e));
 });
 
 app.get("/resume", function(req, res) {

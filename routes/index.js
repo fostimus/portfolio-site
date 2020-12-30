@@ -1,3 +1,4 @@
 module.exports = {
-  spotify: require("./spotify")
+  spotify: require("./spotify"),
+  github: require("./github")
 };
