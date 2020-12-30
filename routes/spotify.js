@@ -156,35 +156,33 @@ async function getPlaylists() {
   return state.playlists;
 }
 
-router.get("/tracks", function(req, res) {
-  // use the access token to access the Spotify Web API
-  const tracks = {
-    url:
-      "https://api.spotify.com/v1/playlists/" +
-      req.query.playlistId +
-      "/tracks",
+router.get("/tracks", async function(req, res) {
+  res.json(await getTracks(req.query.playlistId));
+});
+
+async function getTracks(playlistId) {
+  const tracksRequest = {
+    method: "get",
+    url: "https://api.spotify.com/v1/playlists/" + playlistId + "/tracks",
     headers: {
       Authorization: "Bearer " + access_token
-    },
-    json: true
+    }
   };
 
-  request.get(tracks, function(error, response, body) {
-    const formattedTracks = body.items.map(track => {
-      const name = track.track.name;
-      const artists = utils.getArtists(track.track.artists);
-      const length = utils.msToTime(track.track.duration_ms);
+  const trackData = await axios(tracksRequest);
 
-      return {
-        name,
-        artists,
-        length
-      };
-    });
+  return trackData.data.items.map(track => {
+    const name = track.track.name;
+    const artists = utils.getArtists(track.track.artists);
+    const length = utils.msToTime(track.track.duration_ms);
 
-    res.json(formattedTracks);
+    return {
+      name,
+      artists,
+      length
+    };
   });
-});
+}
 
 router.get("/play", function(req, res) {
   // use the access token to access the Spotify Web API
@@ -230,4 +228,4 @@ router.get("/refresh_token", function(req, res) {
   });
 });
 
-module.exports = { router, getPlaylists };
+module.exports = { router, getPlaylists, getTracks };
