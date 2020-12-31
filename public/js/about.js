@@ -57,7 +57,7 @@ const playlistClick = (
   // set playlist description
   if (description) {
     const playlistDescription = document.querySelector("#playlist-description");
-    playlistDescription.textContent = description;
+    playlistDescription.innerHTML = description;
   }
 
   tracks.forEach(track => {
