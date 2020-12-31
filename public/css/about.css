@@ -326,9 +326,6 @@ body {
   #music .playlist-title {
     text-align: center;
   }
-  #music .flex-between {
-    gap: 0;
-  }
   .ellipsis-nav {
     display: none;
   }
