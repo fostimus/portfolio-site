@@ -9,6 +9,7 @@ const getTracks = spotifyRoutes.getTracks;
  * Set up mongoose
  */
 const connectionUrl = process.env.MONGO_CONN;
+console.log(connectionUrl);
 mongoose.connect(connectionUrl, {
   useNewUrlParser: true,
   useUnifiedTopology: true
