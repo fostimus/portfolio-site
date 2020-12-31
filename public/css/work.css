@@ -25,6 +25,7 @@
 /* text colors */
 /* skill colors */
 /* length variables */
+/* responsive breakpoints */
 /* ==========================
     work styles
 ========================== */
@@ -50,7 +51,7 @@ html {
 }
 .footer {
   position: relative;
-  top: 550px;
+  top: 420px;
 }
 .skills-container {
   position: relative;
@@ -67,13 +68,22 @@ html {
   display: flex;
   justify-content: space-around;
   width: 90%;
-  margin: 0 auto 100px;
+  padding: 50px 0;
+  margin: auto;
+  height: 550px;
 }
 .background-project:last-child {
   margin: 0 auto;
 }
 .background-project img {
   max-width: 620px;
+  max-height: 550px;
+  box-shadow: 0px 0px 13px #f0f0f0;
+}
+.project-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .flex-reverse {
   flex-direction: row-reverse;
@@ -81,19 +91,24 @@ html {
 .desc {
   align-self: center;
   display: flex;
-  max-width: 500px;
-  height: 15rem;
-  height: inherit;
+  max-width: 650px;
+  height: calc(550px * 0.7);
   flex-flow: column wrap;
   justify-content: space-evenly;
 }
 .desc p {
   text-align: justify;
 }
+.desc-action {
+  height: 45%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+}
 @media (max-width: 1000px) {
   .background-project {
     flex-direction: column;
-    margin-bottom: 80px;
+    margin-bottom: 100px;
   }
   .desc {
     margin-bottom: 30px;

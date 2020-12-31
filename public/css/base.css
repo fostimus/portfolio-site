@@ -25,6 +25,7 @@
 /* text colors */
 /* skill colors */
 /* length variables */
+/* responsive breakpoints */
 /* ==========================
     universal styles
 ========================== */
@@ -136,13 +137,18 @@ p {
 /* ==========================
     skills styling
 ========================== */
+.skills-container {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+}
 .skills-container h3 {
   margin-bottom: 20px;
   text-align: center;
 }
 .skills {
   display: inline-flex;
-  max-width: 1000px;
+  width: 100%;
   min-height: 300px;
   margin: 0 auto;
   align-items: flex-start;
@@ -196,6 +202,9 @@ p {
   font-size: 12px;
   text-align: center;
 }
+.copyright p {
+  margin: 0 auto;
+}
 /* ==========================
     media queries
 ========================== */
@@ -216,15 +225,34 @@ p {
   width: 100%;
   top: 68px;
   position: absolute;
-  font-size: 18px;
-  line-height: 22px;
+  font-size: 20px;
+  line-height: 24px;
   text-align: center;
 }
-/* anything larger than an iPad */
+/* anything larger than mobile */
 @media (min-width: 769px) {
   .nav-item {
     display: inline;
     margin: 0 50px;
+  }
+}
+@media screen and (max-width: 1225px) {
+  h1 {
+    font-size: 44px;
+  }
+  h2 {
+    font-size: 36px;
+  }
+  h3 {
+    font-size: 28px;
+  }
+  h4 {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 1030px) {
+  .footer h1 {
+    text-align: center;
   }
 }
 @media screen and (max-width: 769px) {
@@ -247,11 +275,14 @@ p {
   .social-links img {
     width: 20px;
   }
-  .skills li {
+  .skill:hover .skill-items {
+    width: 100px;
+  }
+  .skills .skill-name {
     font-size: 12px;
-    height: 25px;
-    width: 130px;
-    padding-top: 5px;
+  }
+  .skills .skill {
+    margin: 3px;
   }
   .social-links {
     width: 300px;
