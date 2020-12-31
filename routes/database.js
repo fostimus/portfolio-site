@@ -8,10 +8,7 @@ const getTracks = spotifyRoutes.getTracks;
 /**
  * Set up mongoose
  */
-const connectionUrl =
-  "mongodb+srv://fostimus:" +
-  process.env.MONGO_PASSWORD +
-  "@fostimus-atlas.nzwwr.mongodb.net/portfolio?retryWrites=true&w=majority";
+const connectionUrl = process.env.MONGO_CONN;
 mongoose.connect(connectionUrl, {
   useNewUrlParser: true,
   useUnifiedTopology: true
