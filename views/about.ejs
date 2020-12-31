@@ -17,8 +17,8 @@
     <div class="enable-sticky-footer">
       <%- include("partials/nav", {style: "nav-links"}) %>
 
-      <section id="profile" class="container">
-        <div class="flex-between container">
+      <section id="profile" class="my-container">
+        <div class="flex-between my-container">
           <div class="ellipsis-nav">
             <div class="ellipse-container">
               <a class="ellipse" href="#profile"></a>
@@ -31,8 +31,8 @@
               <a class="ellipse" href="#music"></a>
             </div>
           </div>
-          <div class="mobile-flex container">
-            <div>
+          <div class="mobile-flex my-container">
+            <div class="tagline-container">
               <h1 class="tagline">
                 Technology should enable us to do more; not sap our attention
                 and serendipity. Read on to find what my "more" currently is!
@@ -49,10 +49,10 @@
 
       </section>
 
-      <section id="background" class="container clearfix">
+      <section id="background" class="my-container">
         <img class="line-text-header" src="images/line-text-headers/background/line-light.svg" />
 
-        <div class="flex-between container">
+        <div class="flex-between my-container">
           <div class="ellipsis-nav">
             <div class="ellipse-container">
               <a class="ellipse" href="#profile"></a>
@@ -135,10 +135,10 @@
         <img src="images/lakers.svg" />
       </section>
 
-      <section id="music" class="container">
+      <section id="music" class="my-container">
         <img class="line-text-header" src="images/line-text-headers/spotify-playlists/line-dark.svg" />
 
-        <div class="flex-between container">
+        <div class="flex-between my-container">
           <div class="ellipsis-nav">
             <div class="ellipse-container">
               <a class="ellipse" href="#profile"></a>
@@ -152,7 +152,7 @@
             </div>
           </div>
 
-          <div class="container">
+          <section id="playlists">
             <div class="dropdown">
               <div class="playlist-text">
                 <div>
@@ -183,7 +183,7 @@
                 </tbody>
               </table>
             </div>
-          </div>
+          </section>
 
           <!-- temp fix to make flexbox work for music table -->
           <div style="visibility: hidden;"></div>
@@ -197,7 +197,7 @@
       </section>
     </div>
 
-    <footer class="container footer">
+    <footer class="my-container footer">
       <img class="line-text-header" src="images/line-text-headers/get-in-touch/line-dark.svg" />
 
       <!-- TODO: this isn't centered correctly -->
