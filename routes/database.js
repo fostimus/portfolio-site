@@ -9,7 +9,6 @@ const getTracks = spotifyRoutes.getTracks;
  * Set up mongoose
  */
 const connectionUrl = process.env.MONGO_CONN;
-console.log(connectionUrl);
 mongoose.connect(connectionUrl, {
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -18,7 +17,7 @@ mongoose.connect(connectionUrl, {
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", function() {
-  console.log("Connected to Mongo Atlas DB at: " + connectionUrl);
+  console.log("Connected to Mongo Atlas DB");
 });
 
 router.post("/playlists", async function(req, res) {
