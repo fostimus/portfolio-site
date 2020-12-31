@@ -32,7 +32,8 @@ const playlistClick = (
   playlistId,
   imageUrl,
   description,
-  tracks
+  tracks,
+  toggleDropdown
 ) => {
   removePreviousPlaylist();
   setPlaylistLink(url);
@@ -79,7 +80,9 @@ const playlistClick = (
     tbody.appendChild(tr);
   });
 
-  document.querySelector(".dropdown-content").classList.toggle("show");
+  if (toggleDropdown) {
+    document.querySelector(".dropdown-content").classList.toggle("show");
+  }
 };
 
 /**
@@ -104,7 +107,8 @@ const playlistClick = (
         playlist.id,
         playlist.imageUrl,
         playlist.description,
-        playlist.tracks
+        playlist.tracks,
+        true
       );
     });
 
@@ -114,7 +118,7 @@ const playlistClick = (
   // immediately display first playlist to user
   const { name, url, id, imageUrl, description, tracks } = playlists[0];
 
-  playlistClick(name, url, id, imageUrl, description, tracks);
+  playlistClick(name, url, id, imageUrl, description, tracks, false);
 })();
 
 /**
