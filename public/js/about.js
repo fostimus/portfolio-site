@@ -1,48 +1,10 @@
-let currentPlaylistName = document.querySelector("#playlist-name");
-
 /**
  * toggle dropdown
  */
-const toggleDropdown = e => {
-  let dropdownContainer = document.querySelector(".dropdown-content");
 
-  if (dropdownContainer.children.length === 0) {
-    fetch("/playlists")
-      .then(response => response.json())
-      .then(data => {
-        const playlists = data;
-
-        playlists.map(playlist => {
-          // get playlist and create playlist button object
-          const option = document.createElement("button");
-          const title = document.createTextNode(playlist.name);
-          let imageUrl = null;
-
-          // if the playlist image is set, set the url
-          if (playlist.images.length === 1) {
-            imageUrl = playlist.images[0].url;
-          }
-
-          option.appendChild(title);
-          // attach onclick method to trigger action on choosing a playlist
-          option.addEventListener("click", () =>
-            playlistClick(
-              playlist.name,
-              playlist.external_urls.spotify,
-              playlist.id,
-              imageUrl,
-              playlist.description
-            )
-          );
-
-          dropdownContainer.appendChild(option);
-        });
-      });
-  }
+document.querySelector(".dropbtn").addEventListener("click", e => {
   document.querySelector(".dropdown-content").classList.toggle("show");
-};
-
-document.querySelector(".dropbtn").addEventListener("click", toggleDropdown);
+});
 
 /**
  * Close Dropdown
@@ -64,7 +26,15 @@ window.addEventListener("click", () => {
   }
 });
 
-const playlistClick = (title, url, playlistId, imageUrl, description) => {
+const playlistClick = (
+  title,
+  url,
+  playlistId,
+  imageUrl,
+  description,
+  tracks,
+  toggleDropdown
+) => {
   removePreviousPlaylist();
   setPlaylistLink(url);
 
@@ -90,54 +60,66 @@ const playlistClick = (title, url, playlistId, imageUrl, description) => {
     playlistDescription.textContent = description;
   }
 
-  //fetch track data for that playlist
-  fetch("/tracks?playlistId=" + playlistId)
-    .then(response => response.json())
-    .then(data => {
-      data.forEach(track => {
-        const tbody = document.querySelector(".my-table tbody");
-        const tr = document.createElement("tr");
+  tracks.forEach(track => {
+    const tbody = document.querySelector(".my-table tbody");
+    const tr = document.createElement("tr");
 
-        let tdName = document.createElement("td");
-        tdName.innerHTML = track.name;
+    let tdName = document.createElement("td");
+    tdName.innerHTML = track.name;
 
-        let tdArtists = document.createElement("td");
-        tdArtists.innerHTML = track.artists;
+    let tdArtists = document.createElement("td");
+    tdArtists.innerHTML = track.artists;
 
-        let tdLength = document.createElement("td");
-        tdLength.innerHTML = track.length;
+    let tdLength = document.createElement("td");
+    tdLength.innerHTML = track.length;
 
-        tr.appendChild(tdName);
-        tr.appendChild(tdArtists);
-        tr.appendChild(tdLength);
+    tr.appendChild(tdName);
+    tr.appendChild(tdArtists);
+    tr.appendChild(tdLength);
 
-        tbody.appendChild(tr);
-      });
-    });
+    tbody.appendChild(tr);
+  });
 
-  document.querySelector(".dropdown-content").classList.toggle("show");
+  if (toggleDropdown) {
+    document.querySelector(".dropdown-content").classList.toggle("show");
+  }
 };
 
 /**
- * Load first playlist
+ * Load Playlists
  */
 
-fetch("/playlists/first")
-  .then(response => response.json())
-  .then(data => {
-    let imageUrl = null;
-    // if the playlist image is set, set the url
-    if (data.images.length === 1) {
-      imageUrl = data.images[0].url;
-    }
-    playlistClick(
-      data.name,
-      data.external_urls.spotify,
-      data.id,
-      imageUrl,
-      data.description
-    );
+(async function loadPlaylists() {
+  let dropdownContainer = document.querySelector(".dropdown-content");
+
+  const playlistsResponse = await fetch("/database/playlists");
+  const playlists = await playlistsResponse.json();
+
+  playlists.map(playlist => {
+    const option = document.createElement("button");
+    const title = document.createTextNode(playlist.name);
+    option.appendChild(title);
+
+    option.addEventListener("click", () => {
+      playlistClick(
+        playlist.name,
+        playlist.url,
+        playlist.id,
+        playlist.imageUrl,
+        playlist.description,
+        playlist.tracks,
+        true
+      );
+    });
+
+    dropdownContainer.appendChild(option);
   });
+
+  // immediately display first playlist to user
+  const { name, url, id, imageUrl, description, tracks } = playlists[0];
+
+  playlistClick(name, url, id, imageUrl, description, tracks, false);
+})();
 
 /**
  * helpers
