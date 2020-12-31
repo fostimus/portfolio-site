@@ -32,7 +32,7 @@ html {
 
 .footer {
   position: relative;
-  top: 550px;
+  top: 420px;
 }
 
 .skills-container {
@@ -48,11 +48,15 @@ html {
   top: 320px;
 }
 
+@project-height: 550px;
+
 .background-project {
   display: flex;
   justify-content: space-around;
   width: 90%;
-  margin: 0 auto 100px;
+  padding: 50px 0;
+  margin: auto;
+  height: @project-height;
 
   &:last-child {
     margin: 0 auto;
@@ -60,7 +64,15 @@ html {
 
   img {
     max-width: 620px;
+    max-height: @project-height;
+    box-shadow: 0px 0px 13px @white;
   }
+}
+
+.project-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .flex-reverse {
@@ -70,15 +82,22 @@ html {
 .desc {
   align-self: center;
   display: flex;
-  max-width: 500px;
-  height: 15rem;
-  height: inherit;
+  max-width: 650px;
+  // height: 15rem;
+  height: calc(@project-height * 0.7);
   flex-flow: column wrap;
   justify-content: space-evenly;
 
   p {
     text-align: justify;
   }
+}
+
+.desc-action {
+  height: 45%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
 }
 
 @media (max-width: 1000px) {
