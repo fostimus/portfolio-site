@@ -55,11 +55,12 @@ body {
 /* ==========================
     profile styling
 ========================== */
+
 #profile {
   position: relative;
   display: flex;
   flex-direction: column;
-  top: 100px;
+  top: @vertical-offset;
 
   .ellipse[href="#profile"] {
     background-color: @dark-ellipse;
@@ -85,8 +86,6 @@ body {
 .skills-container {
   position: relative;
   top: 70px;
-  max-width: 800px;
-  margin: 0 auto;
 }
 
 .skill {
@@ -99,7 +98,7 @@ body {
 ========================== */
 #background {
   position: relative;
-  top: 170px;
+  top: @vertical-offset + 50px;
 
   .ellipse[href="#background"] {
     background-color: @dark-ellipse;
@@ -146,7 +145,7 @@ body {
 
 #lakers {
   position: relative;
-  top: @vertical-offset;
+  top: @vertical-offset + 20px;
 
   img {
     display: block;
@@ -228,7 +227,7 @@ body {
 
 #music {
   position: relative;
-  top: @vertical-offset;
+  top: @vertical-offset + 20px;
   background-color: @primary-background-color;
   color: @primary-text-color;
   padding-bottom: 120px;
@@ -256,9 +255,15 @@ body {
   }
 }
 
+#playlists {
+  width: 100%;
+}
+
 .my-table {
   margin: 0 auto;
   max-width: @music-table-width;
+  text-align: left;
+  overflow-x: auto;
 
   td {
     padding: 10px;
@@ -331,21 +336,48 @@ body {
 }
 
 /* ==========================
-    mobile styling
+    responsive styling
 ========================== */
-@media (max-width: 1150px) {
+@media (max-width: @large-screen-breakpoint) {
+  .vertical {
+    display: none;
+  }
+
+  #portfolio-headshot {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: @tablet-breakpoint) {
+  #profile {
+    top: @vertical-offset + 30px;
+  }
+
   .mobile-flex {
     flex-direction: column;
   }
 
-  .vertical {
-    display: none;
+  .tagline-container {
+    padding-right: 48px;
   }
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: @mobile-breakpoint) {
+  #profile {
+    top: @vertical-offset + 60px;
+  }
   #portfolio-headshot {
     width: 300px;
+  }
+
+  #music {
+    h3,
+    .playlist-title {
+      text-align: center;
+    }
+    .flex-between {
+      gap: 0;
+    }
   }
 
   .ellipsis-nav {
@@ -361,5 +393,33 @@ body {
 
   .paragraph {
     margin-top: 5px;
+  }
+
+  .dropdown {
+    padding: 15px 0 30px;
+  }
+
+  .my-table tbody {
+    display: flex;
+
+    tr {
+      td {
+        display: inline-block;
+        min-width: 350px;
+        margin: 0 auto;
+      }
+      padding: 0 10px;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-around;
+      text-align: center;
+
+      &:first-child {
+        text-align: left;
+        border-bottom: none;
+      }
+
+      border-right: 1px solid @secondary-text-color;
+    }
   }
 }

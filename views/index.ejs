@@ -60,6 +60,25 @@
           <%- include("partials/project",
           {
               layout: "flex-reverse",
+              id: "portfolio-site",
+              title: "Portfolio Site",
+              date: "May 2020 - Ongoing",
+              btns: [
+              {
+                link: "http://derek-foster.com",
+                text: "Refresh this page"
+              },
+                {
+                  link: "https://github.com/fostimus/portfolio-site",
+                  text: "Check out the code"
+                }
+              ],
+              image: "images/projects/portfolio-site.png"
+          }) %>
+
+          <%- include("partials/project",
+          {
+              layout: null,
               id: "give-it-a-shot",
               title: "Give It A Shot",
               date: "November 2020",
@@ -78,7 +97,7 @@
 
           <%- include("partials/project",
           {
-              layout: null,
+              layout: "flex-reverse",
               id: "better-boothang",
               title: "Better BooThang",
               date: "October 2020",
@@ -93,7 +112,7 @@
 
           <%- include("partials/project",
           {
-              layout: "flex-reverse",
+              layout: null,
               id: "concentration",
               title: "Concentration",
               date: "October 2020",
@@ -112,9 +131,9 @@
 
           <%- include("partials/project",
           {
-              layout: null,
+              layout: "flex-reverse",
               id: "ninja-board",
-              title: "Giveback Ninja Website Modernization",
+              title: "Giveback Ninja Modernization",
               date: "April 2020 - September 2020",
               btns: [
                 {

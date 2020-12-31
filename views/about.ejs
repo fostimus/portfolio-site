@@ -33,7 +33,7 @@
             </div>
           </div>
           <div class="mobile-flex my-container">
-            <div>
+            <div class="tagline-container">
               <h1 class="tagline">
                 Technology should enable us to do more; not sap our attention
                 and serendipity. Read on to find what my "more" currently is!
@@ -133,6 +133,7 @@
       <section id="lakers">
         <img src="images/lakers.svg" />
       </section>
+
       <section id="music" class="my-container">
         <img class="line-text-header" src="images/line-text-headers/spotify-playlists/line-dark.svg" />
 
@@ -150,14 +151,16 @@
             </div>
           </div>
 
-          <div class="my-container">
-            <div class="dropdown">
+          <section id="playlists">
+            <div class="dropdown mobile-flex">
               <div class="playlist-text">
-                <div>
-                  <h2 id="playlist-name">Select a playlist</h2>
-                  <button class="dropbtn" data-toggle="modal" data-target="#otw">
-                    <img src="images/down-arrow.svg" />
-                  </button>
+                <div class="playlist-controls">
+                  <div class="playlist-title">
+                    <h2 id="playlist-name">Select a playlist</h2>
+                    <button class="dropbtn">
+                      <img src="images/down-arrow.svg" />
+                    </button>
+                  </div>
                   <div class="dropdown-content"></div>
                   <h3>Listen to the full playlist on Spotify</h3>
                 </div>
@@ -181,7 +184,7 @@
                 </tbody>
               </table>
             </div>
-          </div>
+          </section>
 
           <!-- temp fix to make flexbox work for music table -->
           <div style="visibility: hidden;"></div>

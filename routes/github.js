@@ -15,7 +15,14 @@ router.get("/repo/:id", function(req, res) {
     .then(response => {
       res.json(response.data);
     })
-    .catch(e => console.error(e));
+    .catch(e => {
+      if (e.response.status) {
+        res.json({ error: "Unauthorized: rate limit likely exceeded" });
+      } else {
+        res.json({ error: "Server error: admin should check logs." });
+        console.error(e);
+      }
+    });
 });
 
 module.exports = router;

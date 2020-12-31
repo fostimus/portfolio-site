@@ -149,14 +149,20 @@ p {
 
 @skill-height: 37px;
 
-.skills-container h3 {
-  margin-bottom: 20px;
-  text-align: center;
+.skills-container {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+
+  h3 {
+    margin-bottom: 20px;
+    text-align: center;
+  }
 }
 
 .skills {
   display: inline-flex;
-  max-width: 1000px;
+  width: 100%;
   min-height: 300px;
   margin: 0 auto;
   align-items: flex-start;
@@ -220,6 +226,10 @@ p {
   margin-top: 150px;
   font-size: 12px;
   text-align: center;
+
+  p {
+    margin: 0 auto;
+  }
 }
 
 /* ==========================
@@ -244,20 +254,46 @@ p {
   width: 100%;
   top: 68px;
   position: absolute;
-  font-size: 18px;
-  line-height: 22px;
+  font-size: 20px;
+  line-height: 24px;
   text-align: center;
 }
 
-/* anything larger than an iPad */
-@media (min-width: 769px) {
+/* anything larger than mobile */
+@media (min-width: @mobile-breakpoint) {
   .nav-item {
     display: inline;
     margin: 0 50px;
   }
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: @large-screen-breakpoint) {
+  h1 {
+    font-size: 44px;
+  }
+
+  h2 {
+    font-size: 36px;
+  }
+
+  h3 {
+    font-size: 28px;
+  }
+
+  h4 {
+    font-size: 20px;
+  }
+}
+
+//tablet
+@media screen and (max-width: @tablet-breakpoint) {
+  .footer h1 {
+    text-align: center;
+  }
+}
+
+//mobile
+@media screen and (max-width: @mobile-breakpoint) {
   h1 {
     font-size: 32px;
   }
@@ -283,12 +319,19 @@ p {
     width: 20px;
   }
 
+  .skill:hover {
+    .skill-items {
+      width: 100px;
+    }
+  }
+
   .skills {
-    li {
+    .skill-name {
       font-size: 12px;
-      height: 25px;
-      width: 130px;
-      padding-top: 5px;
+    }
+
+    .skill {
+      margin: 3px;
     }
   }
 
