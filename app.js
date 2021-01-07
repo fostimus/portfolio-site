@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const app = express();
+const favicon = require("serve-favicon");
 const routes = require("./routes");
 
 app.set("view engine", "ejs");
@@ -11,7 +12,8 @@ app
   .use(express.json())
   .use(express.static(__dirname + "/public"))
   .use(cors())
-  .use(cookieParser());
+  .use(cookieParser())
+  .use(favicon(__dirname + "/public/images/favicon/favicon.ico"));
 
 app.use("/spotify", routes.spotify);
 app.use("/github", routes.github);
