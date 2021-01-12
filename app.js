@@ -28,7 +28,7 @@ app.get("/about", function(req, res) {
 });
 
 app.get("/resume", function(req, res) {
-  res.sendFile(__dirname + "/public/resume.pdf");
+  res.sendFile(__dirname + "/public/resume.png");
 });
 
 console.log(`Listening on ${process.env.PORT || 3000}`);
