@@ -31,5 +31,5 @@ app.get("/resume", function(req, res) {
   res.sendFile(__dirname + "/public/resume.png");
 });
 
-console.log(`Listening on ${process.env.PORT || 3000}`);
-app.listen(process.env.PORT || 3000);
+console.log(`Listening on ${process.env.PORT || 4000}`);
+app.listen(process.env.PORT || 4000);
