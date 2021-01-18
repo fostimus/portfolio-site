@@ -1,3 +1,5 @@
+import testStyles from "../styles/test.module.less";
+
 export default function HomePage() {
-  return <div>Howdy</div>;
+  return <div className={testStyles.test}>Howdy</div>;
 }
