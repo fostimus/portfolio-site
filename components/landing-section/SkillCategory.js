@@ -5,13 +5,7 @@ export default function SkillCategory({ category }) {
   return (
     <div className="skill">
       <div className="skill-name">{category.name}</div>
-      <div className="skill-items">
-        {category.skills.map(skill => (
-          <div className="skill-item">
-            <p>{skill}</p>
-          </div>
-        ))}
-      </div>
+      <div className="skill-items">{category.skills}</div>
     </div>
   );
 }
