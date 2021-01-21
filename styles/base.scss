@@ -1,0 +1,295 @@
+@import "./globals.scss";
+
+$max-limited-width: 700px;
+
+$button-hover-font-size: 16px;
+$button-hover-height: 60px;
+$button-hover-width: 166px;
+$button-transition: 0.7s all;
+
+/* ==========================
+    universal styles
+========================== */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  transition: all 1.5s;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+a {
+  color: $text-hover-color;
+}
+
+a:hover {
+  color: lighten($text-hover-color, 30%);
+}
+
+h1 {
+  font: normal bold 54px/62px $site-font-family;
+}
+
+h2 {
+  font: normal bold 48px/52px $site-font-family;
+}
+
+h3 {
+  font: normal bold 36px/40px $site-font-family;
+}
+
+h4 {
+  font: normal normal 24px/30px $site-font-family;
+  color: $light-grey;
+}
+
+p {
+  font: normal normal 16px/20px $site-font-family;
+}
+
+.my-container {
+  padding: 0 1em;
+  text-align: center;
+  position: relative;
+}
+
+.limited-width {
+  max-width: $max-limited-width;
+  margin: 0 auto;
+
+  h1,
+  h2 {
+    margin-bottom: 30px;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* handling line text headers as backgrounds and the
+* margin to show text underneath
+*/
+.line-text-header {
+  width: 100%;
+}
+
+.line-text-header + h1 {
+  position: relative;
+  top: -20px;
+}
+
+.btns-container {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+
+  a,
+  a:hover {
+    transition: 0.7s all;
+    color: $primary-text-color;
+  }
+
+  a:hover {
+    font-size: $button-hover-font-size;
+    height: $button-hover-height;
+    width: $button-hover-width;
+  }
+}
+
+.btn {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 156px;
+  height: 50px;
+  border: 2px solid $primary-text-color;
+  border-radius: 15px;
+  font-size: 14px;
+
+  &:hover {
+    color: $secondary-text-color;
+    background-color: $text-hover-color;
+    border: $text-hover-color;
+  }
+}
+
+.social-links {
+  display: flex;
+  width: 600px;
+  margin: 0 auto;
+  justify-content: space-evenly;
+}
+
+.tagline {
+  margin-bottom: 40px;
+}
+
+/* ==========================
+    footer - contact me styling
+========================== */
+.footer {
+  background-color: $primary-background-color;
+  color: $primary-text-color;
+}
+
+.footer-links {
+  margin-top: 30px;
+}
+
+.footer-links a {
+  margin: 0 25px;
+}
+
+.copyright {
+  margin-top: 150px;
+  font-size: 12px;
+  text-align: center;
+
+  p {
+    margin: 0 auto;
+  }
+}
+
+/* ==========================
+    media queries
+========================== */
+@media (min-width: 769px) {
+  .enable-sticky-footer {
+    min-height: calc(100vh - $footer-height);
+  }
+
+  .my-container {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+/* ==========================
+    nav bar
+========================== */
+.nav-bar {
+  width: 100%;
+  top: 40px;
+  position: absolute;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.nav-item {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+/* anything larger than mobile */
+@media (min-width: $mobile-breakpoint) {
+  .nav-item {
+    display: inline;
+    margin: 0 50px;
+  }
+}
+
+@media screen and (max-width: $large-screen-breakpoint) {
+  h1 {
+    font-size: 44px;
+  }
+
+  h2 {
+    font-size: 36px;
+  }
+
+  h3 {
+    font-size: 28px;
+  }
+
+  h4 {
+    font-size: 20px;
+  }
+}
+
+//tablet
+@media screen and (max-width: $tablet-breakpoint) {
+  .footer h1 {
+    text-align: center;
+  }
+}
+
+//mobile
+@media screen and (max-width: $mobile-breakpoint) {
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 10px;
+    max-width: 350px;
+  }
+
+  .social-links img {
+    width: 20px;
+  }
+
+  .skill:hover {
+    .skill-items {
+      width: 100px;
+    }
+  }
+
+  .skills {
+    .skill-name {
+      font-size: 12px;
+    }
+
+    .skill {
+      margin: 3px;
+    }
+  }
+
+  .social-links {
+    width: 300px;
+  }
+
+  .tagline {
+    margin-bottom: 25px;
+  }
+
+  .footer-links {
+    display: flex;
+  }
+}
+
+/* ==========================
+    other & notes
+========================== */
+
+//will select all .col after the first .col element
+.col + .col {
+}
