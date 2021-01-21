@@ -1,0 +1,6 @@
+-   SQL
+-   PostgreSQL
+-   Sequelize ORM
+-   MongoDB
+-   MongoDB Atlas
+-   Mongoose ODM
