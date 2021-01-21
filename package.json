@@ -25,6 +25,7 @@
     "remark": "^13.0.0",
     "remark-html": "^13.0.1",
     "request": "^2.88.2",
+    "sass": "^1.32.5",
     "serve-favicon": "^2.5.0"
   },
   "devDependencies": {},

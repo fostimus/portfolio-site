@@ -5,22 +5,6 @@ import fs from "fs";
 
 const skillsDirectory = path.join(process.cwd(), `content/skills`);
 
-export const mdParser = async id => {
-  const fullPath = path.join(skillsDirectory, `/${id}.md`);
-  console.log(fullPath);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
-
-  const processedContent = await remark()
-    .use(html)
-    .process(fileContents);
-  const contentHtml = processedContent.toString();
-
-  console.log(contentHtml);
-  return {
-    contentHtml
-  };
-};
-
 export const skillsParser = async () => {
   // Get file names under /skills
   const fileNames = fs.readdirSync(skillsDirectory);
@@ -44,11 +28,8 @@ export const skillsParser = async () => {
         contentHtml
       };
 
-      console.log(retVal);
-
       return retVal;
     })
   );
-  console.log(allPostsData);
   return allPostsData;
 };

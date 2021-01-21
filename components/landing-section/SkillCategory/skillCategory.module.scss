@@ -1,0 +1,48 @@
+@import "../../../styles/globals";
+
+$button-hover-font-size: 16px;
+$button-hover-height: 60px;
+$button-hover-width: 166px;
+$button-transition: 0.7s all;
+
+$skill-height: 37px;
+$skill-width: 160px;
+$subskill-height: 30px;
+
+.skill {
+  display: inline-block;
+  height: $skill-height;
+  font-family: $bold-font;
+  background-color: $primary-skill-background-color;
+  border-radius: 15px;
+  width: 160px;
+  margin: 10px;
+  transition: $button-transition;
+
+  .skill-name {
+    font-size: 20px;
+    height: $skill-height;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: $button-transition;
+  }
+
+  &:hover {
+    .skill-items {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  .skill-items {
+    transition: $button-transition;
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.skill-item {
+  margin: 5px 0;
+  text-align: center;
+}
