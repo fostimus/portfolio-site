@@ -20,6 +20,7 @@ export default function Layout({ children, home }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <header className={}>
+        {/* put nav here, toggle styles based on home or not */}
         {home ? (
           <>
             <img
@@ -56,6 +57,7 @@ export default function Layout({ children, home }) {
           </Link>
         </div>
       )}
+      {/* put footer here, don't have to put it anywwhere else again*/}
     </div>
   );
 }

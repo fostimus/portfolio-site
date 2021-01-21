@@ -50,3 +50,19 @@ $subskill-height: 30px;
     text-align: center;
   }
 }
+
+@media screen and (max-width: $mobile-breakpoint) {
+  .skill:hover {
+    .skill-items {
+      width: 100px;
+    }
+  }
+
+  .skill-name {
+    font-size: 12px;
+  }
+
+  .skill {
+    margin: 3px;
+  }
+}
