@@ -19,30 +19,34 @@ $subskill-height: 30px;
   margin: 10px;
   transition: $button-transition;
 
-  .skill-name {
-    font-size: 20px;
-    height: $skill-height;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: $button-transition;
-  }
-
   &:hover {
     .skill-items {
       visibility: visible;
       opacity: 1;
     }
   }
-
-  .skill-items {
-    transition: $button-transition;
-    visibility: hidden;
-    opacity: 0;
-  }
 }
 
-.skill-item {
-  margin: 5px 0;
-  text-align: center;
+.skill-name {
+  font-size: 20px;
+  height: $skill-height;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: $button-transition;
+}
+
+.skill-items {
+  transition: $button-transition;
+  visibility: hidden;
+  opacity: 0;
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    margin: 5px 0;
+    text-align: center;
+  }
 }

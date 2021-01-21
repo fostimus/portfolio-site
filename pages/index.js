@@ -1,4 +1,4 @@
-import SkillCategory from "../components/landing-section/SkillCategory/SkillCategory";
+import SkillContainer from "../components/landing-section/SkillContainer/SkillContainer";
 import { skillsParser } from "../content/markdown-parser";
 
 export async function getStaticProps() {
@@ -11,13 +11,5 @@ export async function getStaticProps() {
 }
 
 export default function HomePage({ allSkillsData }) {
-  return (
-    <div>
-      {allSkillsData.map(skill => (
-        <SkillCategory
-          category={{ name: skill.id, skills: skill.contentHtml }}
-        />
-      ))}
-    </div>
-  );
+  return <SkillContainer skills={allSkillsData} />;
 }
