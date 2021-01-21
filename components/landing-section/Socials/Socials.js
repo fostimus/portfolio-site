@@ -1,4 +1,10 @@
+import { useState } from "react";
 import dynamic from "next/dynamic";
+import HoverEmail from "./icons/hover/email.svg";
+import HoverLinkedin from "./icons/hover/linkedin.svg";
+import HoverGithub from "./icons/hover/github.svg";
+import HoverSpotify from "./icons/hover/spotify.svg";
+import HoverYelp from "./icons/hover/yelp.svg";
 
 // black icons
 const BlackEmail = dynamic(() =>
@@ -19,6 +25,18 @@ const BlackGithub = dynamic(() =>
   })
 );
 
+const BlackSpotify = dynamic(() =>
+  import(`./icons/black/spotify.svg`).then(gh => {
+    return gh;
+  })
+);
+
+const BlackYelp = dynamic(() =>
+  import(`./icons/black/yelp.svg`).then(gh => {
+    return gh;
+  })
+);
+
 //white icons
 const WhiteEmail = dynamic(() =>
   import(`./icons/white/email.svg`).then(gh => {
@@ -26,17 +44,49 @@ const WhiteEmail = dynamic(() =>
   })
 );
 
+const WhiteLinkedin = dynamic(() =>
+  import(`./icons/white/linkedin.svg`).then(gh => {
+    return gh;
+  })
+);
+
+const WhiteGithub = dynamic(() =>
+  import(`./icons/white/github.svg`).then(gh => {
+    return gh;
+  })
+);
+
+const WhiteSpotify = dynamic(() =>
+  import(`./icons/white/spotify.svg`).then(gh => {
+    return gh;
+  })
+);
+
+const WhiteYelp = dynamic(() =>
+  import(`./icons/white/yelp.svg`).then(gh => {
+    return gh;
+  })
+);
+
+function Social({ black }) {
+  const [mouseEnter, setMouseEnter] = useState(false);
+
+  return (
+    <a
+      href="mailto:derekfoster94@gmail.com"
+      target="_blank"
+      onMouseEnter={() => setMouseEnter(true)}
+      onMouseLeave={() => setMouseEnter(false)}
+    >
+      {mouseEnter ? <HoverEmail /> : black ? <BlackEmail /> : <WhiteEmail />}
+    </a>
+  );
+}
+
 export default function Socials({ black }) {
   return (
     <section className="social-links <%= background %>">
-      <a href="mailto:derekfoster94@gmail.com" target="_blank">
-        {black ? <BlackEmail /> : <WhiteEmail />}
-        <img
-          src="images/social-media-icons/<%= color %>/email.svg"
-          onmouseover="this.src='images/social-media-icons/hover/email.svg'"
-          onmouseout="this.src='images/social-media-icons/<%= color %>/email.svg'"
-        />
-      </a>
+      <Social black />
       <a href="https://www.linkedin.com/in/derek-foster/" target="_blank">
         <img
           src="images/social-media-icons/<%= color %>/linkedin.svg"
