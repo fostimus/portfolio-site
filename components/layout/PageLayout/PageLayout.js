@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
-import Navigation from "../../Navigation";
+import Navigation from "../Navigation";
+import Footer from "../Footer";
 
 const name = "Derek Foster";
 export const siteTitle = "Portfolio Website";
@@ -21,18 +22,10 @@ export default function PageLayout({ children, home }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <header>
-        {/* put nav here, toggle styles based on home or not */}
         <Navigation />
       </header>
       <main>{children}</main>
-      {!home && (
-        <div>
-          <Link href="/">
-            <a>← Back to home</a>
-          </Link>
-        </div>
-      )}
-      {/* put footer here, don't have to put it anywwhere else again*/}
+      <Footer />
     </div>
   );
 }
