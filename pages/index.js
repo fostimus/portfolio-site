@@ -16,12 +16,13 @@ export async function getStaticProps() {
 }
 
 export default function HomePage({ allSkillsData, socials }) {
-  return <PageLayout />;
+  return (
+    <PageLayout>
+      <SectionLayout>
+        <h2 style={{ textAlign: "center" }}>Heeeey</h2>
+        <Socials socials={socials} />
+        <SkillContainer skills={allSkillsData} />
+      </SectionLayout>
+    </PageLayout>
+  );
 }
-
-//
-// <SectionLayout>
-//   <h2 style={{ textAlign: "center" }}>Heeeey</h2>
-//   <Socials socials={socials} />
-//   <SkillContainer skills={allSkillsData} />
-// </SectionLayout>

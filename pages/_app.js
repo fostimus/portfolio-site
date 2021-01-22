@@ -1,4 +1,5 @@
-import "normalize.css/normalize.css";
+// import "normalize.css/normalize.css";
+import "../styles/reset.css";
 import "../styles/base.scss";
 
 export default function App({ Component, pageProps }) {

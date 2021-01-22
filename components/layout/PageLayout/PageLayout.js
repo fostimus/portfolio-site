@@ -1,14 +1,15 @@
 import Head from "next/head";
 import Link from "next/link";
-import Navigation from "../Navigation";
+import Header from "../Header";
 import Footer from "../Footer";
+import styles from "./pageLayout.module.scss";
 
 const name = "Derek Foster";
 export const siteTitle = "Portfolio Website";
 
 export default function PageLayout({ children, home }) {
   return (
-    <div>
+    <div className={styles.theme}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content="Derek Foster's Portfolio & Blog" />
@@ -21,9 +22,7 @@ export default function PageLayout({ children, home }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header>
-        <Navigation />
-      </header>
+      <Header />
       <main>{children}</main>
       <Footer />
     </div>
