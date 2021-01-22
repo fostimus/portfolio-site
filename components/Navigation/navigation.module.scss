@@ -1,0 +1,23 @@
+@import "../../styles/globals";
+
+.nav-bar {
+  width: 100%;
+  top: 40px;
+  position: absolute;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.nav-item {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+/* anything larger than mobile */
+@media (min-width: $mobile-breakpoint) {
+  .nav-item {
+    display: inline;
+    margin: 0 50px;
+  }
+}

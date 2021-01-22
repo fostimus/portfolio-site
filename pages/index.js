@@ -1,4 +1,4 @@
-// import Layout from "../components/Layout";
+import PageLayout from "../components/layout/PageLayout";
 import SkillContainer from "../components/landing-section/SkillContainer";
 import Socials from "../components/landing-section/Socials";
 import SectionLayout from "../components/layout/SectionLayout";
@@ -16,10 +16,12 @@ export async function getStaticProps() {
 }
 
 export default function HomePage({ allSkillsData, socials }) {
-  return (
-    <SectionLayout>
-      <Socials socials={socials} />
-      <SkillContainer skills={allSkillsData} />
-    </SectionLayout>
-  );
+  return <PageLayout />;
 }
+
+//
+// <SectionLayout>
+//   <h2 style={{ textAlign: "center" }}>Heeeey</h2>
+//   <Socials socials={socials} />
+//   <SkillContainer skills={allSkillsData} />
+// </SectionLayout>
