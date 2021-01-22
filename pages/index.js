@@ -1,6 +1,7 @@
 // import Layout from "../components/Layout";
 import SkillContainer from "../components/landing-section/SkillContainer";
 import Socials from "../components/landing-section/Socials";
+import SectionLayout from "../components/layout/SectionLayout";
 import { skillsParser } from "../content/markdown-parser";
 import { blackSocials } from "../content/socials";
 
@@ -16,9 +17,9 @@ export async function getStaticProps() {
 
 export default function HomePage({ allSkillsData, socials }) {
   return (
-    <>
-      <Socials socials={socials} black />
+    <SectionLayout>
+      <Socials socials={socials} />
       <SkillContainer skills={allSkillsData} />
-    </>
+    </SectionLayout>
   );
 }

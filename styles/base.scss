@@ -15,8 +15,11 @@ $button-transition: 0.7s all;
 }
 
 html,
-body {
+body,
+#__next {
   height: 100%;
+  width: 100%;
+  margin: 0;
 }
 
 body {
@@ -126,13 +129,6 @@ p {
     background-color: $text-hover-color;
     border: $text-hover-color;
   }
-}
-
-.social-links {
-  display: flex;
-  width: 600px;
-  margin: 0 auto;
-  justify-content: space-evenly;
 }
 
 .tagline {
