@@ -1,0 +1,19 @@
+@import "../../../styles/globals";
+
+.btn {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 156px;
+  height: 50px;
+  border: 2px solid $primary-text-color;
+  border-radius: 15px;
+  font-size: 14px;
+
+  &:hover {
+    color: $secondary-text-color;
+    background-color: $text-hover-color;
+    border: $text-hover-color;
+  }
+}

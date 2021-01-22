@@ -4,12 +4,12 @@ export default function SectionLayout({
   children,
   sectionNo,
   lineTextHeader,
-  theme
+  theme,
+  footer,
+  className
 }) {
-  return (
-    <section
-      className={`${styles.dark} ${styles["verticalOffset" + sectionNo]}`}
-    >
+  const elements = (
+    <>
       {lineTextHeader ? (
         <img
           className="line-text-header"
@@ -25,6 +25,22 @@ export default function SectionLayout({
         <></>
       )}
       {children}
+    </>
+  );
+
+  return footer ? (
+    <footer
+      className={`${styles.dark} ${
+        styles["verticalOffset" + sectionNo]
+      } ${className}`}
+    >
+      {elements}
+    </footer>
+  ) : (
+    <section
+      className={`${styles.dark} ${styles["verticalOffset" + sectionNo]}`}
+    >
+      {elements}
     </section>
   );
 }

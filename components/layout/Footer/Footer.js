@@ -1,13 +1,15 @@
 import styles from "./footer.module.scss";
+import SectionLayout from "../SectionLayout";
 
 export default function Footer() {
   return (
-    <footer className="dark-bg my-container footer">
-      <img
-        className="line-text-header"
-        src="images/line-text-headers/get-in-touch/line-dark.svg"
-      />
-
+    <SectionLayout
+      footer
+      sectionNo={4}
+      theme={"dark"}
+      lineTextHeader={"get-in-touch"}
+      className="my-container"
+    >
       <h2 className="limited-width">
         Say hello! Learn more about my life as a professional and a person.
       </h2>
@@ -30,6 +32,6 @@ export default function Footer() {
         <br />
         <p>&copy; Derek Foster 2020</p>
       </div>
-    </footer>
+    </SectionLayout>
   );
 }
