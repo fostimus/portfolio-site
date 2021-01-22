@@ -18,8 +18,11 @@ export async function getStaticProps() {
 export default function HomePage({ allSkillsData, socials }) {
   return (
     <PageLayout>
-      <SectionLayout>
-        <h2 style={{ textAlign: "center" }}>Heeeey</h2>
+      <SectionLayout sectionNo={1} theme={"dark"}>
+        <h2 style={{ textAlign: "center", width: "600px", margin: "0 auto" }}>
+          Hello! My name is Derek. I'm a Full-Stack Engineer living in San
+          Francisco.
+        </h2>
         <Socials socials={socials} />
         <SkillContainer skills={allSkillsData} />
       </SectionLayout>
