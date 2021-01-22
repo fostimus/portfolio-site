@@ -2,20 +2,22 @@
 import SkillContainer from "../components/landing-section/SkillContainer";
 import Socials from "../components/landing-section/Socials";
 import { skillsParser } from "../content/markdown-parser";
+import { blackSocials } from "../content/socials";
 
 export async function getStaticProps() {
   const allSkillsData = await skillsParser();
   return {
     props: {
-      allSkillsData
+      allSkillsData,
+      socials: blackSocials
     }
   };
 }
 
-export default function HomePage({ allSkillsData }) {
+export default function HomePage({ allSkillsData, socials }) {
   return (
     <>
-      <Socials black />
+      <Socials socials={socials} black />
       <SkillContainer skills={allSkillsData} />
     </>
   );
