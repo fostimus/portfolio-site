@@ -24,3 +24,16 @@
     margin: 0 auto;
   }
 }
+
+//tablet
+@media screen and (max-width: $tablet-breakpoint) {
+  .footer h1 {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: $mobile-breakpoint) {
+  .footer-links {
+    display: flex;
+  }
+}

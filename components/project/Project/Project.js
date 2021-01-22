@@ -1,7 +1,6 @@
 import ProjectDescription from "../ProjectDescription";
 import styles from "./project.module.scss";
 
-//reversed flag is for swapping desc and image to have better ux
 export default function Project({ title, date, buttons, image, reversed }) {
   return (
     <section

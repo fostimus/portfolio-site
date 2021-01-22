@@ -12,7 +12,7 @@ export default function SectionLayout({
     <>
       {lineTextHeader ? (
         <img
-          className="line-text-header"
+          className={styles["line-text-header"]}
           src={
             "images/line-text-headers/" +
             lineTextHeader +

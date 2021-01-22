@@ -67,89 +67,19 @@ a {
   position: relative;
 }
 
+.flex-column {
+  display: flex;
+  flex-flow: column nowrap;
+  height: 600px;
+  justify-content: space-around;
+}
+
 .text-center {
   text-align: center;
 }
 
-/* handling line text headers as backgrounds and the
-* margin to show text underneath
-*/
-.line-text-header {
-  width: 100%;
-}
-
-.line-text-header + h1 {
-  position: relative;
-  top: -20px;
-}
-
-.btns-container {
-  max-width: 400px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-
-  a,
-  a:hover {
-    transition: 0.7s all;
-    color: $primary-text-color;
-  }
-
-  a:hover {
-    font-size: $button-hover-font-size;
-    height: $button-hover-height;
-    width: $button-hover-width;
-  }
-}
-
-.btn {
-  position: relative;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 156px;
-  height: 50px;
-  border: 2px solid $primary-text-color;
-  border-radius: 15px;
-  font-size: 14px;
-
-  &:hover {
-    color: $secondary-text-color;
-    background-color: $text-hover-color;
-    border: $text-hover-color;
-  }
-}
-
 .tagline {
   margin-bottom: 40px;
-}
-
-/* ==========================
-    footer - contact me styling
-========================== */
-.footer {
-  background-color: $primary-background-color;
-  color: $primary-text-color;
-}
-
-.footer-links {
-  margin-top: 30px;
-}
-
-.footer-links a {
-  margin: 0 25px;
-}
-
-.copyright {
-  margin-top: 150px;
-  font-size: 12px;
-  text-align: center;
-
-  p {
-    margin: 0 auto;
-  }
 }
 
 /* ==========================
@@ -164,31 +94,6 @@ a {
     width: 100%;
     margin: 0 auto;
     text-align: center;
-  }
-}
-
-/* ==========================
-    nav bar
-========================== */
-.nav-bar {
-  width: 100%;
-  top: 40px;
-  position: absolute;
-  font-size: 20px;
-  line-height: 24px;
-  text-align: center;
-}
-
-.nav-item {
-  margin: 5px 0;
-  font-size: 16px;
-}
-
-/* anything larger than mobile */
-@media (min-width: $mobile-breakpoint) {
-  .nav-item {
-    display: inline;
-    margin: 0 50px;
   }
 }
 
@@ -207,13 +112,6 @@ a {
 
   h4 {
     font-size: 20px;
-  }
-}
-
-//tablet
-@media screen and (max-width: $tablet-breakpoint) {
-  .footer h1 {
-    text-align: center;
   }
 }
 
@@ -242,10 +140,6 @@ a {
 
   .tagline {
     margin-bottom: 25px;
-  }
-
-  .footer-links {
-    display: flex;
   }
 }
 
