@@ -14,11 +14,11 @@ function Social({ info, black }) {
       onMouseLeave={() => setMouseEnter(false)}
     >
       {mouseEnter ? (
-        <img src={info.hover} width={100} height={100} />
+        <Image src={info.hover} width={25} height={25} />
       ) : black ? (
-        <img src={info.black} width={100} height={100} />
+        <Image src={info.black} width={25} height={25} />
       ) : (
-        info.white
+        <Image src={info.white} width={25} height={25} />
       )}
     </a>
   );
