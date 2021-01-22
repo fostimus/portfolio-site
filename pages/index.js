@@ -1,6 +1,5 @@
-import PageLayout from "../components/layout/PageLayout";
-import SectionLayout from "../components/layout/SectionLayout";
-import LandingSection from "../components/landing-section/LandingSection";
+import { PageLayout, SectionLayout } from "../components/layout";
+import LandingSection from "../components/landing-section";
 import { skillsParser } from "../content/markdown-parser";
 import { whiteSocials } from "../content/socials";
 
