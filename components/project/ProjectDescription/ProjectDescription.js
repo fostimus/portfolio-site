@@ -10,7 +10,7 @@ export default function ProjectDescription({ title, date, buttons }) {
         <h4>{date}</h4>
         <ButtonContainer buttons={buttons} />
       </div>
-      <p></p>
+      <p>fsdhfdsfhdskfh dsahkjdhsajfh </p>
     </div>
   );
 }

@@ -1,8 +1,9 @@
 import { PageLayout, SectionLayout } from "../components/layout";
 import LandingSection from "../components/landing-section";
-import ProjectDescription from "../components/projects/ProjectDescription";
+import Project from "../components/project";
 import { skillsParser } from "../content/markdown-parser";
 import { whiteSocials } from "../content/socials";
+import { projects } from "../content/projects";
 
 export async function getStaticProps() {
   const allSkillsData = await skillsParser();
@@ -21,11 +22,14 @@ export default function HomePage({ allSkillsData, socials }) {
         <LandingSection socials={socials} skills={allSkillsData} />
       </SectionLayout>
       <SectionLayout sectionNo={2} theme="dark" lineTextHeader="projects">
-        <ProjectDescription
-          title="test"
-          link="another test"
-          buttons={[{ text: "button 1", link: "hehehe" }]}
-        />
+        {projects.map((project, index) => (
+          <Project
+            title={project.name}
+            date={project.date}
+            image={project.image}
+            reversed={index % 2 === 0 ? true : false}
+          />
+        ))}
       </SectionLayout>
     </PageLayout>
   );
