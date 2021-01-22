@@ -67,16 +67,6 @@ a {
   position: relative;
 }
 
-.limited-width {
-  max-width: $max-limited-width;
-  margin: 0 auto;
-
-  h1,
-  h2 {
-    margin-bottom: 30px;
-  }
-}
-
 .text-center {
   text-align: center;
 }
