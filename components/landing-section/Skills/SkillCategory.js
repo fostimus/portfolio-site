@@ -1,6 +1,9 @@
 import styles from "./skillCategory.module.scss";
+import { useState } from "react";
 
 export default function SkillCategory({ category }) {
+  const [mouseEnter, setMouseEnter] = useState(false);
+
   return (
     <div className={styles.skill}>
       <div className={styles["skill-name"]}>{category.name}</div>
