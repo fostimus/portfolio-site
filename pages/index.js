@@ -21,7 +21,7 @@ export default function HomePage({ allSkillsData, socials }) {
       <SectionLayout sectionNo={1} theme="dark">
         <LandingSection socials={socials} skills={allSkillsData} />
       </SectionLayout>
-      <SectionLayout sectionNo={2} theme="dark" lineTextHeader="projects">
+      <SectionLayout sectionNo={1} theme="dark" lineTextHeader="projects">
         {projects.map((project, index) => (
           <Project
             title={project.name}
