@@ -6,7 +6,7 @@ export default function ButtonContainer({ buttons, className }) {
     <div className={`${styles["btns-container"]} ${className}`}>
       {buttons
         ? buttons.map(button => (
-            <Button text={button.text} link={button.link} />
+            <Button key={button.text} text={button.text} link={button.link} />
           ))
         : null}
     </div>

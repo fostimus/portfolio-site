@@ -26,7 +26,7 @@ export default function Socials({ socials }) {
   return (
     <section className={styles["social-links"]}>
       {socials.map(social => (
-        <Social info={social} />
+        <Social info={social} key={social.name} />
       ))}
     </section>
   );

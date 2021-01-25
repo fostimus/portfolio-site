@@ -25,6 +25,8 @@ export default function HomePage({ allSkillsData, socials }) {
         {projects.map((project, index) => (
           <Project
             title={project.name}
+            key={project.id}
+            id={project.id}
             date={project.date}
             image={project.image}
             reversed={index % 2 === 0 ? true : false}

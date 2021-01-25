@@ -9,6 +9,7 @@ export default function SkillContainer({ skills }) {
       <div className={styles.skills}>
         {skills.map(skill => (
           <SkillCategory
+            key={skill.id}
             category={{ name: skill.id, skills: skill.contentHtml }}
           />
         ))}
