@@ -27,6 +27,12 @@ $subskill-height: 30px;
   }
 }
 
+@for $i from 1 through 10 {
+  .skill-height-#{$i} {
+    height: $skill-height * $i;
+  }
+}
+
 .skill-name {
   font-size: 20px;
   height: $skill-height;
