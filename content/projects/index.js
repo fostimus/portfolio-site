@@ -5,7 +5,11 @@ export const projects = [
     date: "December 2020 - Ongoing",
     // this is retrieved from github API
     description: "",
-    image: "images/projects/give-it-a-shot-v2.png"
+    image: {
+      path: "/images/projects/give-it-a-shot-v2.png",
+      height: "319",
+      width: "620"
+    }
   },
   {
     name: "Portfolio Site",
@@ -13,7 +17,11 @@ export const projects = [
     date: "May 2020 - Ongoing",
     // this is retrieved from github API
     description: "",
-    image: "images/projects/portfolio-site.png"
+    image: {
+      path: "/images/projects/portfolio-site.png",
+      height: "477",
+      width: "620"
+    }
   },
   {
     name: "Give It A Shot",
@@ -21,7 +29,11 @@ export const projects = [
     date: "November 2020",
     // this is retrieved from github API
     description: "",
-    image: "images/projects/give-it-a-shot.png"
+    image: {
+      path: "/images/projects/give-it-a-shot.png",
+      height: "339",
+      width: "620"
+    }
   },
   {
     name: "Better BooThang",
@@ -29,7 +41,11 @@ export const projects = [
     date: "October 2020",
     // this is retrieved from github API
     description: "",
-    image: "images/projects/Welcome.png"
+    image: {
+      path: "/images/projects/Welcome.png",
+      height: "422",
+      width: "620"
+    }
   },
   {
     name: "Concentration",
@@ -37,7 +53,11 @@ export const projects = [
     date: "October 2020",
     // this is retrieved from github API
     description: "",
-    image: "images/projects/ss3.png"
+    image: {
+      path: "/images/projects/ss3.png",
+      height: "460",
+      width: "571"
+    }
   },
   {
     name: "Giveback Ninja Modernization",
@@ -45,6 +65,10 @@ export const projects = [
     date: "April 2020 - September 2020",
     // this is retrieved from github API
     description: "",
-    image: "images/projects/giveback-ninja.jpg"
+    image: {
+      path: "/images/projects/giveback-ninja.jpg",
+      height: "433",
+      width: "600"
+    }
   }
 ];

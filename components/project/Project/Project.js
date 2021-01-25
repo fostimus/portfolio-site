@@ -1,5 +1,6 @@
 import ProjectDescription from "../ProjectDescription";
 import styles from "./project.module.scss";
+import Image from "next/image";
 
 export default function Project({ title, date, buttons, image, reversed }) {
   return (
@@ -9,8 +10,8 @@ export default function Project({ title, date, buttons, image, reversed }) {
       }`}
     >
       <ProjectDescription title={title} date={date} buttons={buttons} />
-      <div class="project-image">
-        <img src={image} />
+      <div className={styles["project-image"]}>
+        <Image src={image.path} width={image.width} height={image.height} />
       </div>
     </section>
   );
