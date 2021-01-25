@@ -1,16 +1,17 @@
 import styles from "./skillCategory.module.scss";
 import { useState } from "react";
 
-export default function SkillCategory({ category }) {
+export default function SkillCategory({ name, skills }) {
   const [mouseEnter, setMouseEnter] = useState(false);
 
   return (
     <div className={styles.skill}>
-      <div className={styles["skill-name"]}>{category.name}</div>
-      <div
-        className={styles["skill-items"]}
-        dangerouslySetInnerHTML={{ __html: category.skills }}
-      ></div>
+      <div className={styles["skill-name"]}>{name}</div>
+      <ul className={styles["skill-items"]}>
+        {skills.map(skill => (
+          <li>{skill}</li>
+        ))}
+      </ul>
     </div>
   );
 }

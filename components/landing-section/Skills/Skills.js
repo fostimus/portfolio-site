@@ -8,10 +8,7 @@ export default function Skills({ skills }) {
       <h3>Skills</h3>
       <div className={styles.skills}>
         {skills.map(skill => (
-          <SkillCategory
-            key={skill.id}
-            category={{ name: skill.id, skills: skill.contentHtml }}
-          />
+          <SkillCategory key={skill.id} name={skill.id} skills={skill.skills} />
         ))}
       </div>
     </div>
