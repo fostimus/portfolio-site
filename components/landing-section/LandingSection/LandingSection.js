@@ -1,5 +1,5 @@
 import Socials from "../Socials";
-import SkillContainer from "../SkillContainer";
+import Skills from "../Skills";
 
 export default function LandingSection({ socials, skills }) {
   return (
@@ -9,7 +9,7 @@ export default function LandingSection({ socials, skills }) {
         Francisco.
       </h2>
       <Socials socials={socials} />
-      <SkillContainer skills={skills} />
+      <Skills skills={skills} />
     </div>
   );
 }

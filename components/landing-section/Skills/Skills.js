@@ -1,8 +1,8 @@
 import styles from "./skillContainer.module.scss";
 
-import SkillCategory from "../SkillCategory";
+import SkillCategory from "./SkillCategory";
 
-export default function SkillContainer({ skills }) {
+export default function Skills({ skills }) {
   return (
     <div className={styles["skills-container"]}>
       <h3>Skills</h3>
