@@ -5,7 +5,7 @@
   display: flex;
   max-width: 650px;
   // height: 15rem;
-  height: 250px;
+  min-height: 250px;
   flex-flow: column wrap;
   justify-content: space-evenly;
 
@@ -21,8 +21,39 @@
   justify-content: space-around;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1460px) {
   .desc {
+    width: 400px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .desc {
+    width: 300px;
+  }
+}
+
+@media (max-width: 1070px) {
+  .desc {
+    width: 240px;
     margin-bottom: 30px;
+  }
+}
+
+@media (max-width: $tablet-breakpoint) {
+  .desc {
+    width: 420px;
+  }
+
+  .desc-action {
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .desc {
+    width: 350px;
+    min-height: 250px;
   }
 }
