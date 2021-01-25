@@ -37,6 +37,7 @@ $subskill-height: 30px;
 }
 
 .skill-items {
+  // margin: 0 auto;
   transition: $button-transition;
   visibility: hidden;
   opacity: 0;
@@ -63,6 +64,7 @@ $subskill-height: 30px;
   }
 
   .skill {
+    width: 60px;
     margin: 3px;
   }
 }

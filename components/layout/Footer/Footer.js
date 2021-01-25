@@ -1,11 +1,12 @@
 import styles from "./footer.module.scss";
 import SectionLayout from "../SectionLayout";
+import ButtonContainer from "../../button/ButtonContainer";
 
 export default function Footer() {
   return (
     <SectionLayout
       footer
-      sectionNo={4}
+      sectionNo={2}
       theme={"dark"}
       lineTextHeader={"get-in-touch"}
       className="my-container"
@@ -14,23 +15,18 @@ export default function Footer() {
         Say hello! Learn more about my life as a professional and a person.
       </h2>
 
-      <div className="btns-container footer-links">
-        <a
-          className="btn"
-          href="mailto:derekfoster94@gmail.com"
-          target="_blank"
-        >
-          Get in touch
-        </a>
-        <a className="btn" href="images/favicon/about">
-          Learn about me
-        </a>
-      </div>
+      <ButtonContainer
+        className={styles["footer-links"]}
+        buttons={[
+          { text: "Get in touch", link: "mailto:derekfoster94@gmail.com" },
+          { text: "Learn about me", link: "/about" }
+        ]}
+      />
 
-      <div className="copyright">
+      <div className={styles["copyright"]}>
         <p>Ingredients: Heart, soul, and lots of coffee</p>
         <br />
-        <p>&copy; Derek Foster 2020</p>
+        <p>&copy; Derek Foster 2021</p>
       </div>
     </SectionLayout>
   );

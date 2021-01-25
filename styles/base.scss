@@ -82,6 +82,13 @@ a {
   margin-bottom: 40px;
 }
 
+.limited-width {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
 /* ==========================
     media queries
 ========================== */
