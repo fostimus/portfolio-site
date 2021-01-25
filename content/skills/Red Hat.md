@@ -1,4 +1,0 @@
--   OpenShift
--   Decision Manager
--   Linux
--   EAP/WildFly

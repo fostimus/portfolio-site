@@ -23,5 +23,3 @@ export default function SkillCategory({ name, skills }) {
     </div>
   );
 }
-
-//component for individual Skills (or maybe just have a list of each for the SkillCategories)

@@ -1,8 +1,0 @@
--   JavaScript
--   Node.js
--   Express.js
--   Next.js
--   Java
--   Apache Maven
--   Spring Boot
--   Apache Camel

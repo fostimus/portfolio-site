@@ -1,9 +1,0 @@
--   Git
--   GitHub
--   Adobe PhotoShop
--   Docker
--   Selenium WebDriver
--   Cucumber
--   bash
--   zsh
--   Heroku

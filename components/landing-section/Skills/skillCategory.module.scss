@@ -5,13 +5,13 @@ $button-hover-height: 60px;
 $button-hover-width: 166px;
 $button-transition: 0.7s all;
 
-$skill-height: 37px;
+$category-height: 37px;
 $skill-width: 160px;
-$subskill-height: 30px;
+$subcategory-height: 30px;
 
 .skill {
   display: inline-block;
-  height: $skill-height;
+  height: $category-height;
   font-family: $bold-font;
   background-color: $primary-skill-background-color;
   border-radius: 15px;
@@ -27,15 +27,18 @@ $subskill-height: 30px;
   }
 }
 
+$skill-height: 20px;
+
 @for $i from 1 through 10 {
   .skill-height-#{$i} {
-    height: $skill-height * $i;
+    // the height of each skill * the amount of skills (the +4 is for extra padding)
+    height: $skill-height * ($i + 4);
   }
 }
 
 .skill-name {
   font-size: 20px;
-  height: $skill-height;
+  height: $category-height;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,6 +56,7 @@ $subskill-height: 30px;
   }
 
   li {
+    height: $skill-height;
     margin: 5px 0;
     text-align: center;
   }
