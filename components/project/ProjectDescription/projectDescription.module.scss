@@ -5,12 +5,17 @@
   display: flex;
   max-width: 650px;
   // height: 15rem;
-  min-height: 250px;
+  min-height: 300px;
   flex-flow: column wrap;
   justify-content: space-evenly;
 
   p {
     text-align: justify;
+  }
+
+  [class*="btns-container"] {
+    margin: initial;
+    justify-content: flex-start;
   }
 }
 
@@ -30,6 +35,11 @@
 @media (max-width: 1200px) {
   .desc {
     width: 300px;
+    min-height: 500px;
+
+    [class*="btns-container"] {
+      flex-direction: column;
+    }
   }
 }
 
@@ -54,6 +64,6 @@
 @media (max-width: $mobile-breakpoint) {
   .desc {
     width: 350px;
-    min-height: 250px;
+    min-height: 380px;
   }
 }

@@ -29,6 +29,7 @@ export default function HomePage({ allSkillsData, socials }) {
             id={project.id}
             date={project.date}
             image={project.image}
+            buttons={project.buttons}
             reversed={index % 2 === 0 ? true : false}
           />
         ))}

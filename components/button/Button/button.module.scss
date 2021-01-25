@@ -17,3 +17,11 @@
     border: $text-hover-color;
   }
 }
+
+@media screen and (max-width: $mobile-breakpoint) {
+  .btn {
+    font-size: 12px;
+    width: 135px;
+    height: 42px;
+  }
+}

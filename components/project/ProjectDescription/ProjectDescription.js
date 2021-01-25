@@ -24,9 +24,9 @@ export default function ProjectDescription({ title, id, date, buttons }) {
       <div className={styles["desc-action"]}>
         <h2>{title}</h2>
         <h4>{date}</h4>
-        <ButtonContainer buttons={buttons} />
       </div>
       <p>{description}</p>
+      <ButtonContainer buttons={buttons} />
     </div>
   );
 }

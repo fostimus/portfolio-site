@@ -9,7 +9,17 @@ export const projects = [
       path: "/images/projects/give-it-a-shot-v2.png",
       height: "319",
       width: "620"
-    }
+    },
+    buttons: [
+      {
+        link: "https://giveitashotv2.herokuapp.com/",
+        text: "Find your drink"
+      },
+      {
+        link: "https://github.com/fostimus/give-it-a-shot-v2",
+        text: "Check out the code"
+      }
+    ]
   },
   {
     name: "Portfolio Site",
@@ -21,7 +31,17 @@ export const projects = [
       path: "/images/projects/portfolio-site.png",
       height: "477",
       width: "620"
-    }
+    },
+    buttons: [
+      {
+        link: "http://derek-foster.com",
+        text: "Refresh this page"
+      },
+      {
+        link: "https://github.com/fostimus/portfolio-site",
+        text: "Check out the code"
+      }
+    ]
   },
   {
     name: "Give It A Shot",
@@ -33,7 +53,17 @@ export const projects = [
       path: "/images/projects/give-it-a-shot.png",
       height: "339",
       width: "620"
-    }
+    },
+    buttons: [
+      {
+        link: "https://give-it-a-shot-client.herokuapp.com/",
+        text: "Find your drink"
+      },
+      {
+        link: "https://github.com/fostimus/give-it-a-shot",
+        text: "Check out the code"
+      }
+    ]
   },
   {
     name: "Better BooThang",
@@ -45,7 +75,13 @@ export const projects = [
       path: "/images/projects/Welcome.png",
       height: "422",
       width: "620"
-    }
+    },
+    buttons: [
+      {
+        link: "https://github.com/fostimus/better-boothang",
+        text: "Check out the code"
+      }
+    ]
   },
   {
     name: "Concentration",
@@ -57,7 +93,17 @@ export const projects = [
       path: "/images/projects/ss3.png",
       height: "460",
       width: "571"
-    }
+    },
+    buttons: [
+      {
+        link: "https://fostimus-concentration.herokuapp.com/",
+        text: "Play the Game"
+      },
+      {
+        link: "https://github.com/fostimus/concentration",
+        text: "Check out the code"
+      }
+    ]
   },
   {
     name: "Giveback Ninja Modernization",
@@ -69,6 +115,12 @@ export const projects = [
       path: "/images/projects/giveback-ninja.jpg",
       height: "433",
       width: "600"
-    }
+    },
+    buttons: [
+      {
+        link: "https://github.com/redhat-cop/ninja-board/tree/v2",
+        text: "Check out the code"
+      }
+    ]
   }
 ];
