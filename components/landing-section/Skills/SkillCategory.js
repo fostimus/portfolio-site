@@ -12,8 +12,6 @@ export default function SkillCategory({ name, skills }) {
 
   const commonStyles = `${styles[useContext(ThemeContext)]} ${styles.skill}`;
 
-  console.log(commonStyles);
-
   return (
     <div
       className={

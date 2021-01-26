@@ -32,7 +32,7 @@ export default function SectionLayout({
     </>
   );
 
-  const commonStyles = `${styles["" + currentTheme]} ${
+  const commonStyles = `${styles[currentTheme]} ${
     styles["verticalOffset" + sectionNo]
   } ${className}`;
 
