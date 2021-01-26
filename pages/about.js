@@ -1,24 +1,23 @@
-// import Layout from "../components/Layout";
-import SkillContainer from "../components/landing-section/SkillContainer";
+import { PageLayout, SectionLayout } from "../components/layout";
+import Skills from "../components/landing-section/Skills";
 import Socials from "../components/landing-section/Socials";
-import { skillsParser } from "../content/markdown-parser";
+import { skills } from "../content/skills";
 import { blackSocials } from "../content/socials";
 
 export async function getStaticProps() {
-  const allSkillsData = await skillsParser();
   return {
     props: {
-      allSkillsData,
+      skills,
       socials: blackSocials
     }
   };
 }
 
-export default function AboutPage({ allSkillsData, socials }) {
+export default function AboutPage({ skills, socials }) {
   return (
-    <>
+    <PageLayout theme="light">
       <Socials socials={socials} />
-      <SkillContainer skills={allSkillsData} />
-    </>
+      <Skills skills={skills} />
+    </PageLayout>
   );
 }

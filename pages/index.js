@@ -16,11 +16,11 @@ export async function getStaticProps() {
 
 export default function HomePage({ skills, socials }) {
   return (
-    <PageLayout>
-      <SectionLayout sectionNo={1} theme="dark">
+    <PageLayout theme="dark">
+      <SectionLayout sectionNo={1}>
         <LandingSection socials={socials} skills={skills} />
       </SectionLayout>
-      <SectionLayout sectionNo={1} theme="dark" lineTextHeader="projects">
+      <SectionLayout sectionNo={1} lineTextHeader="projects">
         {projects.map((project, index) => (
           <Project
             title={project.name}

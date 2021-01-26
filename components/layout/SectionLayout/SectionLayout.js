@@ -1,13 +1,16 @@
 import styles from "./sectionLayout.module.scss";
+import { ThemeContext } from "../../../state";
+import { useContext } from "react";
 
 export default function SectionLayout({
   children,
   sectionNo,
   lineTextHeader,
-  theme,
   footer,
   className
 }) {
+  const theme = useContext(ThemeContext);
+
   const elements = (
     <>
       {lineTextHeader ? (

@@ -20,7 +20,7 @@ export default function SkillCategory({ name, skills }) {
       <div className={styles["skill-name"]}>{name}</div>
       <ul className={styles["skill-items"]}>
         {skills.map(skill => (
-          <li>{skill}</li>
+          <li key={skill}>{skill}</li>
         ))}
       </ul>
     </div>

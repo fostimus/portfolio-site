@@ -42,22 +42,22 @@ $aquamarine: #2bc9af;
 $logo-green: #77966d;
 $logo-dark-green: #243e36;
 
-/* background colors */
+/* primary theme */
 $primary-background-color: $black;
-$secondary-background-color: $white;
-$background-hover-color: $dark-grey;
-
-/* text colors */
 $primary-text-color: $white;
-$secondary-text-color: $light-grey;
-$tertiary-text-color: $black;
-$text-hover-color: $aquamarine;
-
-/* skill colors */
 $primary-skill-background-color: $dark-grey;
 $primary-skill-text-color: $white;
+
+/* secondary theme */
+$secondary-background-color: $white;
+$secondary-text-color: $light-grey;
 $secondary-skill-background-color: $light-grey;
 $secondary-skill-text-color: $black;
+
+/* other colors */
+$tertiary-text-color: $black;
+$background-hover-color: $dark-grey;
+$text-hover-color: $aquamarine;
 
 /* length variables */
 $footer-height: 350px;
