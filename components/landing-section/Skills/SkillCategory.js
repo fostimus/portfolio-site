@@ -1,5 +1,6 @@
 import styles from "./skillCategory.module.scss";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { ThemeContext } from "../../../state";
 
 export default function SkillCategory({ name, skills }) {
   const [mouseEnter, setMouseEnter] = useState(false);
@@ -9,10 +10,14 @@ export default function SkillCategory({ name, skills }) {
       ? styles["skill-height-" + skills.length]
       : styles["skill-height-" + (skills.length - 1)];
 
+  const commonStyles = `${styles[useContext(ThemeContext)]} ${styles.skill}`;
+
+  console.log(commonStyles);
+
   return (
     <div
       className={
-        mouseEnter ? `${styles.skill} ${skillCategoryHeight}` : styles.skill
+        mouseEnter ? `${commonStyles} ${skillCategoryHeight}` : commonStyles
       }
       onMouseEnter={() => setMouseEnter(true)}
       onMouseLeave={() => setMouseEnter(false)}

@@ -9,11 +9,20 @@ $category-height: 37px;
 $skill-width: 160px;
 $subcategory-height: 30px;
 
+.dark {
+  background-color: $primary-skill-background-color;
+  color: $primary-skill-text-color;
+}
+
+.light {
+  background-color: $secondary-skill-background-color;
+  color: $secondary-skill-text-color;
+}
+
 .skill {
   display: inline-block;
   height: $category-height;
   font-family: $bold-font;
-  background-color: $primary-skill-background-color;
   border-radius: 15px;
   width: 160px;
   margin: 10px;
