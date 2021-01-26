@@ -7,9 +7,10 @@ export default function SectionLayout({
   sectionNo,
   lineTextHeader,
   footer,
+  theme,
   className
 }) {
-  const theme = useContext(ThemeContext);
+  const currentTheme = theme ? theme : useContext(ThemeContext);
 
   const elements = (
     <>
@@ -20,7 +21,7 @@ export default function SectionLayout({
             "images/line-text-headers/" +
             lineTextHeader +
             "/line-" +
-            theme +
+            currentTheme +
             ".svg"
           }
         />
@@ -33,7 +34,7 @@ export default function SectionLayout({
 
   return footer ? (
     <footer
-      className={`${styles.dark} ${
+      className={`${styles["" + currentTheme]} ${
         styles["verticalOffset" + sectionNo]
       } ${className}`}
     >

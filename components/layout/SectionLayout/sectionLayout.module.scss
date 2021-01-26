@@ -3,9 +3,13 @@
 $vertical-offset: 170px;
 
 .dark {
-  background-color: $primary-background-color;
+  background: $primary-background-color;
   color: $primary-text-color;
-  font: $body-font;
+}
+
+.light {
+  background: $secondary-background-color;
+  color: $secondary-text-color;
 }
 
 @mixin verticalOffset($factor) {
