@@ -31,6 +31,18 @@ export default function AboutPage({ tagline, image, skills, socials }) {
           skills={skills}
         ></LandingSection>
       </SectionLayout>
+      <SectionLayout sectionNo={1} lineTextHeader="background"></SectionLayout>
+      <SectionLayout sectionNo={1}>
+        <img
+          style={{ width: "100%", height: "100%", verticalAlign: "bottom" }}
+          src="/images/lakers.svg"
+        />
+      </SectionLayout>
+      <SectionLayout
+        sectionNo={1}
+        theme="dark"
+        lineTextHeader="spotify-playlists"
+      ></SectionLayout>
     </PageLayout>
   );
 }

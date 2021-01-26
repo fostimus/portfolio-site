@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <SectionLayout
       footer
-      sectionNo={2}
+      sectionNo={1}
       theme={"dark"}
       lineTextHeader={"get-in-touch"}
       className="my-container"
