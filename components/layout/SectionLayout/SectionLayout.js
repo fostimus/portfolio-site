@@ -32,19 +32,13 @@ export default function SectionLayout({
     </>
   );
 
+  const commonStyles = `${styles["" + currentTheme]} ${
+    styles["verticalOffset" + sectionNo]
+  } ${className}`;
+
   return footer ? (
-    <footer
-      className={`${styles["" + currentTheme]} ${
-        styles["verticalOffset" + sectionNo]
-      } ${className}`}
-    >
-      {elements}
-    </footer>
+    <footer className={commonStyles}>{elements}</footer>
   ) : (
-    <section
-      className={`${styles.dark} ${styles["verticalOffset" + sectionNo]}`}
-    >
-      {elements}
-    </section>
+    <section className={commonStyles}>{elements}</section>
   );
 }

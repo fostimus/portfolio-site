@@ -5,9 +5,9 @@ export default function EllipsisNav({ sections, currentSection }) {
     <div className={styles["ellipsis-nav"]}>
       {sections.map(section =>
         section === currentSection ? (
-          <Ellipse section={currentSection} />
+          <Ellipse key={section} section={currentSection} />
         ) : (
-          <Ellipse />
+          <Ellipse key={section} />
         )
       )}
     </div>
