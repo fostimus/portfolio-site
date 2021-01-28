@@ -6,9 +6,9 @@ export default function SkillCategory({ name, skills }) {
   const [mouseEnter, setMouseEnter] = useState(false);
 
   const skillCategoryHeight =
-    skills.length > 5
-      ? styles["skill-height-" + skills.length]
-      : styles["skill-height-" + (skills.length - 1)];
+    styles[
+      `skill-height-${skills.length > 5 ? skills.length : skills.length - 1}`
+    ];
 
   const commonStyles = `${styles[useContext(ThemeContext)]} ${styles.skill}`;
 
