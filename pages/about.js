@@ -5,16 +5,19 @@ import EllipsisNav from "../components/ellipsis-nav";
 import { skills } from "../content/skills";
 import { blackSocials } from "../content/socials";
 import { aboutTagline, aboutImage } from "../content/tagline";
-import { backgroundContent } from "../content/background";
+import { markdownParser } from "../content/markdownParser";
+import path from "path";
 
 export async function getStaticProps() {
+  const backgroundDirectory = path.join(process.cwd(), `content/background`);
+
   return {
     props: {
       tagline: aboutTagline,
       image: aboutImage,
       skills,
       socials: blackSocials,
-      background: backgroundContent
+      background: await markdownParser(backgroundDirectory)
     }
   };
 }
