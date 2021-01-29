@@ -57,8 +57,14 @@ h4 {
 }
 
 p,
-a {
+a,
+ol,
+ul {
   font: normal normal 16px/20px $site-font-family;
+}
+
+ol {
+  list-style: decimal;
 }
 
 .my-container {

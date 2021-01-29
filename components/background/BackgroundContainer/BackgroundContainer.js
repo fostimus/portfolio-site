@@ -5,9 +5,11 @@ export default function BackgroundContainer({ content }) {
   return (
     <div className={styles["bg-container4"]}>
       {content.map(section => (
-        <BackgroundSection key={section.title} title={section.title}>
-          {section.content}
-        </BackgroundSection>
+        <BackgroundSection
+          key={section.title}
+          title={section.title}
+          content={section.content}
+        />
       ))}
     </div>
   );

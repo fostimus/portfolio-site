@@ -3,6 +3,8 @@ import html from "remark-html";
 import path from "path";
 import fs from "fs";
 
+//TODO: going to need front-matter to state the order of md file
+
 export const markdownParser = async contentPath => {
   // Get file names under /skills
   const fileNames = fs.readdirSync(contentPath);
@@ -23,7 +25,7 @@ export const markdownParser = async contentPath => {
 
       const retVal = {
         title: id,
-        contentHtml
+        content: contentHtml
       };
 
       return retVal;

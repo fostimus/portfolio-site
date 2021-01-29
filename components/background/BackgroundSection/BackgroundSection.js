@@ -1,8 +1,11 @@
-export default function BackgroundSection({ title, children }) {
+import styles from "./backgroundSection.module.scss";
+
+export default function BackgroundSection({ title, content }) {
   return (
-    <div style={{ textAlign: "center" }}>
+    <div className={styles["bg-section"]}>
       {title ? <h2>{title}</h2> : <></>}
-      {children}
+
+      <div dangerouslySetInnerHTML={{ __html: content }} />
     </div>
   );
 }
