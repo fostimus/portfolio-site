@@ -1,0 +1,7 @@
+//TODO: potentially break SCSS into classes for different amount of grid items, using react to select the correct one
+
+.bg-container4 {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+}

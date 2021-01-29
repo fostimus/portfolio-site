@@ -1,9 +1,11 @@
 import { PageLayout, SectionLayout } from "../components/layout";
 import LandingSection from "../components/landing-section";
+import BackgroundContainer from "../components/background";
 import EllipsisNav from "../components/ellipsis-nav";
 import { skills } from "../content/skills";
 import { blackSocials } from "../content/socials";
 import { aboutTagline, aboutImage } from "../content/tagline";
+import { backgroundContent } from "../content/background";
 
 export async function getStaticProps() {
   return {
@@ -11,12 +13,19 @@ export async function getStaticProps() {
       tagline: aboutTagline,
       image: aboutImage,
       skills,
-      socials: blackSocials
+      socials: blackSocials,
+      background: backgroundContent
     }
   };
 }
 
-export default function AboutPage({ tagline, image, skills, socials }) {
+export default function AboutPage({
+  tagline,
+  image,
+  skills,
+  socials,
+  background
+}) {
   return (
     <PageLayout theme="light">
       <SectionLayout sectionNo={1}>
@@ -31,7 +40,13 @@ export default function AboutPage({ tagline, image, skills, socials }) {
           skills={skills}
         ></LandingSection>
       </SectionLayout>
-      <SectionLayout sectionNo={1} lineTextHeader="background"></SectionLayout>
+      <SectionLayout sectionNo={1} lineTextHeader="background">
+        <EllipsisNav
+          sections={["test", "yes", "shweet"]}
+          currentSection="yes"
+        />
+        <BackgroundContainer content={background} />
+      </SectionLayout>
       <SectionLayout sectionNo={1}>
         <img
           style={{ width: "100%", height: "100%", verticalAlign: "bottom" }}
