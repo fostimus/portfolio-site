@@ -8,7 +8,8 @@ export default function SectionLayout({
   lineTextHeader,
   footer,
   theme,
-  className
+  className,
+  id
 }) {
   const currentTheme = theme ? theme : useContext(ThemeContext);
 
@@ -37,8 +38,12 @@ export default function SectionLayout({
   } ${className}`;
 
   return footer ? (
-    <footer className={commonStyles}>{elements}</footer>
+    <footer id={id} className={commonStyles}>
+      {elements}
+    </footer>
   ) : (
-    <section className={commonStyles}>{elements}</section>
+    <section id={id} className={commonStyles}>
+      {elements}
+    </section>
   );
 }

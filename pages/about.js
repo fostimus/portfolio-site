@@ -29,13 +29,12 @@ export default function AboutPage({
   socials,
   background
 }) {
+  const sections = ["profile", "background", "music"];
+
   return (
     <PageLayout theme="light">
-      <SectionLayout sectionNo={1}>
-        <EllipsisNav
-          sections={["test", "yes", "shweet"]}
-          currentSection="yes"
-        />
+      <SectionLayout id={sections[0]} sectionNo={1}>
+        <EllipsisNav sections={sections} currentSection={0} />
         <LandingSection
           tagline={tagline}
           image={image}
@@ -43,11 +42,8 @@ export default function AboutPage({
           skills={skills}
         ></LandingSection>
       </SectionLayout>
-      <SectionLayout sectionNo={1} lineTextHeader="background">
-        <EllipsisNav
-          sections={["test", "yes", "shweet"]}
-          currentSection="yes"
-        />
+      <SectionLayout id={sections[1]} sectionNo={1} lineTextHeader="background">
+        <EllipsisNav sections={sections} currentSection={1} />
         <BackgroundContainer content={background} />
       </SectionLayout>
       <SectionLayout sectionNo={1}>
@@ -57,10 +53,13 @@ export default function AboutPage({
         />
       </SectionLayout>
       <SectionLayout
+        id={sections[2]}
         sectionNo={1}
         theme="dark"
         lineTextHeader="spotify-playlists"
-      ></SectionLayout>
+      >
+        <EllipsisNav sections={sections} currentSection={2} />
+      </SectionLayout>
     </PageLayout>
   );
 }

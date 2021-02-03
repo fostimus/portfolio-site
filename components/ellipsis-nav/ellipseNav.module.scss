@@ -20,6 +20,8 @@ $light-ellipse: $white;
 .ellipse-container {
   display: flex;
   margin-bottom: 20px;
+  font-family: $site-font-family;
+  gap: 5px;
 
   span {
     text-transform: uppercase;
