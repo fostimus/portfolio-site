@@ -33,7 +33,8 @@ export default function Interests() {
       <div className={styles.interests}>
         {content.map(item => (
           <OverlayTrigger
-            trigger="hover"
+            key={item[1].title}
+            trigger={["hover", "focus"]}
             placement="right"
             overlay={popover(item[1].title, item[1].content)}
           >

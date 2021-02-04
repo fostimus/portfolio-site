@@ -8,9 +8,35 @@ import { blackSocials } from "../content/socials";
 import { aboutTagline, aboutImage } from "../content/tagline";
 import { markdownParser } from "../content/markdownParser";
 import path from "path";
+// const models = require("../models");
+// const mongoose = require("mongoose");
+//
+// function loadPlaylists() {
+//   const connectionUrl = process.env.MONGO_CONN;
+//   mongoose.connect(connectionUrl, {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+//   });
+//
+//   const db = mongoose.connection;
+//   db.on("error", console.error.bind(console, "connection error:"));
+//   db.once("open", function() {
+//     console.log("Connected to Mongo Atlas DB at: " + connectionUrl);
+//     models.playlist.find({}, function(err, result) {
+//       if (err) {
+//         res.json(err);
+//       } else {
+//         return result;
+//       }
+//     });
+//   });
+// }
 
 export async function getStaticProps() {
   const backgroundDirectory = path.join(process.cwd(), `content/background`);
+  // const getPlaylists = loadPlaylists();
+
+  // console.log(getPlaylists);
 
   return {
     props: {
