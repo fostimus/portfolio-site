@@ -1,4 +1,5 @@
 import BackgroundSection from "../BackgroundSection";
+import Interests from "../Interests/Interests";
 import styles from "./backgroundContainer.module.scss";
 
 export default function BackgroundContainer({ content }) {
@@ -11,6 +12,8 @@ export default function BackgroundContainer({ content }) {
           content={section.content}
         />
       ))}
+
+      <Interests />
     </div>
   );
 }

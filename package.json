@@ -4,6 +4,7 @@
   "description": "Facilitates API calls to 3rd party software",
   "main": "app.js",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.2",
     "@svgr/webpack": "^5.5.0",
     "@zeit/next-less": "^1.0.1",
     "axios": "^0.21.1",
@@ -22,6 +23,7 @@
     "path": "^0.12.7",
     "querystring": "^0.2.0",
     "react": "^17.0.1",
+    "react-bulma-components": "^3.4.0",
     "react-dom": "^17.0.1",
     "remark": "^13.0.0",
     "remark-html": "^13.0.1",

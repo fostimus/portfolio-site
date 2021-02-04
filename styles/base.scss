@@ -1,4 +1,6 @@
 @import "./globals.scss";
+// the tilde tells webpack to look in node_modules
+// @import "~react-bulma-components/src/index.sass";
 
 $max-limited-width: 700px;
 

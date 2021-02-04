@@ -7,6 +7,7 @@ import { blackSocials } from "../content/socials";
 import { aboutTagline, aboutImage } from "../content/tagline";
 import { markdownParser } from "../content/markdownParser";
 import path from "path";
+// import Button from "react-bulma-components/lib/components/button";
 
 export async function getStaticProps() {
   const backgroundDirectory = path.join(process.cwd(), `content/background`);
@@ -41,6 +42,7 @@ export default function AboutPage({
           socials={socials}
           skills={skills}
         ></LandingSection>
+        <Button />
       </SectionLayout>
       <SectionLayout id={sections[1]} sectionNo={1} lineTextHeader="background">
         <EllipsisNav sections={sections} currentSection={1} />
