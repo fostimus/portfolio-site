@@ -167,42 +167,6 @@ body {
   width: 100%;
 }
 
-.my-table {
-  margin: 0 auto;
-  max-width: @music-table-width;
-  text-align: left;
-  overflow-x: auto;
-
-  td {
-    padding: 10px;
-  }
-
-  th {
-    color: @secondary-text-color;
-    text-transform: uppercase;
-    padding: 5px;
-  }
-
-  tr + tr:hover {
-    //border-radius not working
-    border-radius: 10px;
-    color: @text-hover-color;
-    background-color: @background-hover-color;
-  }
-
-  th:first-child,
-  th:last-child,
-  td:first-child,
-  td:last-child {
-    width: 1%;
-    white-space: nowrap;
-  }
-
-  tbody > tr:first-child {
-    border-bottom: 1px solid @secondary-text-color;
-  }
-}
-
 .music-player {
   background-color: @background-hover-color;
 }

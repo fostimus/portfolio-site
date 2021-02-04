@@ -2,7 +2,7 @@ import { PageLayout, SectionLayout } from "../components/layout";
 import LandingSection from "../components/landing-section";
 import BackgroundContainer from "../components/background";
 import EllipsisNav from "../components/ellipsis-nav";
-import PlaylistInfo from "../components/playlists/PlaylistInfo";
+import Playlists from "../components/playlists/Playlists";
 import { skills } from "../content/skills";
 import { blackSocials } from "../content/socials";
 import { aboutTagline, aboutImage } from "../content/tagline";
@@ -60,7 +60,7 @@ export default function AboutPage({
         lineTextHeader="spotify-playlists"
       >
         <EllipsisNav sections={sections} currentSection={2} />
-        <PlaylistInfo />
+        <Playlists />
       </SectionLayout>
     </PageLayout>
   );

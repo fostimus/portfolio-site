@@ -1,5 +1,7 @@
 @import "../../../styles/globals";
 
+$music-table-width: 1000px;
+
 .table {
   margin: 0 auto;
   max-width: $music-table-width;
@@ -11,7 +13,7 @@
   }
 
   th {
-    color: $secondary-text-color;
+    color: $tertiary-text-color;
     text-transform: uppercase;
     padding: 5px;
   }
