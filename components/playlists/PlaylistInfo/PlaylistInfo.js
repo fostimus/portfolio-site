@@ -9,9 +9,6 @@ export default function PlaylistInfo({
 }) {
   const [showDropdown, setShowDropdown] = useState(false);
 
-  console.log(playlists);
-  console.log(currentPlaylist);
-
   const playlistName = playlists[currentPlaylist]
     ? playlists[currentPlaylist].name
     : "Select a playlist";

@@ -17,8 +17,6 @@ export async function getStaticProps() {
 }
 
 export default function HomePage({ tagline, skills, socials }) {
-  // <embed src="df-logo.svg" />
-
   return (
     <PageLayout>
       <SectionLayout sectionNo={1}>

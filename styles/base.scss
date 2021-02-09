@@ -61,7 +61,12 @@ h4 {
 p,
 a,
 ol,
-ul {
+ul,
+table {
+  font-family: $site-font-family;
+}
+
+p {
   font: normal normal 16px/20px $site-font-family;
 }
 

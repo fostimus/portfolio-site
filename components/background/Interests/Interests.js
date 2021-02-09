@@ -2,7 +2,7 @@ import styles from "./interests.module.scss";
 import { Popover, OverlayTrigger, Button } from "react-bootstrap";
 import "@fortawesome/fontawesome-free/css/all.css";
 
-export default function Interests() {
+export default function Interests({ className }) {
   const content = [
     [
       <i className={`fas fa-basketball-ball`}></i>,
@@ -25,7 +25,7 @@ export default function Interests() {
     </Popover>
   );
   return (
-    <div className={styles.interestsContainer}>
+    <div className={`${className} ${styles.interestsContainer}`}>
       <div className={styles.tagline}>
         <h3>Interests</h3>
         <h6>Hover over each to learn more</h6>

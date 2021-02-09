@@ -1,5 +1,6 @@
 import remark from "remark";
 import html from "remark-html";
+import matter from "gray-matter";
 import path from "path";
 import fs from "fs";
 
@@ -18,14 +19,17 @@ export const markdownParser = async contentPath => {
 
       const fileContents = fs.readFileSync(fullPath, "utf8");
 
+      const matterResult = matter(fileContents);
+
       const processedContent = await remark()
         .use(html)
-        .process(fileContents);
+        .process(matterResult.content);
       const contentHtml = processedContent.toString();
 
       const retVal = {
         title: id,
-        content: contentHtml
+        content: contentHtml,
+        frontMatter: matterResult.data
       };
 
       return retVal;
