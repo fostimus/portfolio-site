@@ -8,35 +8,22 @@ import { blackSocials } from "../content/socials";
 import { aboutTagline, aboutImage } from "../content/tagline";
 import { markdownParser } from "../content/markdownParser";
 import path from "path";
-// const models = require("../models");
-// const mongoose = require("mongoose");
-//
-// function loadPlaylists() {
-//   const connectionUrl = process.env.MONGO_CONN;
-//   mongoose.connect(connectionUrl, {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true
-//   });
-//
-//   const db = mongoose.connection;
-//   db.on("error", console.error.bind(console, "connection error:"));
-//   db.once("open", function() {
-//     console.log("Connected to Mongo Atlas DB at: " + connectionUrl);
-//     models.playlist.find({}, function(err, result) {
-//       if (err) {
-//         res.json(err);
-//       } else {
-//         return result;
-//       }
-//     });
-//   });
-// }
+const mongoose = require("mongoose");
+
+async function loadPlaylists() {
+  const connectionUrl = process.env.MONGO_CONN;
+  mongoose.connect(connectionUrl, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  });
+
+  console.log("Connected to Mongo Atlas DB at: " + connectionUrl);
+  return await mongoose.model("playlist").find({});
+}
 
 export async function getStaticProps() {
   const backgroundDirectory = path.join(process.cwd(), `content/background`);
-  // const getPlaylists = loadPlaylists();
-
-  // console.log(getPlaylists);
+  const playlists = await loadPlaylists();
 
   return {
     props: {
@@ -44,7 +31,8 @@ export async function getStaticProps() {
       image: aboutImage,
       skills,
       socials: blackSocials,
-      background: await markdownParser(backgroundDirectory)
+      background: await markdownParser(backgroundDirectory),
+      playlists: JSON.stringify(playlists)
     }
   };
 }
@@ -54,7 +42,8 @@ export default function AboutPage({
   image,
   skills,
   socials,
-  background
+  background,
+  playlists
 }) {
   const sections = ["profile", "background", "music"];
 
@@ -86,7 +75,7 @@ export default function AboutPage({
         lineTextHeader="spotify-playlists"
       >
         <EllipsisNav sections={sections} currentSection={2} />
-        <Playlists />
+        <Playlists playlists={playlists} />
       </SectionLayout>
     </PageLayout>
   );
