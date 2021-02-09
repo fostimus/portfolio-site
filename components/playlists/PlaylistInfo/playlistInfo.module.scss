@@ -2,6 +2,11 @@
 
 $music-table-width: 1000px;
 
+.title {
+  display: flex;
+  align-items: center;
+}
+
 .playlist-text {
   display: flex;
   flex-flow: column wrap;
@@ -40,7 +45,6 @@ $music-table-width: 1000px;
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
-  display: none;
   position: absolute;
   background-color: $primary-background-color;
   min-width: 160px;
@@ -65,4 +69,56 @@ $music-table-width: 1000px;
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {
   display: block;
+}
+
+@media screen and (max-width: $mobile-breakpoint) {
+  #music {
+    h3,
+    .playlist-title {
+      text-align: center;
+    }
+  }
+
+  .ellipsis-nav {
+    display: none;
+  }
+
+  .offset-left {
+    text-align: center;
+    padding-top: 25px;
+    margin-bottom: 0 !important;
+    right: 0;
+  }
+
+  .paragraph {
+    margin-top: 5px;
+  }
+
+  .dropdown {
+    padding: 15px 0 30px;
+  }
+
+  .my-table tbody {
+    display: flex;
+
+    tr {
+      td {
+        display: inline-block;
+        min-width: 350px;
+        margin: 0 auto;
+      }
+      padding: 0 10px;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-around;
+      text-align: center;
+
+      &:first-child {
+        text-align: left;
+        border-bottom: none;
+      }
+
+      border-right: 1px solid $secondary-text-color;
+    }
+  }
 }

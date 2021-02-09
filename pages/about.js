@@ -8,6 +8,7 @@ import { blackSocials } from "../content/socials";
 import { aboutTagline, aboutImage } from "../content/tagline";
 import { markdownParser } from "../content/markdownParser";
 import path from "path";
+const models = require("../models");
 const mongoose = require("mongoose");
 
 async function loadPlaylists() {
@@ -18,7 +19,11 @@ async function loadPlaylists() {
   });
 
   console.log("Connected to Mongo Atlas DB at: " + connectionUrl);
-  return await mongoose.model("playlist").find({});
+  // console.log(await mongoose.model("playlist").find({}));
+  const playlists = await models.playlist.find({});
+  console.log(playlists);
+
+  return JSON.parse(JSON.stringify(playlists));
 }
 
 export async function getStaticProps() {
@@ -32,7 +37,7 @@ export async function getStaticProps() {
       skills,
       socials: blackSocials,
       background: await markdownParser(backgroundDirectory),
-      playlists: JSON.stringify(playlists)
+      playlists
     }
   };
 }
