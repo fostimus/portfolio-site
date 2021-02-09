@@ -8,7 +8,6 @@ import { blackSocials } from "../content/socials";
 import { aboutTagline, aboutImage } from "../content/tagline";
 import { markdownParser } from "../content/markdownParser";
 import path from "path";
-const models = require("../models");
 const mongoose = require("mongoose");
 
 async function loadPlaylists() {
@@ -19,9 +18,8 @@ async function loadPlaylists() {
   });
 
   console.log("Connected to Mongo Atlas DB at: " + connectionUrl);
-  // console.log(await mongoose.model("playlist").find({}));
-  const playlists = await models.playlist.find({});
-  console.log(playlists);
+
+  const playlists = await mongoose.model("playlist").find({});
 
   return JSON.parse(JSON.stringify(playlists));
 }

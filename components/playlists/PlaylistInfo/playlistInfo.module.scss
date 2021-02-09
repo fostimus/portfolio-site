@@ -7,6 +7,15 @@ $music-table-width: 1000px;
   align-items: center;
 }
 
+.name {
+  text-transform: uppercase;
+}
+
+.image img {
+  width: 220px;
+  height: 220px;
+}
+
 .playlist-text {
   display: flex;
   flex-flow: column wrap;
