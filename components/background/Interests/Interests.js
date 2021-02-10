@@ -1,23 +1,6 @@
 import styles from "./interests.module.scss";
-import { Popover, OverlayTrigger, Button } from "react-bootstrap";
-import "@fortawesome/fontawesome-free/css/all.css";
 
 export default function Interests({ className }) {
-  const content = [
-    [
-      <i className={`fas fa-basketball-ball`}></i>,
-      { title: "Basketball", content: "" }
-    ],
-    [<i className="fas fa-biking"></i>, { title: "Athletics", content: "" }],
-    [<i className="fab fa-spotify"></i>, { title: "Music", content: "" }],
-    [<i className="fas fa-podcast"></i>, { title: "Podcaster", content: "" }],
-    [<i className="fas fa-book-open"></i>, { title: "Reading", content: "" }],
-    [
-      <img className={`${styles.interest} `} src="/japanese-flag.svg" alt="" />,
-      { title: "Japanese", content: "" }
-    ]
-  ];
-
   const popover = (title, content) => (
     <Popover id="popover-basic">
       <Popover.Title as="h3">{title}</Popover.Title>

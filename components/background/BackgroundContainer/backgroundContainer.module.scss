@@ -15,6 +15,7 @@
 
 .logo {
   width: 300px;
+  margin: auto;
 }
 
 .bg-section1 {
@@ -27,4 +28,9 @@
     grid-row: 2 / 2;
     grid-column: ($i - 1) / $i;
   }
+}
+
+.interest {
+  text-align: center;
+  width: 1.5em;
 }
