@@ -1,11 +1,19 @@
 import styles from "./backgroundSection.module.scss";
+import { Card } from "react-bootstrap";
 
 export default function BackgroundSection({ title, content, className }) {
+  console.log(typeof content);
   return (
-    <div className={`${className} ${styles["bg-section"]}`}>
-      {title ? <h2>{title}</h2> : <></>}
+    <Card className={`${className} ${styles["bg-section"]}`}>
+      <Card.Body>
+        {title && <Card.Title>{title}</Card.Title>}
 
-      <div dangerouslySetInnerHTML={{ __html: content }} />
-    </div>
+        {typeof content === "string" ? (
+          <Card.Text dangerouslySetInnerHTML={{ __html: content }} />
+        ) : (
+          <Card.Text>{content}</Card.Text>
+        )}
+      </Card.Body>
+    </Card>
   );
 }
