@@ -7,26 +7,27 @@ import styles from "./backgroundContainer.module.scss";
 export default function BackgroundContainer({ content }) {
   return (
     <div className={styles["bg-container4"]}>
-      {content.map(section => (
-        <BackgroundSection
-          className={styles["bg-section" + section.frontMatter.id]}
-          key={section.title}
-          title={section.title}
-          content={section.content}
-        />
-      ))}
-
-      <BackgroundSection
-        content={
-          <img
-            className={`${styles["bg-section3"]} ${styles.logo}`}
-            src="images/df-logo-transparent.svg"
+      {content.map(section => {
+        console.log(section);
+        return (
+          <BackgroundSection
+            className={styles["bg-section" + section.frontMatter.id]}
+            key={section.title}
+            title={section.title}
+            content={section.content}
           />
-        }
-      />
-      <BackgroundSection
-        content={<Interests className={styles["bg-section4"]} />}
-      />
+        );
+      })}
+
+      <BackgroundSection>
+        <embed
+          className={`${styles["bg-section3"]} ${styles.logo}`}
+          src="/images/df-logo-transparent.svg"
+        />
+      </BackgroundSection>
+      <BackgroundSection>
+        <Interests className={styles["bg-section4"]} />
+      </BackgroundSection>
     </div>
   );
 }

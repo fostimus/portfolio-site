@@ -10,3 +10,10 @@
     box-shadow: 0 0 3px 3px #ccc;
   }
 }
+
+.body {
+  height: 90%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+}

@@ -13,7 +13,7 @@ export default function Table({ playlist }) {
             <th>Length</th>
           </tr>
           {playlist.tracks.map(track => (
-            <tr>
+            <tr key={track.name}>
               <td>{track.name}</td>
               <td>{track.artists}</td>
               <td>{track.length}</td>
