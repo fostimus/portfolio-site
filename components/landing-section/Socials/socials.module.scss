@@ -1,0 +1,18 @@
+@import "../../../styles/globals.scss";
+
+.social-links {
+  display: flex;
+  width: 600px;
+  margin: 0 auto 60px;
+  justify-content: space-evenly;
+}
+
+@media screen and (max-width: $mobile-breakpoint) {
+  .social-links {
+    width: 300px;
+
+    img {
+      width: 20px;
+    }
+  }
+}

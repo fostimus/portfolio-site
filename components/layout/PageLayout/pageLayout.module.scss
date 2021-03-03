@@ -1,0 +1,11 @@
+@import "../../../styles/globals";
+
+.dark {
+  background: $primary-background-color;
+  color: $primary-text-color;
+}
+
+.light {
+  background: $secondary-background-color;
+  color: $secondary-text-color;
+}

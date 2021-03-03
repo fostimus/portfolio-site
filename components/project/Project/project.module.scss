@@ -1,0 +1,44 @@
+@import "../../../styles/globals";
+
+.background-project {
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+  padding: 50px 0;
+  margin: auto;
+  min-height: 550px;
+
+  &:last-child {
+    margin: 0 auto;
+  }
+}
+
+.flex-reverse {
+  flex-direction: row-reverse;
+}
+
+.project-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & > div {
+    box-shadow: 0px 0px 13px $white;
+  }
+}
+
+@media (max-width: $tablet-breakpoint) {
+  .background-project {
+    flex-direction: column;
+    margin-bottom: 60px;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .background-project h2 {
+    font-size: 24px;
+  }
+  .project-image > div {
+    width: 300px;
+  }
+}

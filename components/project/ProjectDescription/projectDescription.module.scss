@@ -1,0 +1,69 @@
+@import "../../../styles/globals";
+
+.desc {
+  align-self: center;
+  display: flex;
+  max-width: 650px;
+  // height: 15rem;
+  min-height: 300px;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+
+  p {
+    text-align: justify;
+  }
+
+  [class*="btns-container"] {
+    margin: initial;
+    justify-content: flex-start;
+  }
+}
+
+.desc-action {
+  height: 55%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+}
+
+@media (max-width: 1460px) {
+  .desc {
+    width: 400px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .desc {
+    width: 300px;
+    min-height: 500px;
+
+    [class*="btns-container"] {
+      flex-direction: column;
+    }
+  }
+}
+
+@media (max-width: 1070px) {
+  .desc {
+    width: 240px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: $tablet-breakpoint) {
+  .desc {
+    width: 420px;
+  }
+
+  .desc-action {
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .desc {
+    width: 350px;
+    min-height: 380px;
+  }
+}

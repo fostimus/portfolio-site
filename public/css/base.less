@@ -7,10 +7,6 @@
 @button-hover-width: 166px;
 @button-transition: 0.7s all;
 
-@skill-height: 37px;
-@skill-width: 160px;
-@subskill-height: 30px;
-
 /* ==========================
     universal styles
 ========================== */
@@ -93,45 +89,6 @@ p {
   top: -20px;
 }
 
-.btns-container {
-  max-width: 400px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-
-  a,
-  a:hover {
-    transition: 0.7s all;
-    color: @primary-text-color;
-  }
-
-  a:hover {
-    font-size: @button-hover-font-size;
-    height: @button-hover-height;
-    width: @button-hover-width;
-  }
-}
-
-.btn {
-  position: relative;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 156px;
-  height: 50px;
-  border: 2px solid @primary-text-color;
-  border-radius: 15px;
-  font-size: 14px;
-
-  &:hover {
-    color: @secondary-text-color;
-    background-color: @text-hover-color;
-    border: @text-hover-color;
-  }
-}
-
 .social-links {
   display: flex;
   width: 600px;
@@ -141,69 +98,6 @@ p {
 
 .tagline {
   margin-bottom: 40px;
-}
-
-/* ==========================
-    skills styling
-========================== */
-
-@skill-height: 37px;
-
-.skills-container {
-  width: 90%;
-  max-width: 900px;
-  margin: 0 auto;
-
-  h3 {
-    margin-bottom: 20px;
-    text-align: center;
-  }
-}
-
-.skills {
-  display: inline-flex;
-  width: 100%;
-  min-height: 300px;
-  margin: 0 auto;
-  align-items: flex-start;
-}
-
-.skill {
-  display: inline-block;
-  height: @skill-height;
-  font-family: @bold-font;
-  background-color: @primary-skill-background-color;
-  border-radius: 15px;
-  width: 160px;
-  margin: 10px;
-  transition: @button-transition;
-
-  .skill-name {
-    font-size: 20px;
-    height: @skill-height;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: @button-transition;
-  }
-
-  &:hover {
-    .skill-items {
-      visibility: visible;
-      opacity: 1;
-    }
-  }
-
-  .skill-items {
-    transition: @button-transition;
-    visibility: hidden;
-    opacity: 0;
-  }
-}
-
-.skill-item {
-  margin: 5px 0;
-  text-align: center;
 }
 
 /* ==========================
@@ -244,31 +138,6 @@ p {
     width: 100%;
     margin: 0 auto;
     text-align: center;
-  }
-}
-
-/* ==========================
-    nav bar
-========================== */
-.nav-bar {
-  width: 100%;
-  top: 40px;
-  position: absolute;
-  font-size: 20px;
-  line-height: 24px;
-  text-align: center;
-}
-
-.nav-item {
-  margin: 5px 0;
-  font-size: 16px;
-}
-
-/* anything larger than mobile */
-@media (min-width: @mobile-breakpoint) {
-  .nav-item {
-    display: inline;
-    margin: 0 50px;
   }
 }
 

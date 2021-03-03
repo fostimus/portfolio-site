@@ -1,0 +1,39 @@
+@import "../../../styles/globals";
+/* ==========================
+    footer - contact me styling
+========================== */
+.footer {
+  background-color: $primary-background-color;
+  color: $primary-text-color;
+}
+
+.footer-links {
+  margin-top: 30px;
+
+  a {
+    margin: 0 25px;
+  }
+}
+
+.copyright {
+  margin-top: 150px;
+  font-size: 12px;
+  text-align: center;
+
+  p {
+    margin: 0 auto;
+  }
+}
+
+//tablet
+@media screen and (max-width: $tablet-breakpoint) {
+  .footer h1 {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: $mobile-breakpoint) {
+  .footer-links {
+    display: flex;
+  }
+}

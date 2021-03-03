@@ -1,0 +1,36 @@
+@import "../../../styles/globals";
+
+$vertical-offset: 170px;
+
+.dark {
+  background: $primary-background-color;
+  color: $primary-text-color;
+}
+
+.light {
+  background: $secondary-background-color;
+  color: $secondary-text-color;
+}
+
+@mixin verticalOffset($factor) {
+  position: relative;
+  top: $vertical-offset * $factor;
+}
+
+@for $i from 1 through 8 {
+  .verticalOffset#{$i} {
+    @include verticalOffset($i);
+  }
+}
+
+/* handling line text headers as backgrounds and the
+* margin to show text underneath
+*/
+.line-text-header {
+  width: 100%;
+}
+
+.line-text-header + h1 {
+  position: relative;
+  top: -20px;
+}

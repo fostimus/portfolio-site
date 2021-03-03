@@ -1,0 +1,171 @@
+@import "./globals.scss";
+// the tilde tells webpack to look in node_modules
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+$max-limited-width: 700px;
+
+$button-hover-font-size: 16px;
+$button-hover-height: 60px;
+$button-hover-width: 166px;
+$button-transition: 0.7s all;
+
+/* ==========================
+    universal styles
+========================== */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#__next {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+body {
+  transition: all 1.5s;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+a {
+  color: $text-hover-color;
+}
+
+a:hover {
+  color: lighten($text-hover-color, 30%);
+}
+
+h1 {
+  font: normal bold 54px/62px $site-font-family;
+}
+
+h2 {
+  font: normal bold 48px/52px $site-font-family;
+}
+
+h3 {
+  font: normal bold 36px/40px $site-font-family;
+}
+
+h4 {
+  font: normal normal 24px/30px $site-font-family;
+  color: $light-grey;
+}
+
+p,
+a,
+ol,
+ul,
+table {
+  font-family: $site-font-family;
+}
+
+p {
+  font: normal normal 16px/20px $site-font-family;
+}
+
+ol {
+  list-style: decimal;
+}
+
+.my-container {
+  padding: 0 1em;
+  text-align: center;
+  position: relative;
+}
+
+.flex-column {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.tagline {
+  margin-bottom: 40px;
+}
+
+.limited-width {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* ==========================
+    media queries
+========================== */
+@media (min-width: 769px) {
+  .enable-sticky-footer {
+    min-height: calc(100vh - $footer-height);
+  }
+
+  .my-container {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: $large-screen-breakpoint) {
+  h1 {
+    font-size: 44px;
+  }
+
+  h2 {
+    font-size: 36px;
+  }
+
+  h3 {
+    font-size: 28px;
+  }
+
+  h4 {
+    font-size: 20px;
+  }
+}
+
+//mobile
+@media screen and (max-width: $mobile-breakpoint) {
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 10px;
+    max-width: 350px;
+  }
+
+  .tagline {
+    margin-bottom: 25px;
+  }
+}
+
+/* ==========================
+    other & notes
+========================== */
+
+//will select all .col after the first .col element
+.col + .col {
+}
