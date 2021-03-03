@@ -20,6 +20,7 @@ const icons = [
 ];
 
 export default function BackgroundContainer({ content }) {
+  console.log(content);
   return (
     <div className={styles["bg-container4"]}>
       {content.map(section => {
@@ -33,28 +34,36 @@ export default function BackgroundContainer({ content }) {
         );
       })}
 
+      {interestsContainer(icons.slice(0, icons.length / 2), "2")}
+
       <embed
         className={`${styles["bg-section3"]} ${styles.logo}`}
         src="/images/df-logo-transparent.svg"
       />
-      <BackgroundSection
-        className={styles["bg-section4"]}
-        title="Interests"
-        subtitle="Hover over each to learn more"
-        vertical
-      >
-        {icons.map(item => (
-          <OverlayTrigger
-            key={item[1].title}
-            trigger={["hover", "focus"]}
-            placement="right"
-            overlay={popover(item[1].title, item[1].content)}
-          >
-            {item[0]}
-          </OverlayTrigger>
-        ))}
-      </BackgroundSection>
+      {interestsContainer(icons.slice(icons.length / 2), "4")}
     </div>
+  );
+}
+
+function interestsContainer(interests, pos) {
+  return (
+    <BackgroundSection
+      className={styles[`bg-section${pos}`]}
+      title="Interests"
+      subtitle="Hover over each to learn more"
+      vertical
+    >
+      {interests.map(item => (
+        <OverlayTrigger
+          key={item[1].title}
+          trigger={["hover", "focus"]}
+          placement="right"
+          overlay={popover(item[1].title, item[1].content)}
+        >
+          {item[0]}
+        </OverlayTrigger>
+      ))}
+    </BackgroundSection>
   );
 }
 

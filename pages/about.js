@@ -20,7 +20,7 @@ async function loadPlaylists() {
 
   console.log("Connected to Mongo Atlas DB at: " + connectionUrl);
 
-  const playlists = await models.playlist.find({});
+  const playlists = await mongoose.model("playlist").find({});
 
   return JSON.parse(JSON.stringify(playlists));
 }
