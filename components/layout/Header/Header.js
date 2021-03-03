@@ -12,7 +12,7 @@ export default function Header() {
             <a href="/about">About</a>
           </li>
           <li className={styles["nav-item"]}>
-            <a href="/resume">Resume</a>
+            <a href="/api/resume">Resume</a>
           </li>
         </ul>
       </nav>

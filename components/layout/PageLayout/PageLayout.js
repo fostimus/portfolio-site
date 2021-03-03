@@ -16,7 +16,12 @@ export default function PageLayout({ children, theme }) {
     <ThemeContext.Provider value={currentTheme}>
       <div className={styles[currentTheme]}>
         <Head>
-          <link rel="icon" href="/favicon.ico" />
+          <link
+            rel="shortcut icon"
+            href="/favicon.ico?v=2"
+            type="image/x-icon"
+          />
+
           <meta name="description" content="Derek Foster's Portfolio & Blog" />
           <meta
             property="og:image"

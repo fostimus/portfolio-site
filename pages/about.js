@@ -14,8 +14,6 @@ export async function getStaticProps() {
   const backgroundDirectory = path.join(process.cwd(), `content/background`);
   const playlists = JSON.parse(JSON.stringify(await loadPlaylists()));
 
-  console.log(playlists);
-
   return {
     props: {
       tagline: aboutTagline,
