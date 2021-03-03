@@ -27,3 +27,27 @@
   justify-content: space-evenly;
   align-items: center;
 }
+
+// .flip-card {
+//   background-color: transparent;
+//   perspective: 1000px;
+// }
+
+.flip {
+  transition: transform 1s;
+  // transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    transform: rotateY(180deg);
+  }
+}
+
+.cardFront,
+.cardBack {
+  backface-visibility: hidden;
+}
+
+.cardBack {
+  transform: rotateY(180deg);
+}
