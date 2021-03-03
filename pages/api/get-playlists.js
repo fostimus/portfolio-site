@@ -7,7 +7,7 @@ export async function loadPlaylists() {
     useUnifiedTopology: true
   });
 
-  console.log("Connected to Mongo Atlas DB at: " + connectionUrl);
+  console.log("Connected to Mongo Atlas DB");
 
   const Schema = mongoose.Schema;
 

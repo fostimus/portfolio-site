@@ -53,8 +53,6 @@
   "bugs": {
     "url": "https://github.com/fostimus/portfolio-site/issues"
   },
-  "homepage": "https://github.com/fostimus/portfolio-site#readme",
-  "engines": {
-    "node": "12.x"
-  }
+  "homepage": "https://github.com/fostimus/portfolio-site#readme"
+
 }

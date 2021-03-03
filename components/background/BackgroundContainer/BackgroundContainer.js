@@ -20,7 +20,6 @@ const icons = [
 ];
 
 export default function BackgroundContainer({ content }) {
-  console.log(content);
   return (
     <div className={styles["bg-container4"]}>
       {content.map(section => {
