@@ -8,26 +8,13 @@ import { blackSocials } from "../content/socials";
 import { aboutTagline, aboutImage } from "../content/tagline";
 import { markdownParser } from "../content/markdownParser";
 import path from "path";
-const models = require("../models");
-const mongoose = require("mongoose");
-
-async function loadPlaylists() {
-  const connectionUrl = process.env.MONGO_CONN;
-  mongoose.connect(connectionUrl, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  });
-
-  console.log("Connected to Mongo Atlas DB at: " + connectionUrl);
-
-  const playlists = await mongoose.model("playlist").find({});
-
-  return JSON.parse(JSON.stringify(playlists));
-}
+import { loadPlaylists } from "./api/get-playlists";
 
 export async function getStaticProps() {
   const backgroundDirectory = path.join(process.cwd(), `content/background`);
-  const playlists = await loadPlaylists();
+  const playlists = JSON.parse(JSON.stringify(await loadPlaylists()));
+
+  console.log(playlists);
 
   return {
     props: {
