@@ -1,0 +1,98 @@
+@import "../../../styles/globals";
+
+$button-hover-font-size: 16px;
+$button-hover-height: 60px;
+$button-hover-width: 166px;
+$button-transition: 0.7s all;
+
+$category-height: 37px;
+$skill-width: 160px;
+$subcategory-height: 30px;
+
+.dark {
+  background-color: $primary-skill-background-color;
+  color: $primary-skill-text-color;
+}
+
+.light {
+  background-color: $secondary-skill-background-color;
+  color: $secondary-skill-text-color;
+}
+
+.skill {
+  display: inline-block;
+  height: $category-height;
+  font-family: $bold-font;
+  border-radius: 15px;
+  width: 160px;
+  margin: 10px;
+  transition: $button-transition;
+
+  &:hover {
+    .skill-items {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+$skill-height: 20px;
+
+@for $i from 1 through 10 {
+  .skill-height-#{$i} {
+    // the height of each skill * the amount of skills (the +4 is for extra padding)
+    height: $skill-height * ($i + 4);
+  }
+}
+
+.skill-name {
+  font-size: 20px;
+  height: $category-height;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: $button-transition;
+}
+
+.skill-items {
+  transition: $button-transition;
+  visibility: hidden;
+  opacity: 0;
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    height: $skill-height;
+    margin: 5px 0;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: $mobile-breakpoint) {
+  .skill-name {
+    font-size: 12px;
+  }
+
+  .skill-items {
+    text-align: left;
+    font-size: 10px;
+  }
+
+  .skill,
+  .skill-items {
+    width: 60px;
+  }
+
+  .skill {
+    margin: 3px;
+  }
+
+  @for $i from 1 through 10 {
+    .skill-height-#{$i} {
+      // the height of each skill * the amount of skills (the +4 is for extra padding)
+      height: $skill-height * ($i + 5);
+    }
+  }
+}

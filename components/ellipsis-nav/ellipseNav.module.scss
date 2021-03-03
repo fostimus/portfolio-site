@@ -1,0 +1,39 @@
+@import "../../styles/globals";
+
+/* ellipsis nav colors */
+$ellipse-border: $light-grey;
+$dark-ellipse: $dark-grey;
+$light-ellipse: $white;
+
+/* ==========================
+    ellipsis nav styling
+========================== */
+
+.ellipsis-nav {
+  text-align: left;
+  margin: 0 15px;
+  color: $dark-ellipse;
+  position: absolute;
+  top: 50%;
+  font-size: 10px;
+}
+
+.ellipse-container {
+  display: flex;
+  margin-bottom: 20px;
+  font-family: $site-font-family;
+  gap: 5px;
+  align-items: center;
+
+  span {
+    text-transform: uppercase;
+  }
+}
+
+.ellipse {
+  display: inline-block;
+  border: 1px solid $ellipse-border;
+  border-radius: 50%;
+  width: 13px;
+  height: 13px;
+}

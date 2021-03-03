@@ -1,0 +1,27 @@
+@import "../../../styles/globals";
+
+$button-hover-font-size: 16px;
+$button-hover-height: 60px;
+$button-hover-width: 166px;
+$button-transition: 0.7s all;
+
+.btns-container {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+
+  a,
+  a:hover {
+    transition: 0.7s all;
+    color: $primary-text-color;
+  }
+
+  a:hover {
+    font-size: $button-hover-font-size;
+    height: $button-hover-height;
+    width: $button-hover-width;
+  }
+}
