@@ -71,18 +71,28 @@ $skill-height: 20px;
 }
 
 @media screen and (max-width: $mobile-breakpoint) {
-  .skill:hover {
-    .skill-items {
-      width: 100px;
-    }
-  }
-
   .skill-name {
     font-size: 12px;
   }
 
-  .skill {
+  .skill-items {
+    text-align: left;
+    font-size: 10px;
+  }
+
+  .skill,
+  .skill-items {
     width: 60px;
+  }
+
+  .skill {
     margin: 3px;
+  }
+
+  @for $i from 1 through 10 {
+    .skill-height-#{$i} {
+      // the height of each skill * the amount of skills (the +4 is for extra padding)
+      height: $skill-height * ($i + 5);
+    }
   }
 }
