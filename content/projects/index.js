@@ -1,5 +1,27 @@
 export const projects = [
   {
+    name: "Virtual Glovebox",
+    id: "virtual-glovebox",
+    date: "January 2020 - February 2020",
+    // this is retrieved from github API
+    description: "",
+    image: {
+      path: "/images/projects/virtual-glovebox/IMG_2472.jpeg",
+      height: "319",
+      width: "150"
+    },
+    buttons: [
+      {
+        link: "https://expo.io/@fostimus/virtual-glovebox",
+        text: "Give it a test drive"
+      },
+      {
+        link: "https://github.com/fostimus/virtual-glovebox",
+        text: "Check out the code"
+      }
+    ]
+  },
+  {
     name: "Give It A Shot V2",
     id: "give-it-a-shot-v2",
     date: "December 2020 - Ongoing",
