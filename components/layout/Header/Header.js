@@ -12,6 +12,9 @@ export default function Header() {
             <a href="/about">About</a>
           </li>
           <li className={styles["nav-item"]}>
+            <a href="/blog">Blog</a>
+          </li>
+          <li className={styles["nav-item"]}>
             <a href="/api/resume">Resume</a>
           </li>
         </ul>
