@@ -14,7 +14,7 @@ import dynamic from "next/dynamic";
 const Playlists = dynamic(() => import("../components/playlists/Playlists"));
 
 export async function getStaticProps() {
-  const backgroundDirectory = path.join(process.cwd(), `content/background`);
+  const backgroundDirectory = path.join(process.cwd(), "content/background");
   const playlists = JSON.parse(JSON.stringify(await loadPlaylists()));
 
   return {

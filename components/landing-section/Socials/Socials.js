@@ -11,7 +11,7 @@ function Social({ info }) {
       target="_blank"
       onMouseEnter={() => setMouseEnter(true)}
       onMouseLeave={() => setMouseEnter(false)}
-      key={info.name}
+      key={info.name} rel="noreferrer"
     >
       {mouseEnter ? (
         <Image src={info.hover} width={25} height={25} />

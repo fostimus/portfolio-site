@@ -6,7 +6,7 @@ import "@fortawesome/fontawesome-free/css/all.css";
 
 const icons = [
   [
-    <i className={`fas fa-basketball-ball`}></i>,
+    <i className={"fas fa-basketball-ball"}></i>,
     { title: "Basketball", content: "" }
   ],
   [<i className="fas fa-biking"></i>, { title: "Athletics", content: "" }],
