@@ -2,13 +2,16 @@ import { PageLayout, SectionLayout } from "../components/layout";
 import LandingSection from "../components/landing-section";
 import BackgroundContainer from "../components/background";
 import EllipsisNav from "../components/ellipsis-nav";
-import Playlists from "../components/playlists/Playlists";
+// import Playlists from "../components/playlists/Playlists";
 import { skills } from "../content/skills";
 import { blackSocials } from "../content/socials";
 import { aboutTagline, aboutImage } from "../content/tagline";
 import { markdownParser } from "../content/markdownParser";
 import path from "path";
 import { loadPlaylists } from "./api/get-playlists";
+import dynamic from "next/dynamic";
+
+const Playlists = dynamic(() => import("../components/playlists/Playlists"));
 
 export async function getStaticProps() {
   const backgroundDirectory = path.join(process.cwd(), `content/background`);
