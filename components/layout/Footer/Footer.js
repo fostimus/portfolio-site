@@ -9,7 +9,7 @@ export default function Footer() {
       sectionNo={1}
       theme={"dark"}
       lineTextHeader={"get-in-touch"}
-      className="my-container"
+      className={`my-container ${styles.footer}`}
     >
       <h2 className="limited-width">
         Say hello! Learn more about my life as a professional and a person.

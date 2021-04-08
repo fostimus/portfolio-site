@@ -4,7 +4,7 @@ export default function Tagline({ tagline, socials }) {
   return (
     <div>
       <h2 className="limited-width">{tagline}</h2>
-      <Socials socials={socials} />
+      {socials && <Socials socials={socials} />}
     </div>
   );
 }
