@@ -1,5 +1,5 @@
-const desc1 = "Frontend Development. Fitness. Basketball. Podcasting."
+const desc1 = 'Frontend Development. Fitness. Basketball. Podcasting.';
 
-const desc2 = "+ anything else that pops out of my head."
+const desc2 = '+ anything else that pops out of my head.';
 
-export {desc1, desc2};
+export { desc1, desc2 };

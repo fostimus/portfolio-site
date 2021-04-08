@@ -31,7 +31,10 @@
     "sass": "^1.32.5",
     "serve-favicon": "^2.5.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^7.23.0",
+    "prettier": "^2.2.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "next start",
@@ -53,5 +56,4 @@
     "url": "https://github.com/fostimus/portfolio-site/issues"
   },
   "homepage": "https://github.com/fostimus/portfolio-site#readme"
-
 }
