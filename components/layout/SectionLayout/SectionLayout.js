@@ -1,6 +1,7 @@
 import styles from "./sectionLayout.module.scss";
 import { ThemeContext } from "../../../state";
 import { useContext } from "react";
+import PropTypes from "prop-types";
 
 export default function SectionLayout({
   children,
@@ -9,7 +10,7 @@ export default function SectionLayout({
   footer,
   theme,
   className,
-  id
+  id,
 }) {
   const currentTheme = theme ? theme : useContext(ThemeContext);
 
@@ -47,3 +48,21 @@ export default function SectionLayout({
     </section>
   );
 }
+
+SectionLayout.defaultProps = {
+  sectionNo: 1,
+  footer: false,
+};
+
+SectionLayout.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
+  sectionNo: PropTypes.number,
+  lineTextHeader: PropTypes.string,
+  footer: PropTypes.bool,
+  theme: PropTypes.string,
+  className: PropTypes.object,
+  id: PropTypes.string,
+};

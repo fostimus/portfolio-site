@@ -8,6 +8,12 @@
   }
 
   hr {
-    border: 2px solid $text-hover-color;
+    border: 1px solid $text-hover-color;
+  }
+
+  &:hover {
+    hr {
+      border: 1px solid lighten($text-hover-color, 30%);
+    }
   }
 }

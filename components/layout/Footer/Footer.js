@@ -6,7 +6,6 @@ export default function Footer() {
   return (
     <SectionLayout
       footer
-      sectionNo={1}
       theme={"dark"}
       lineTextHeader={"get-in-touch"}
       className={`my-container ${styles.footer}`}
@@ -19,7 +18,7 @@ export default function Footer() {
         className={styles["footer-links"]}
         buttons={[
           { text: "Get in touch", link: "mailto:derekfoster94@gmail.com" },
-          { text: "Learn about me", link: "/about" }
+          { text: "Learn about me", link: "/about" },
         ]}
       />
 
