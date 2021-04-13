@@ -20,7 +20,7 @@ export default function SectionLayout({
         <img
           className={styles["line-text-header"]}
           src={
-            "images/line-text-headers/" +
+            "/images/line-text-headers/" +
             lineTextHeader +
             "/line-" +
             currentTheme +

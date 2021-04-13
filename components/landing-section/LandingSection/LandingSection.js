@@ -4,13 +4,7 @@ import Image from "next/image";
 import styles from "./landingSection.module.scss";
 import PropTypes from "prop-types";
 
-export default function LandingSection({
-  tagline,
-  desc,
-  socials,
-  skills,
-  image,
-}) {
+export default function LandingSection({ tagline, socials, skills, image }) {
   // flex-column styles messing up image style
   //
   return (
@@ -18,13 +12,6 @@ export default function LandingSection({
       <div className={styles["landing-layout"]}>
         <div className={styles.text}>
           <Tagline tagline={tagline} socials={socials} />
-          {desc &&
-            desc.map((line) => (
-              <>
-                <h4>{line}</h4>
-                <br />
-              </>
-            ))}
         </div>
         {image ? (
           <Image src={image.path} width={image.width} height={image.height} />
@@ -39,7 +26,6 @@ export default function LandingSection({
 
 LandingSection.propTypes = {
   tagline: PropTypes.string.isRequired,
-  desc: PropTypes.arrayOf(PropTypes.string),
   socials: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,

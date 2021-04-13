@@ -1,5 +1,4 @@
 import { PageLayout, SectionLayout } from "@layout";
-import LandingSection from "../../components/landing-section";
 import LandingContainer from "../../components/blog";
 import { desc1, desc2, blogs } from "../../content/blog";
 
@@ -18,10 +17,7 @@ export default function BlogHomePage({ desc, blogs }) {
   return (
     <PageLayout theme="light" footerTheme="light">
       <SectionLayout>
-        <LandingSection tagline="Blog" desc={desc} />
-      </SectionLayout>
-      <SectionLayout>
-        <LandingContainer blogs={blogs} />
+        <LandingContainer blogs={blogs} desc={desc} />
       </SectionLayout>
     </PageLayout>
   );

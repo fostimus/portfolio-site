@@ -2,13 +2,24 @@ import styles from "./LandingContainer.module.scss";
 import BlogLink from "../BlogLink";
 import PropTypes from "prop-types";
 
-export default function LandingContainer({ blogs }) {
+export default function LandingContainer({ blogs, desc }) {
   return (
     <section className={styles.container}>
-      {blogs.map((blog, idx) => (
-        <BlogLink key={idx} title={blog.title} date={blog.date} />
-      ))}
-      {/* TODO: pagination for blog posts goes here */}
+      <div className={styles.tagline}>
+        <h1>Blog</h1>
+        {desc.map((line) => (
+          <>
+            <h4>{line}</h4>
+            <br />
+          </>
+        ))}
+      </div>
+      <>
+        {blogs.map((blog, idx) => (
+          <BlogLink key={idx} title={blog.title} date={blog.date} />
+        ))}
+        {/* TODO: pagination for blog posts goes here */}
+      </>
     </section>
   );
 }
@@ -21,4 +32,5 @@ LandingContainer.propTypes = {
       content: PropTypes.string.isRequired,
     })
   ),
+  desc: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
