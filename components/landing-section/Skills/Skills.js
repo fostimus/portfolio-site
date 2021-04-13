@@ -1,6 +1,6 @@
 import styles from "./skillContainer.module.scss";
-
 import SkillCategory from "./SkillCategory";
+import PropTypes from "prop-types";
 
 export default function Skills({ skills }) {
   return (
@@ -14,3 +14,12 @@ export default function Skills({ skills }) {
     </div>
   );
 }
+
+Skills.propTypes = {
+  skills: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      skills: PropTypes.arrayOf(PropTypes.string),
+    })
+  ),
+};

@@ -1,14 +1,15 @@
 import styles from "./skillCategory.module.scss";
 import { useState, useContext } from "react";
 import { ThemeContext } from "../../../state";
+import PropTypes from "prop-types";
 
 export default function SkillCategory({ name, skills }) {
   const [mouseEnter, setMouseEnter] = useState(false);
 
   const skillCategoryHeight =
-    styles[
-      `skill-height-${skills.length > 5 ? skills.length : skills.length - 1}`
-    ];
+		styles[
+		  `skill-height-${skills.length > 5 ? skills.length : skills.length - 1}`
+		];
 
   const commonStyles = `${styles[useContext(ThemeContext)]} ${styles.skill}`;
 
@@ -29,3 +30,8 @@ export default function SkillCategory({ name, skills }) {
     </div>
   );
 }
+
+SkillCategory.propTypes = {
+  name: PropTypes.string.isRequired,
+  skills: PropTypes.arrayOf(PropTypes.string).isRequired,
+};

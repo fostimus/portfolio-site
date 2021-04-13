@@ -1,4 +1,5 @@
 import styles from "./header.module.scss";
+import Link from "next/link";
 
 export default function Header() {
   return (
@@ -6,16 +7,24 @@ export default function Header() {
       <nav>
         <ul>
           <li className={styles["nav-item"]}>
-            <a href="/">Work</a>
+            <Link href="/">
+              <a>Work</a>
+            </Link>
           </li>
           <li className={styles["nav-item"]}>
-            <a href="/about">About</a>
+            <Link href="/about">
+              <a>About</a>
+            </Link>
           </li>
           <li className={styles["nav-item"]}>
-            <a href="/blog">Blog</a>
+            <Link href="/blog">
+              <a>Blog</a>
+            </Link>
           </li>
           <li className={styles["nav-item"]}>
-            <a href="/api/resume">Resume</a>
+            <Link href="/api/resume">
+              <a>Resume</a>
+            </Link>
           </li>
         </ul>
       </nav>

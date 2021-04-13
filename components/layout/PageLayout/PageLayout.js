@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Link from "next/link";
 import Header from "../Header";
 import Footer from "../Footer";
 import styles from "./pageLayout.module.scss";
