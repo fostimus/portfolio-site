@@ -4,8 +4,8 @@ import Footer from "../Footer";
 import styles from "./pageLayout.module.scss";
 import { ThemeContext } from "../../../state";
 import { useContext } from "react";
+import PropTypes from "prop-types";
 
-const name = "Derek Foster";
 export const siteTitle = "Portfolio Website";
 
 export default function PageLayout({ children, theme }) {
@@ -38,3 +38,11 @@ export default function PageLayout({ children, theme }) {
     </ThemeContext.Provider>
   );
 }
+
+PageLayout.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
+  theme: PropTypes.string,
+};

@@ -3,6 +3,8 @@ import LandingSection from "../../components/landing-section";
 import BlogLink from "../../components/blog/BlogLink/BlogLink";
 import { desc1, desc2 } from "../../content/blog";
 
+import PropTypes from "prop-types";
+
 export async function getStaticProps() {
   return {
     props: {
@@ -13,7 +15,7 @@ export async function getStaticProps() {
 
 export default function BlogHomePage({ desc }) {
   return (
-    <PageLayout>
+    <PageLayout theme="light">
       <SectionLayout sectionNo={1}>
         <LandingSection tagline="Blog" desc={desc} />
         <BlogLink title="Testingggg" date="April 6, 2021" />
@@ -21,3 +23,7 @@ export default function BlogHomePage({ desc }) {
     </PageLayout>
   );
 }
+
+BlogHomePage.propTypes = {
+  desc: PropTypes.string.isRequired,
+};
