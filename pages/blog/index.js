@@ -1,6 +1,6 @@
 import { PageLayout, SectionLayout } from "@layout";
 import LandingSection from "../../components/landing-section";
-import BlogLink from "../../components/blog/BlogLink/BlogLink";
+import LandingContainer from "../../components/blog";
 import { desc1, desc2, blogs } from "../../content/blog";
 
 import PropTypes from "prop-types";
@@ -21,11 +21,7 @@ export default function BlogHomePage({ desc, blogs }) {
         <LandingSection tagline="Blog" desc={desc} />
       </SectionLayout>
       <SectionLayout>
-        <div style={{ width: "40%", margin: "0 auto", marginBottom: "50px" }}>
-          {blogs.map((blog, idx) => (
-            <BlogLink key={idx} title={blog.title} date={blog.date} />
-          ))}
-        </div>
+        <LandingContainer blogs={blogs} />
       </SectionLayout>
     </PageLayout>
   );
