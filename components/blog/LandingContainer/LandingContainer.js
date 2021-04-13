@@ -8,6 +8,7 @@ export default function LandingContainer({ blogs }) {
       {blogs.map((blog, idx) => (
         <BlogLink key={idx} title={blog.title} date={blog.date} />
       ))}
+      {/* TODO: pagination for blog posts goes here */}
     </section>
   );
 }

@@ -1,13 +1,17 @@
 @import "../../../styles/globals";
 
 .link {
+  display: block;
+  margin: 1.5rem auto;
   color: $blog-grey;
 
   h3 {
     font-weight: 700;
+    margin-bottom: 0.5rem;
   }
 
   hr {
+    margin-top: 2rem;
     border: 1px solid $text-hover-color;
   }
 

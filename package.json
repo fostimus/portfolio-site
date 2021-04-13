@@ -4,6 +4,7 @@
   "description": "Facilitates API calls to 3rd party software",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.2",
+    "@fostimus/hr-utils": "^1.0.2",
     "@svgr/webpack": "^5.5.0",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
