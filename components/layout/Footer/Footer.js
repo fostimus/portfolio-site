@@ -1,12 +1,13 @@
 import styles from "./footer.module.scss";
 import SectionLayout from "../SectionLayout";
 import ButtonContainer from "../../button/ButtonContainer";
+import PropTypes from "prop-types";
 
-export default function Footer() {
+export default function Footer({ theme }) {
   return (
     <SectionLayout
       footer
-      theme={"dark"}
+      theme={theme}
       lineTextHeader={"get-in-touch"}
       className={`my-container ${styles.footer}`}
     >
@@ -30,3 +31,11 @@ export default function Footer() {
     </SectionLayout>
   );
 }
+
+Footer.defaultProps = {
+  theme: "dark",
+};
+
+Footer.propTypes = {
+  theme: PropTypes.string,
+};

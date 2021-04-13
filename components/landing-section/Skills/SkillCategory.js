@@ -1,15 +1,15 @@
 import styles from "./skillCategory.module.scss";
 import { useState, useContext } from "react";
-import { ThemeContext } from "../../../state";
+import { ThemeContext } from "globalState";
 import PropTypes from "prop-types";
 
 export default function SkillCategory({ name, skills }) {
   const [mouseEnter, setMouseEnter] = useState(false);
 
   const skillCategoryHeight =
-		styles[
-		  `skill-height-${skills.length > 5 ? skills.length : skills.length - 1}`
-		];
+    styles[
+      `skill-height-${skills.length > 5 ? skills.length : skills.length - 1}`
+    ];
 
   const commonStyles = `${styles[useContext(ThemeContext)]} ${styles.skill}`;
 
@@ -23,7 +23,7 @@ export default function SkillCategory({ name, skills }) {
     >
       <div className={styles["skill-name"]}>{name}</div>
       <ul className={styles["skill-items"]}>
-        {skills.map(skill => (
+        {skills.map((skill) => (
           <li key={skill}>{skill}</li>
         ))}
       </ul>

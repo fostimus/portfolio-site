@@ -2,13 +2,13 @@ import Head from "next/head";
 import Header from "../Header";
 import Footer from "../Footer";
 import styles from "./pageLayout.module.scss";
-import { ThemeContext } from "../../../state";
+import { ThemeContext } from "globalState";
 import { useContext } from "react";
 import PropTypes from "prop-types";
 
 export const siteTitle = "Portfolio Website";
 
-export default function PageLayout({ children, theme }) {
+export default function PageLayout({ children, theme, footerTheme }) {
   const currentTheme = theme ? theme : useContext(ThemeContext);
 
   return (
@@ -33,7 +33,7 @@ export default function PageLayout({ children, theme }) {
         </Head>
         <Header />
         <main>{children}</main>
-        <Footer />
+        <Footer theme={footerTheme} />
       </div>
     </ThemeContext.Provider>
   );
@@ -45,4 +45,5 @@ PageLayout.propTypes = {
     PropTypes.node,
   ]),
   theme: PropTypes.string,
+  footerTheme: PropTypes.string,
 };

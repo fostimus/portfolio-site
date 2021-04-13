@@ -2,6 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "globalState": ["globalState.js"],
       "@components/*": ["components/*"],
       "@layout": ["components/layout"]
     }

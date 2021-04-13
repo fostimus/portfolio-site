@@ -16,12 +16,12 @@ export async function getStaticProps() {
 
 export default function BlogHomePage({ desc, blogs }) {
   return (
-    <PageLayout theme="light">
+    <PageLayout theme="light" footerTheme="light">
       <SectionLayout>
         <LandingSection tagline="Blog" desc={desc} />
       </SectionLayout>
       <SectionLayout>
-        <div style={{ width: "40%", margin: "0 auto" }}>
+        <div style={{ width: "40%", margin: "0 auto", marginBottom: "50px" }}>
           {blogs.map((blog, idx) => (
             <BlogLink key={idx} title={blog.title} date={blog.date} />
           ))}
@@ -32,7 +32,7 @@ export default function BlogHomePage({ desc, blogs }) {
 }
 
 BlogHomePage.propTypes = {
-  desc: PropTypes.string.isRequired,
+  desc: PropTypes.arrayOf(PropTypes.string).isRequired,
   blogs: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,

@@ -1,5 +1,5 @@
 import styles from "./sectionLayout.module.scss";
-import { ThemeContext } from "../../../state";
+import { ThemeContext } from "globalState";
 import { useContext } from "react";
 import PropTypes from "prop-types";
 
@@ -63,6 +63,6 @@ SectionLayout.propTypes = {
   lineTextHeader: PropTypes.string,
   footer: PropTypes.bool,
   theme: PropTypes.string,
-  className: PropTypes.object,
+  className: PropTypes.string,
   id: PropTypes.string,
 };
