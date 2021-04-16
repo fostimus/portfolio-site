@@ -4,9 +4,9 @@ import PropTypes from "prop-types";
 
 export default function Page({ custom, children, meta }) {
   return (
-    <PageLayout theme="light" footerTheme="light" meta={meta}>
+    <PageLayout theme="light" footerTheme="light" meta={meta} blog>
       <SectionLayout>
-        {custom ? children : <BlogPost>{children}</BlogPost>}
+        {custom ? children : <BlogPost meta={meta}>{children}</BlogPost>}
       </SectionLayout>
     </PageLayout>
   );

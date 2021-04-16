@@ -6,9 +6,13 @@ import { ThemeContext } from "globalState";
 import { useContext } from "react";
 import PropTypes from "prop-types";
 
-export const siteTitle = "Portfolio Website";
-
-export default function PageLayout({ children, theme, footerTheme, meta }) {
+export default function PageLayout({
+  children,
+  theme,
+  footerTheme,
+  meta,
+  blog,
+}) {
   const currentTheme = theme ? theme : useContext(ThemeContext);
 
   return (
@@ -24,14 +28,24 @@ export default function PageLayout({ children, theme, footerTheme, meta }) {
 
           <meta name="title" content={meta.title} />
           <meta name="description" content={meta.desc} />
-          <meta
-            property="og:image"
-            content={`https://og-image.now.sh/${encodeURI(
-              siteTitle
-            )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
-          />
-          <meta name="og:title" content={siteTitle} />
+          <meta name="keywords" content={meta.tags} />
+
+          <meta name="og:title" content={meta.title} />
+          {/* TOOD: host image somewhere, use that URL here */}
+          <meta property="og:image" content="/images/df-logo-transparent.svg" />
+          <meta property="og:url" content={meta.url} />
+          <meta property="og:site_name" content="Derek Foster" />
+          {blog && (
+            <>
+              <meta property="og:type" content="article" />
+              {/* need to put published date formatted correctly here, and add in authors tag */}
+              <meta property="article:published_time" content="" />
+              <meta property="article:tag" content={meta.tags} />
+            </>
+          )}
+
           <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:site" content="@website-username" />
         </Head>
         <Header />
         <main>{children}</main>
@@ -42,7 +56,12 @@ export default function PageLayout({ children, theme, footerTheme, meta }) {
 }
 
 PageLayout.defaultProps = {
-  meta: { title: "Derek Foster", desc: "Derek Foster's Portfolio & Blog" },
+  meta: {
+    title: "Derek Foster",
+    desc: "Derek Foster's Portfolio & Blog",
+    url: "https://derek-foster.com",
+  },
+  blog: false,
 };
 
 PageLayout.propTypes = {
@@ -55,5 +74,8 @@ PageLayout.propTypes = {
   meta: PropTypes.shape({
     title: PropTypes.string,
     desc: PropTypes.string,
+    tags: PropTypes.arrayOf(PropTypes.string),
+    url: PropTypes.string,
   }),
+  blog: PropTypes.bool,
 };
