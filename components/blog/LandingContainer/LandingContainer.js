@@ -3,17 +3,14 @@ import commonStyles from "../blogStyles.module.scss";
 import BlogLink from "../BlogLink";
 import PropTypes from "prop-types";
 
-export default function LandingContainer({ blogs, desc }) {
+export default function LandingContainer({ blogs }) {
   return (
     <section className={`${styles.container} ${commonStyles.container}`}>
       <div className={styles.tagline}>
         <h1>Blog</h1>
-        {desc.map((line) => (
-          <>
-            <h4>{line}</h4>
-            <br />
-          </>
-        ))}
+        <h4>Frontend Development. Fitness. Basketball. Podcasting.</h4>
+        <br />
+        <h4>+ anything else that pops out of my head.</h4>
       </div>
       <>
         {blogs.map((blog, idx) => (
@@ -33,5 +30,4 @@ LandingContainer.propTypes = {
       content: PropTypes.string.isRequired,
     })
   ),
-  desc: PropTypes.arrayOf(PropTypes.string).isRequired,
 };

@@ -1,7 +1,3 @@
-const desc1 = "Frontend Development. Fitness. Basketball. Podcasting.";
-
-const desc2 = "+ anything else that pops out of my head.";
-
 const blogs = [
   {
     title: "My First Blog",
@@ -20,4 +16,4 @@ const blogs = [
   },
 ];
 
-export { desc1, desc2, blogs };
+export { blogs };
