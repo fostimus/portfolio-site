@@ -8,7 +8,7 @@ import PropTypes from "prop-types";
 
 export const siteTitle = "Portfolio Website";
 
-export default function PageLayout({ children, theme, footerTheme }) {
+export default function PageLayout({ children, theme, footerTheme, meta }) {
   const currentTheme = theme ? theme : useContext(ThemeContext);
 
   return (
@@ -20,8 +20,10 @@ export default function PageLayout({ children, theme, footerTheme }) {
             href="/favicon.ico?v=2"
             type="image/x-icon"
           />
+          <title>Derek Foster: {meta.title}</title>
 
-          <meta name="description" content="Derek Foster's Portfolio & Blog" />
+          <meta name="title" content={meta.title} />
+          <meta name="description" content={meta.desc} />
           <meta
             property="og:image"
             content={`https://og-image.now.sh/${encodeURI(
@@ -39,6 +41,10 @@ export default function PageLayout({ children, theme, footerTheme }) {
   );
 }
 
+PageLayout.defaultProps = {
+  meta: { title: "Derek Foster", desc: "Derek Foster's Portfolio & Blog" },
+};
+
 PageLayout.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
@@ -46,4 +52,8 @@ PageLayout.propTypes = {
   ]),
   theme: PropTypes.string,
   footerTheme: PropTypes.string,
+  meta: PropTypes.shape({
+    title: PropTypes.string,
+    desc: PropTypes.string,
+  }),
 };

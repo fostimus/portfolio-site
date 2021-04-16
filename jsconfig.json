@@ -4,7 +4,8 @@
     "paths": {
       "globalState": ["globalState.js"],
       "@components/*": ["components/*"],
-      "@layout": ["components/layout"]
+      "@layout": ["components/layout"],
+      "@blog": ["components/blog"]
     }
   }
 }

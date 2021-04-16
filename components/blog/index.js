@@ -1,3 +1,5 @@
 import LandingContainer from "./LandingContainer";
+import BlogPost from "./BlogPost";
+import Page from "./Page";
 
-export default LandingContainer;
+export { LandingContainer, BlogPost, Page as default };

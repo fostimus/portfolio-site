@@ -1,5 +1,5 @@
 import { PageLayout, SectionLayout } from "@layout";
-import LandingContainer from "../../components/blog";
+import { LandingContainer } from "@blog";
 import { desc1, desc2, blogs } from "../../content/blog";
 
 import PropTypes from "prop-types";

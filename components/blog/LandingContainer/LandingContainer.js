@@ -1,10 +1,11 @@
 import styles from "./LandingContainer.module.scss";
+import commonStyles from "../blogStyles.module.scss";
 import BlogLink from "../BlogLink";
 import PropTypes from "prop-types";
 
 export default function LandingContainer({ blogs, desc }) {
   return (
-    <section className={styles.container}>
+    <section className={`${styles.container} ${commonStyles.container}`}>
       <div className={styles.tagline}>
         <h1>Blog</h1>
         {desc.map((line) => (

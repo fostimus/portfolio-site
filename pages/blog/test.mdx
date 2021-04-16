@@ -1,10 +1,14 @@
-import { PageLayout, SectionLayout } from "@layout";
+import Page from "@blog";
 
-export default ({ children }) => (
-  <PageLayout>
-    <SectionLayout>{children}</SectionLayout>
-  </PageLayout>
-);
+export const meta = {
+  title: "My First Post",
+  date: "2021-04-15",
+  desc:
+    "Derek Foster joins the ring - can he blog his way through this campaign?",
+  tags: ["blogging"],
+};
+
+export default ({ children }) => <Page meta={meta}>{children}</Page>;
 
 # Test post
 
