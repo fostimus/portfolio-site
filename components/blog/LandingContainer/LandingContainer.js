@@ -27,7 +27,6 @@ LandingContainer.propTypes = {
     PropTypes.shape({
       title: PropTypes.string.isRequired,
       date: PropTypes.string.isRequired,
-      content: PropTypes.string.isRequired,
     })
   ),
 };
