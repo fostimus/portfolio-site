@@ -3,5 +3,19 @@
 .blogPost {
   h1 {
     text-align: center;
+    color: $blog-copy;
+    margin-bottom: 2rem;
   }
+  h4 {
+    text-align: center;
+    color: $blog-grey;
+    margin: 2.5rem 0;
+  }
+  p {
+    margin-top: 1rem;
+  }
+
+  color: $blog-copy;
+  font-size: 1.375rem;
+  line-height: 2rem;
 }

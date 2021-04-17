@@ -6,6 +6,8 @@ import { ThemeContext } from "globalState";
 import { useContext } from "react";
 import PropTypes from "prop-types";
 
+const defaultTitle = "Derek Foster";
+
 export default function PageLayout({
   children,
   theme,
@@ -24,7 +26,11 @@ export default function PageLayout({
             href="/favicon.ico?v=2"
             type="image/x-icon"
           />
-          <title>Derek Foster: {meta.title}</title>
+          <title>
+            {meta.title !== defaultTitle
+              ? meta.title + " - " + defaultTitle
+              : meta.title}
+          </title>
 
           <meta name="title" content={meta.title} />
           <meta name="description" content={meta.desc} />
@@ -57,7 +63,7 @@ export default function PageLayout({
 
 PageLayout.defaultProps = {
   meta: {
-    title: "Derek Foster",
+    title: defaultTitle,
     desc: "Derek Foster's Portfolio & Blog",
     url: "https://derek-foster.com",
   },

@@ -6,8 +6,8 @@ export default function BlogPost({ children, meta }) {
   return (
     <section className={`${styles.blogPost} ${commonStyles.container}`}>
       <h1>{meta.title}</h1>
-      <h4>{meta.date}</h4>
       <h4>{meta.desc}</h4>
+      <h4>{meta.date}</h4>
       <article>{children}</article>
     </section>
   );

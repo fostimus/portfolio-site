@@ -1,33 +1,33 @@
 @font-face {
-  font-family: 'Lato';
-  src: url('./font/Lato-Regular.ttf') format('truetype');
+  font-family: "Lato";
+  src: url("./font/Lato-Regular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'LatoItalic';
-  src: url('./font/Lato-Italic.ttf') format('truetype');
+  font-family: "LatoItalic";
+  src: url("./font/Lato-Italic.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'LatoBold';
-  src: url('./font/Lato-Bold.ttf') format('truetype');
+  font-family: "LatoBold";
+  src: url("./font/Lato-Bold.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'LatoItalicBold';
-  src: url('./font/Lato-BoldItalic.ttf') format('truetype');
+  font-family: "LatoItalicBold";
+  src: url("./font/Lato-BoldItalic.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'LatoHairline';
-  src: url('./font/Lato-Hairline.ttf') format('truetype');
+  font-family: "LatoHairline";
+  src: url("./font/Lato-Hairline.ttf") format("truetype");
 }
 
-$site-font-family: 'Lato', sans-serif;
-$italic-font: 'LatoItalic', sans-serif;
-$bold-font: 'LatoBold', sans-serif;
-$italic-bold-font: 'LatoItalicBold', sans-serif;
-$hairline-font: 'LatoHairline', sans-serif;
+$site-font-family: "Lato", sans-serif;
+$italic-font: "LatoItalic", sans-serif;
+$bold-font: "LatoBold", sans-serif;
+$italic-bold-font: "LatoItalicBold", sans-serif;
+$hairline-font: "LatoHairline", sans-serif;
 
 $body-font: normal normal normal 14px $site-font-family;
 
@@ -38,7 +38,8 @@ $black: #272727;
 $white: #f0f0f0;
 $dark-grey: #464646;
 $light-grey: #aeaeae;
-$blog-grey: #7C8483;
+$blog-grey: #7c8483;
+$blog-copy: #595959;
 $aquamarine: #2bc9af;
 $logo-green: #77966d;
 $logo-dark-green: #243e36;
