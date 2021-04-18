@@ -1,5 +1,6 @@
 import { PageLayout, SectionLayout } from "@layout";
-import { LandingContainer } from "@blog";
+import { LandingContainer, dateFormat } from "@blog";
+import dayjs from "dayjs";
 
 import PropTypes from "prop-types";
 
@@ -7,8 +8,8 @@ export async function getStaticProps() {
   const posts = importAll(require.context(".", true, /\.mdx$/));
 
   const blogs = posts.map((post) => ({
-    title: post.module.meta.title,
-    date: post.module.meta.date,
+    title: post?.module?.meta?.title,
+    date: dayjs(post?.module?.meta?.date).format(dateFormat),
   }));
 
   return {
@@ -33,7 +34,6 @@ BlogHomePage.propTypes = {
     PropTypes.shape({
       title: PropTypes.string.isRequired,
       date: PropTypes.string.isRequired,
-      content: PropTypes.string.isRequired,
     })
   ),
 };

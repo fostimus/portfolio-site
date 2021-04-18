@@ -59,6 +59,12 @@ Given Next.js' wicked page routing set up, these blog posts are _directly_ store
 
 Another killer feature of Next.js is [dynamic routing](https://nextjs.org/docs/routing/dynamic-routes). I won't dive deep here, but I nearly used dynamic routes for catching all blog posts. The idea is to allow _any_ route in your URL, and your dynamic route will catch and handle it accordingly. You do get access to the route the user entered, so you would be able to use that route in any logic you want, e.g. to display the correct blog post.
 
+### Webpack's [require.context](https://webpack.js.org/guides/dependency-management/#requirecontext)
+
+A key piece to my implementation came from [this blog post](https://www.smashingmagazine.com/2020/09/build-blog-nextjs-mdx/) by [Ibrahima Ndaw](https://www.ibrahima-ndaw.com/). Using `require.context`, webpack will dynamically get all modules from the specified directory and import them. The dynamic nature of this feature is perfect for writing multiple blog posts - as more are added, the exported component will automagically be imported and displayed on the Blog landing page.
+
+The caveat here is the directory **must be static**. Webpack is bundler, this feature will happen at build time. Since the dynamic imports will happen at build time, we _cannot_ pass in variables, or other node objects (such as `__dirname` or `process.cwd()`). The directory must be a literal, so Webpack knows where to go!
+
 ### Conclusion
 
 MDX is a game changer. I've been loving the trend towards "developer experience", and MDX continues that ideology. I don't have to go through a CMS (which I was a quarter of the way done with, and scrapped for MDX 😉), and I can interweave my React components within each blog post however I want - quite the flexible solution!
