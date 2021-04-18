@@ -1,0 +1,46 @@
+import Page from "@blog";
+
+export const meta = {
+  title: "First Post",
+  date: "2021-04-15",
+  desc:
+    "Derek Foster joins the blogging ring - can he make it through 12 rounds and knock out his opponent?",
+  tags: [
+    "blogging",
+    "react",
+    "reactjs",
+    "next",
+    "nextjs",
+    "mdx",
+    "jsx",
+    "markdown",
+    "md",
+    "frontend",
+    "frontend engineering",
+    "frontend development",
+    "engineering",
+    "SASS",
+    "SCSS",
+    "SEO",
+  ],
+};
+
+export default ({ children }) => <Page meta={meta}>{children}</Page>;
+
+Hello, world! Welcome to my site, and to my very first blog post. I'll use this space mostly to talk tech (emphasis on frontend development), productivity "hacks", journaling, and _occasionally_ about [podcasting](https://linktr.ee/baguetteboys) and basketball.
+
+In this introductory post I'll be going into detail on... how I built this blog set up! The high level: the site is built with [Next.js](https://nextjs.org/), [SCSS](https://sass-lang.com/) modules, and [MDX](https://mdxjs.com/) for quick blog writing and integration with [JSX](https://reactjs.org/docs/introducing-jsx.html) components.
+
+## MDX
+
+The huge "breakthrough" here was MDX. Markdown is awesome to write a blog post with, but terrible to style your content. MDX solves this by enabling you to import React components into the MDX file, and export a component from the file directly. You can then style the imported components to MDX to have control over the way the blog post looks.
+
+Here's a screenshot of the beginning of this post: ![MDX component](/images/blog-post.png)
+
+I imported a `Page` component, which represents a styled Blog Page. By passing the markdown as `children`, I am sending the HTML (or in this case, JSX) into the Page component and it will be rendered the same way as any old React component! The styling I've applied to the `Page` will be applied, and all is good in the blogging hood.
+
+One other huge benefit of this approach is all of the dynamic metadata being sent. At the beginning of each MDX file, which represents **one blog post**, I set up the needed metadata: title, date, and tags. Within the `PageLayout` I wrote, I set the flag `blog` to true so the HTML head tag gets populated correctly with the metadata, to optimize for SEO.
+
+## Directory Structure
+
+With a multitude of options in front of me for implementation using MDX, I went with storing each MDX file within my `/pages/blog` directory. If you are unfamiliar with Next.js, I **highly** recommend you check it out; instead of dealing with page routing yourself, Next.js make routing a piece of cake by utilizing your [`/pages` directory to create routes](https://nextjs.org/docs/routing/introduction).

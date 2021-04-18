@@ -29,7 +29,6 @@ export default function BlogHomePage({ blogs }) {
 }
 
 BlogHomePage.propTypes = {
-  desc: PropTypes.arrayOf(PropTypes.string).isRequired,
   blogs: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,
