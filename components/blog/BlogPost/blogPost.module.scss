@@ -6,11 +6,17 @@
     color: $blog-copy;
     margin-bottom: 2rem;
   }
-  h4 {
+
+  :is(h2, h3, h4, h5) {
     text-align: center;
-    color: $blog-grey;
+    color: $blog-copy;
     margin: 2rem 0;
   }
+
+  h4 {
+    color: $blog-grey;
+  }
+
   p {
     margin-top: 2rem;
     color: $blog-copy;
@@ -20,6 +26,10 @@
 
   article {
     margin-top: 3rem;
+  }
+
+  img {
+    max-width: 100%;
   }
 }
 

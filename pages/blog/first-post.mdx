@@ -2,9 +2,9 @@ import Page from "@blog";
 
 export const meta = {
   title: "First Post",
-  date: "2021-04-15",
+  date: "2021-04-18",
   desc:
-    "Derek Foster joins the blogging ring - can he make it through 12 rounds and knock out his opponent?",
+    "Derek Foster joins the blogging ring - can he make it through all 12 rounds (AKA post at least 12 times)?",
   tags: [
     "blogging",
     "react",
@@ -22,6 +22,12 @@ export const meta = {
     "SASS",
     "SCSS",
     "SEO",
+    "webpack",
+    "dynamic",
+    "routes",
+    "routing",
+    "https",
+    "URL",
   ],
 };
 
@@ -44,3 +50,21 @@ One other huge benefit of this approach is all of the dynamic metadata being sen
 ## Directory Structure
 
 With a multitude of options in front of me for implementation using MDX, I went with storing each MDX file within my `/pages/blog` directory. If you are unfamiliar with Next.js, I **highly** recommend you check it out; instead of dealing with page routing yourself, Next.js make routing a piece of cake by utilizing your [`/pages` directory to create routes](https://nextjs.org/docs/routing/introduction).
+
+As an example, the landing page for the blog (after you click "Blog" in the navigation links at the top of the page) is at `/pages/blog/index.js`. You will see the URL is then: `https://derek-foster.com/blog`. The same is for the other pages of the site; `/pages/index.js` is the home page (or "Work" in the navigation links) and `/pages/about.js` will give you the about page (my favorite page!)
+
+Given Next.js' wicked page routing set up, these blog posts are _directly_ stored in `/pages/blog`; the page routing feature works with MDX as well! If you want to set that up, check out the docs [here](https://mdxjs.com/getting-started/next) and a nifty blog post on it [here](https://nextjs.org/blog/markdown). It has to do with customizing your [Webpack config](https://nextjs.org/docs/api-reference/next.config.js/custom-webpack-config).
+
+### Note: Dynamic Routing
+
+Another killer feature of Next.js is [dynamic routing](https://nextjs.org/docs/routing/dynamic-routes). I won't dive deep here, but I nearly used dynamic routes for catching all blog posts. The idea is to allow _any_ route in your URL, and your dynamic route will catch and handle it accordingly. You do get access to the route the user entered, so you would be able to use that route in any logic you want, e.g. to display the correct blog post.
+
+### Conclusion
+
+MDX is a game changer. I've been loving the trend towards "developer experience", and MDX continues that ideology. I don't have to go through a CMS (which I was a quarter of the way done with, and scrapped for MDX 😉), and I can interweave my React components within each blog post however I want - quite the flexible solution!
+
+As I wrap up this first blog post, I'd be remiss if I didn't mention the weaker points of the current implementation. There is no ordering for multiple blog posts, so on the blog home page the posts will be out of chronological order. There is also no pagination, so there is going to be a long, unordered list all on one page! This is a computer scientist's worst nightmare, where is John von Neumann and [merge sort](https://en.wikipedia.org/wiki/Merge_sort) when you need them!
+
+With that, Derek is out for today! I also don't have comments set up yet, so feel free to [email me](mailto:derekfoster94@gmail.com) or [do the twitter thing](https://twitter.com/fostimus). Happy coding!
+
+GitHub repo: [https://github.com/fostimus/portfolio-site](https://github.com/fostimus/portfolio-site)
