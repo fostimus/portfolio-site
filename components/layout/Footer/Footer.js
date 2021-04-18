@@ -17,6 +17,7 @@ export default function Footer({ theme }) {
 
       <ButtonContainer
         className={styles["footer-links"]}
+        theme={theme}
         buttons={[
           { text: "Get in touch", link: "mailto:derekfoster94@gmail.com" },
           { text: "Learn about me", link: "/about" },

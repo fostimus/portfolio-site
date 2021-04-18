@@ -1,5 +1,26 @@
 @import "../../../styles/globals";
 
+.dark {
+  border: 2px solid $primary-text-color;
+
+  &:hover {
+    color: $secondary-text-color;
+    background-color: $text-hover-color;
+    border: $text-hover-color;
+  }
+}
+
+.light {
+  color: $secondary-text-color !important;
+  border: 2px solid $secondary-text-color;
+
+  &:hover {
+    color: $primary-text-color;
+    background-color: $text-hover-color;
+    border: $text-hover-color;
+  }
+}
+
 .btn {
   position: relative;
   display: inline-flex;
@@ -7,15 +28,8 @@
   align-items: center;
   width: 156px;
   height: 50px;
-  border: 2px solid $primary-text-color;
   border-radius: 15px;
   font-size: 14px;
-
-  &:hover {
-    color: $secondary-text-color;
-    background-color: $text-hover-color;
-    border: $text-hover-color;
-  }
 }
 
 @media screen and (max-width: $mobile-breakpoint) {
