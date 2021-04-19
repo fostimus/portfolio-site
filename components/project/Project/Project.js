@@ -11,7 +11,12 @@ export default function Project({ title, id, date, buttons, image, reversed }) {
     >
       <ProjectDescription title={title} id={id} date={date} buttons={buttons} />
       <div className={styles["project-image"]}>
-        <Image src={image.path} width={image.width} height={image.height} />
+        <Image
+          src={image.path}
+          width={image.width}
+          height={image.height}
+          alt={title}
+        />
       </div>
     </section>
   );

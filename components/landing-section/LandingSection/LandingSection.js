@@ -14,7 +14,12 @@ export default function LandingSection({ tagline, socials, skills, image }) {
           <Tagline tagline={tagline} socials={socials} />
         </div>
         {image ? (
-          <Image src={image.path} width={image.width} height={image.height} />
+          <Image
+            src={image.path}
+            width={image.width}
+            height={image.height}
+            alt="Derek Foster"
+          />
         ) : (
           <></>
         )}

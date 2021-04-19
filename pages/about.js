@@ -24,8 +24,8 @@ export async function getStaticProps() {
       skills,
       socials: blackSocials,
       background: await markdownParser(backgroundDirectory),
-      playlists
-    }
+      playlists,
+    },
   };
 }
 
@@ -35,7 +35,7 @@ export default function AboutPage({
   skills,
   socials,
   background,
-  playlists
+  playlists,
 }) {
   const sections = ["profile", "background", "music"];
 
@@ -58,6 +58,7 @@ export default function AboutPage({
         <img
           style={{ width: "100%", height: "100%", verticalAlign: "bottom" }}
           src="/images/lakers.svg"
+          alt="Lakers Gradient"
         />
       </SectionLayout>
       <SectionLayout

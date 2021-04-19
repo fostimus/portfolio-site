@@ -16,9 +16,19 @@ function Social({ info }) {
       rel="noreferrer"
     >
       {mouseEnter ? (
-        <Image src={info.hover} width={25} height={25} />
+        <Image
+          src={info.hover}
+          width={25}
+          height={25}
+          alt={`${info.name} icon`}
+        />
       ) : (
-        <Image src={info.icon} width={25} height={25} />
+        <Image
+          src={info.icon}
+          width={25}
+          height={25}
+          alt={`${info.name} icon`}
+        />
       )}
     </a>
   );
@@ -27,7 +37,7 @@ function Social({ info }) {
 export default function Socials({ socials }) {
   return (
     <section className={styles["social-links"]}>
-      {socials?.map(social => (
+      {socials?.map((social) => (
         <Social info={social} key={social.name} />
       ))}
     </section>

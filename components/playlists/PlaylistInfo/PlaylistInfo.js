@@ -5,7 +5,7 @@ import { useState } from "react";
 export default function PlaylistInfo({
   playlists,
   currentPlaylist,
-  setCurrentPlaylist
+  setCurrentPlaylist,
 }) {
   const [showDropdown, setShowDropdown] = useState(false);
 
@@ -32,7 +32,7 @@ export default function PlaylistInfo({
               onClick={() => setShowDropdown(!showDropdown)}
               className={styles["dropbtn"]}
             >
-              <img src="images/down-arrow.svg" />
+              <img src="images/down-arrow.svg" alt="Down Arrow" />
             </button>
           </div>
           {showDropdown && (
@@ -57,7 +57,10 @@ export default function PlaylistInfo({
       </div>
       <div className={styles.image}>
         {playlists[currentPlaylist] && (
-          <img src={playlists[currentPlaylist].imageUrl} />
+          <img
+            src={playlists[currentPlaylist].imageUrl}
+            alt="Spotify Playlist Image"
+          />
         )}
       </div>
     </div>

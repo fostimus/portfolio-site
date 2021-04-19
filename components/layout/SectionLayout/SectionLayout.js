@@ -26,6 +26,7 @@ export default function SectionLayout({
             currentTheme +
             ".svg"
           }
+          alt={`Section Header: ${lineTextHeader}`}
         />
       ) : (
         <></>

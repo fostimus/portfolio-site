@@ -7,22 +7,26 @@ import "@fortawesome/fontawesome-free/css/all.css";
 const icons = [
   [
     <i className={"fas fa-basketball-ball"}></i>,
-    { title: "Basketball", content: "" }
+    { title: "Basketball", content: "" },
   ],
   [<i className="fas fa-biking"></i>, { title: "Athletics", content: "" }],
   [<i className="fab fa-spotify"></i>, { title: "Music", content: "" }],
   [<i className="fas fa-podcast"></i>, { title: "Podcaster", content: "" }],
   [<i className="fas fa-book-open"></i>, { title: "Reading", content: "" }],
   [
-    <img className={`${styles.interest} `} src="/japanese-flag.svg" alt="" />,
-    { title: "Japanese", content: "" }
-  ]
+    <img
+      className={`${styles.interest} `}
+      src="/japanese-flag.svg"
+      alt="Japan's National Flag"
+    />,
+    { title: "Japanese", content: "" },
+  ],
 ];
 
 export default function BackgroundContainer({ content }) {
   return (
     <div className={styles["bg-container4"]}>
-      {content.map(section => {
+      {content.map((section) => {
         return (
           <BackgroundSection
             className={styles["bg-section" + section.frontMatter.id]}
@@ -52,7 +56,7 @@ function interestsContainer(interests, pos) {
       subtitle="Hover over each to learn more"
       vertical
     >
-      {interests.map(item => (
+      {interests.map((item) => (
         <OverlayTrigger
           key={item[1].title}
           trigger={["hover", "focus"]}
