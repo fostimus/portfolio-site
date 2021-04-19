@@ -9,7 +9,6 @@ export default function LandingContainer({ blogs }) {
       <div className={styles.tagline}>
         <h1>Blog</h1>
         <h4>Frontend Development. Fitness. Basketball. Podcasting.</h4>
-        <br />
         <h4>+ anything else that pops out of my head.</h4>
       </div>
       <>

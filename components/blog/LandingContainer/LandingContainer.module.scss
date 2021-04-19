@@ -3,8 +3,17 @@
 .container {
   color: $blog-grey;
 
+  h1 {
+    color: $blog-copy;
+  }
+
   .tagline {
     text-align: center;
     margin-bottom: 2rem;
+
+    h4 {
+      margin-bottom: 1rem;
+      line-height: 2.5rem;
+    }
   }
 }
