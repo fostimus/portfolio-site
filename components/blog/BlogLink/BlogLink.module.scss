@@ -21,3 +21,15 @@
     }
   }
 }
+
+@media screen and (max-width: $mobile-breakpoint) {
+  .link {
+    :is(h3, h5) {
+      text-align: center;
+    }
+
+    hr {
+      width: 80%;
+    }
+  }
+}

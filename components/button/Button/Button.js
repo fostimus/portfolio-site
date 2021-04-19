@@ -5,7 +5,6 @@ import { ThemeContext } from "globalState";
 
 export default function Button({ text, link, theme }) {
   const currentTheme = theme ? theme : useContext(ThemeContext);
-  console.log(theme);
 
   return (
     <a

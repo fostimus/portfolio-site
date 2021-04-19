@@ -1,5 +1,13 @@
+@import "../../styles/globals";
+
 .container {
   width: 40%;
   margin: 0 auto;
   margin-bottom: 10rem;
+}
+
+@media screen and (max-width: $mobile-breakpoint) {
+  .container {
+    width: 90%;
+  }
 }
