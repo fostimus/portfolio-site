@@ -1,10 +1,9 @@
 import styles from "./BlogLink.module.scss";
 import PropTypes from "prop-types";
-import { formatSlug } from "@fostimus/hr-utils";
 
-export default function BlogLink({ title, date }) {
+export default function BlogLink({ link, title, date }) {
   return (
-    <a className={styles.link} href={`/blog/${formatSlug(title)}`}>
+    <a className={styles.link} href={`/blog/${link}`}>
       <h3>{title}</h3>
       <h5>{date}</h5>
       <hr />
@@ -13,6 +12,7 @@ export default function BlogLink({ title, date }) {
 }
 
 BlogLink.propTypes = {
+  link: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
 };

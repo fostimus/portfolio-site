@@ -13,7 +13,12 @@ export default function LandingContainer({ blogs }) {
       </div>
       <>
         {blogs.map((blog, idx) => (
-          <BlogLink key={idx} title={blog.title} date={blog.date} />
+          <BlogLink
+            key={idx}
+            link={blog.link}
+            title={blog.title}
+            date={blog.date}
+          />
         ))}
         {/* TODO: pagination for blog posts goes here */}
       </>
@@ -25,6 +30,7 @@ LandingContainer.propTypes = {
   blogs: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,
+      link: PropTypes.string.isRequired,
       date: PropTypes.string.isRequired,
     })
   ),

@@ -8,6 +8,7 @@ export async function getStaticProps() {
   const posts = importAll(require.context(".", true, /\.mdx$/));
 
   const blogs = posts.map((post) => ({
+    link: post.link.replace("/", "").replace(".mdx", ""),
     title: post?.module?.meta?.title,
     date: dayjs(post?.module?.meta?.date).format(dateFormat),
   }));
