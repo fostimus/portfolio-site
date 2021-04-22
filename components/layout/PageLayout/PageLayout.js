@@ -5,6 +5,8 @@ import styles from "./pageLayout.module.scss";
 import { ThemeContext } from "globalState";
 import { useContext } from "react";
 import PropTypes from "prop-types";
+import { dateFormat } from "@blog";
+import dayjs from "dayjs";
 
 const defaultTitle = "Derek Foster";
 
@@ -45,15 +47,16 @@ export default function PageLayout({
           <meta name="keywords" content={meta.tags} />
 
           <meta name="og:title" content={meta.title} />
-          {/* TOOD: host image somewhere, use that URL here */}
-          <meta property="og:image" content="/images/df-logo-transparent.svg" />
+          <meta property="og:image" content={meta.image} />
           <meta property="og:url" content={meta.url} />
           <meta property="og:site_name" content="Derek Foster" />
           {blog && (
             <>
               <meta property="og:type" content="article" />
-              {/* need to put published date formatted correctly here, and add in authors tag */}
-              <meta property="article:published_time" content="" />
+              <meta
+                property="article:published_time"
+                content={dayjs(meta.date).format(dateFormat)}
+              />
               <meta property="article:tag" content={meta.tags} />
             </>
           )}
@@ -63,10 +66,7 @@ export default function PageLayout({
           <meta name="twitter:creator" content="@fostimus" />
           <meta name="twitter:title" content={meta.title} />
           <meta name="twitter:description" content={meta.desc} />
-          <meta
-            name="twitter:image"
-            content="https://i.imgur.com/0b5irZZ.png"
-          />
+          <meta name="twitter:image" content={meta.image} />
         </Head>
         <Header />
         <main>{children}</main>
@@ -81,6 +81,7 @@ PageLayout.defaultProps = {
     title: defaultTitle,
     desc: "Derek Foster's Portfolio & Blog",
     url: "https://derek-foster.com",
+    image: "https://i.imgur.com/0b5irZZ.png",
   },
   blog: false,
 };
@@ -95,9 +96,11 @@ PageLayout.propTypes = {
   meta: PropTypes.shape({
     title: PropTypes.string,
     desc: PropTypes.string,
+    date: PropTypes.string,
     tags: PropTypes.arrayOf(PropTypes.string),
     url: PropTypes.string,
     link: PropTypes.string,
+    image: PropTypes.string,
   }),
   blog: PropTypes.bool,
 };
