@@ -30,6 +30,7 @@
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",
     "react-dom": "^17.0.1",
+    "react-ga": "^3.3.0",
     "remark": "^13.0.0",
     "remark-html": "^13.0.1",
     "request": "^2.88.2",
