@@ -1,10 +1,18 @@
 import { PageLayout, SectionLayout } from "@layout";
 import BlogPost from "./BlogPost";
 import PropTypes from "prop-types";
+import { useRouter } from "next/router";
 
 export default function Page({ custom, children, meta }) {
+  const router = useRouter();
+
   return (
-    <PageLayout theme="light" footerTheme="light" meta={meta} blog>
+    <PageLayout
+      theme="light"
+      footerTheme="light"
+      meta={{ ...meta, link: router.pathname }}
+      blog
+    >
       <SectionLayout>
         {custom ? children : <BlogPost meta={meta}>{children}</BlogPost>}
       </SectionLayout>

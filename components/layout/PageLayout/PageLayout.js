@@ -26,6 +26,14 @@ export default function PageLayout({
             href="/favicon.ico?v=2"
             type="image/x-icon"
           />
+          <link
+            rel="canonical"
+            href={
+              blog
+                ? `https://derek-foster.com${meta.link}`
+                : "https://derek-foster.com"
+            }
+          />
           <title>
             {meta.title !== defaultTitle
               ? meta.title + " - " + defaultTitle
@@ -82,6 +90,7 @@ PageLayout.propTypes = {
     desc: PropTypes.string,
     tags: PropTypes.arrayOf(PropTypes.string),
     url: PropTypes.string,
+    link: PropTypes.string,
   }),
   blog: PropTypes.bool,
 };
