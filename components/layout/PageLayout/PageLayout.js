@@ -47,17 +47,17 @@ export default function PageLayout({
           <meta name="keywords" content={meta.tags} />
 
           <meta name="og:title" content={meta.title} />
-          <meta property="og:image" content={meta.image} />
-          <meta property="og:url" content={meta.url} />
-          <meta property="og:site_name" content="Derek Foster" />
+          <meta name="og:image" content={meta.image} />
+          <meta name="og:url" content={meta.url} />
+          <meta name="og:site_name" content="Derek Foster" />
           {blog && (
             <>
-              <meta property="og:type" content="article" />
+              <meta name="og:type" content="article" />
               <meta
-                property="article:published_time"
+                name="article:published_time"
                 content={dayjs(meta.date).format(dateFormat)}
               />
-              <meta property="article:tag" content={meta.tags} />
+              <meta name="article:tag" content={meta.tags} />
             </>
           )}
 
