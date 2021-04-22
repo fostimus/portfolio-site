@@ -59,7 +59,14 @@ export default function PageLayout({
           )}
 
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:site" content="@website-username" />
+          <meta name="twitter:site" content="@derek-foster.com" />
+          <meta name="twitter:creator" content="@fostimus" />
+          <meta name="twitter:title" content={meta.title} />
+          <meta name="twitter:description" content={meta.desc} />
+          <meta
+            name="twitter:image"
+            content="https://i.imgur.com/0b5irZZ.png"
+          />
         </Head>
         <Header />
         <main>{children}</main>
