@@ -81,7 +81,7 @@ PageLayout.defaultProps = {
     title: defaultTitle,
     desc: "Derek Foster's Portfolio & Blog",
     url: "https://derek-foster.com",
-    image: "https://i.imgur.com/0b5irZZ.png",
+    image: "https://i.imgur.com/w8G3DnM.png",
   },
   blog: false,
 };
