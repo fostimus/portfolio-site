@@ -3,6 +3,7 @@
 -   Need to make about page responsive
 -   Switch to CMS instead of `/content` folder
 -   Button light theme - unable to see on the footer
+-   use `next-sitemap` to generate sitemap for blog
 
 # Blog notes/considerations
 
