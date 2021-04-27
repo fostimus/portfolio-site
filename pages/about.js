@@ -48,7 +48,7 @@ export default function AboutPage({
           image={image}
           socials={socials}
           skills={skills}
-        ></LandingSection>
+         />
       </SectionLayout>
       <SectionLayout id={sections[1]} sectionNo={1} lineTextHeader="background">
         <EllipsisNav sections={sections} currentSection={1} />

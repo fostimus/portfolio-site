@@ -6,13 +6,13 @@ import "@fortawesome/fontawesome-free/css/all.css";
 
 const icons = [
   [
-    <i className={"fas fa-basketball-ball"}></i>,
+    <i className={"fas fa-basketball-ball"} />,
     { title: "Basketball", content: "" },
   ],
-  [<i className="fas fa-biking"></i>, { title: "Athletics", content: "" }],
-  [<i className="fab fa-spotify"></i>, { title: "Music", content: "" }],
-  [<i className="fas fa-podcast"></i>, { title: "Podcaster", content: "" }],
-  [<i className="fas fa-book-open"></i>, { title: "Reading", content: "" }],
+  [<i className="fas fa-biking" />, { title: "Athletics", content: "" }],
+  [<i className="fab fa-spotify" />, { title: "Music", content: "" }],
+  [<i className="fas fa-podcast" />, { title: "Podcaster", content: "" }],
+  [<i className="fas fa-book-open" />, { title: "Reading", content: "" }],
   [
     <img
       className={`${styles.interest} `}

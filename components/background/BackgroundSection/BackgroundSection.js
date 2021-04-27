@@ -25,7 +25,7 @@ export default function BackgroundSection({
               <div
                 className={styles.body}
                 dangerouslySetInnerHTML={{ __html: content }}
-              ></div>
+               />
             </Card.Body>
           ) : (
             <>

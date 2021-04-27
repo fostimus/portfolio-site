@@ -17,7 +17,7 @@ export default function EllipsisNav({ sections, currentSection }) {
 function Ellipse({ link, section }) {
   return (
     <div className={styles["ellipse-container"]}>
-      <a className={styles.ellipse} href={"#" + link}></a>
+      <a className={styles.ellipse} href={"#" + link} />
       {section ? <span>{section}</span> : <></>}
     </div>
   );
