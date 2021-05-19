@@ -27,7 +27,7 @@ export default function Footer({ theme }) {
       <div className={styles["copyright"]}>
         <p>Ingredients: Heart, soul, and lots of coffee</p>
         <br />
-        <p>&copy; Derek Foster 2021</p>
+        <p>&copy; Derek Foster {new Date().getFullYear()}</p>
       </div>
     </SectionLayout>
   );

@@ -61,12 +61,18 @@ export default function PageLayout({
             </>
           )}
 
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:site" content="@derek-foster.com" />
-          <meta name="twitter:creator" content="@fostimus" />
+          <meta name="twitter:card" content="summary" />
+          <meta name="twitter:site" content={meta.twitterHandle} />
+          <meta name="twitter:creator" content={meta.twitterHandle}/>
           <meta name="twitter:title" content={meta.title} />
           <meta name="twitter:description" content={meta.desc} />
           <meta name="twitter:image" content={meta.image} />
+
+          <script
+            async
+            src="https://platform.twitter.com/widgets.js"
+            charSet="utf-8"
+          ></script>
         </Head>
         <Header />
         <main>{children}</main>
@@ -82,6 +88,7 @@ PageLayout.defaultProps = {
     desc: "Derek Foster's Portfolio & Blog",
     url: "https://derek-foster.com",
     image: "https://i.imgur.com/w8G3DnM.png",
+    twitterHandle: "@fostimus"
   },
   blog: false,
 };
@@ -101,6 +108,7 @@ PageLayout.propTypes = {
     url: PropTypes.string,
     link: PropTypes.string,
     image: PropTypes.string,
+    twitterHandle: PropTypes.string,
   }),
   blog: PropTypes.bool,
 };
