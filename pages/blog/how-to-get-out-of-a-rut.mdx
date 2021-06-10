@@ -1,0 +1,78 @@
+import Page from "@blog";
+
+export const meta = {
+  title: "How to get out of a rut... or not",
+  date: "2021-06-09",
+  desc:
+    "Derek Foster joins the blogging ring - can he stick a few jabs and get a K.O.?",
+  tags: [
+    "blogging",
+    "react",
+    "reactjs",
+    "next",
+    "nextjs",
+    "mdx",
+    "jsx",
+    "markdown",
+    "md",
+    "frontend",
+    "frontend engineering",
+    "frontend development",
+    "engineering",
+    "SASS",
+    "SCSS",
+    "SEO",
+    "webpack",
+    "dynamic",
+    "routes",
+    "routing",
+    "https",
+    "URL",
+  ],
+  // supplied image will be the main thumbnail for article
+  // image: null,
+};
+
+export default ({ children }) => <Page meta={meta}>{children}</Page>;
+
+Hello, world! Welcome to my site, and to my very first blog post. I'll use this space mostly to talk tech (emphasis on frontend development), productivity "hacks", journaling, and _occasionally_ about [podcasting](https://linktr.ee/baguetteboys) and basketball.
+
+In this introductory post I'll be going into detail on... how I built this blog set up! The high level: the site is built with [Next.js](https://nextjs.org/), [SCSS](https://sass-lang.com/) modules, and [MDX](https://mdxjs.com/) for quick blog writing and integration with [JSX](https://reactjs.org/docs/introducing-jsx.html) components.
+
+## MDX
+
+The huge "breakthrough" here was MDX. Markdown is awesome to write a blog post with, but terrible to style your content. MDX solves this by enabling you to import React components into the MDX file, and export a component from the file directly. You can then style the imported components to MDX to have control over the way the blog post looks.
+
+Here's a screenshot of the beginning of this post: ![MDX component](/images/blog-post.png)
+
+I imported a `Page` component, which represents a styled Blog Page. By passing the markdown as `children`, I am sending the HTML (or in this case, JSX) into the Page component and it will be rendered the same way as any old React component! The styling I've applied to the `Page` will be applied, and all is good in the blogging hood.
+
+One other huge benefit of this approach is all of the dynamic metadata being sent. At the beginning of each MDX file, which represents **one blog post**, I set up the needed metadata: title, date, and tags. Within the `PageLayout` I wrote, I set the flag `blog` to true so the HTML head tag gets populated correctly with the metadata, to optimize for SEO.
+
+## Directory Structure
+
+With a multitude of options in front of me for implementation using MDX, I went with storing each MDX file within my `/pages/blog` directory. If you are unfamiliar with Next.js, I **highly** recommend you check it out; instead of dealing with page routing yourself, Next.js make routing a piece of cake by utilizing your [`/pages` directory to create routes](https://nextjs.org/docs/routing/introduction).
+
+As an example, the landing page for the blog (after you click "Blog" in the navigation links at the top of the page) is at `/pages/blog/index.js`. You will see the URL is then: `https://derek-foster.com/blog`. The same is for the other pages of the site; `/pages/index.js` is the home page (or "Work" in the navigation links) and `/pages/about.js` will give you the about page (my favorite page!)
+
+Given Next.js' wicked page routing set up, these blog posts are _directly_ stored in `/pages/blog`; the page routing feature works with MDX as well! If you want to set that up, check out the docs [here](https://mdxjs.com/getting-started/next) and a nifty blog post on it [here](https://nextjs.org/blog/markdown). It has to do with customizing your [Webpack config](https://nextjs.org/docs/api-reference/next.config.js/custom-webpack-config).
+
+### Note: Dynamic Routing
+
+Another killer feature of Next.js is [dynamic routing](https://nextjs.org/docs/routing/dynamic-routes). I won't dive deep here, but I nearly used dynamic routes for catching all blog posts. The idea is to allow _any_ route in your URL, and your dynamic route will catch and handle it accordingly. You do get access to the route the user entered, so you would be able to use that route in any logic you want, e.g. to display the correct blog post.
+
+### Webpack's [require.context](https://webpack.js.org/guides/dependency-management/#requirecontext)
+
+A key piece to my implementation came from [this blog post](https://www.smashingmagazine.com/2020/09/build-blog-nextjs-mdx/) by [Ibrahima Ndaw](https://www.ibrahima-ndaw.com/). Using `require.context`, webpack will dynamically get all modules from the specified directory and import them. The dynamic nature of this feature is perfect for writing multiple blog posts - as more are added, the exported component will automagically be imported and displayed on the Blog landing page.
+
+The caveat here is the directory **must be static**. Webpack is bundler, this feature will happen at build time. Since the dynamic imports will happen at build time, we _cannot_ pass in variables, or other node objects (such as `__dirname` or `process.cwd()`). The directory must be a literal, so Webpack knows where to go!
+
+### Conclusion
+
+MDX is a game changer. I've been loving the trend towards "developer experience", and MDX continues that ideology. I don't have to go through a CMS (which I was a quarter of the way done with, and scrapped for MDX 😉), and I can interweave my React components within each blog post however I want - quite the flexible solution!
+
+As I wrap up this first blog post, I'd be remiss if I didn't mention the weaker points of the current implementation. There is no ordering for multiple blog posts, so on the blog home page the posts will be out of chronological order. There is also no pagination, so there is going to be a long, unordered list all on one page! This is a computer scientist's worst nightmare, where is John von Neumann and [merge sort](https://en.wikipedia.org/wiki/Merge_sort) when you need them!
+
+With that, Derek is out for today! I also don't have comments set up yet, so feel free to [email me](mailto:derekfoster94@gmail.com) or [do the twitter thing](https://twitter.com/fostimus). Happy coding!
+
+GitHub repo: [https://github.com/fostimus/portfolio-site](https://github.com/fostimus/portfolio-site)
